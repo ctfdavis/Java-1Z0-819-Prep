@@ -2,3 +2,8 @@
     font-weight: bold;
     color: var(--emphasis-color);
 }
+
+.keyword {
+    @include link;
+    background-color: var(--highlight-color);
+}

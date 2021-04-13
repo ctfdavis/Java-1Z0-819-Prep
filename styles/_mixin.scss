@@ -3,6 +3,11 @@
     padding: 0 1rem;
     border: var(--primary-line);
     border-radius: 100vh;
+    &:link,
+    &:visited {
+        text-decoration: none;
+        color: inherit;
+    }
     &--active {
         cursor: none;
         pointer-events: none;

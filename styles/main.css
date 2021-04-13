@@ -7,6 +7,7 @@
   --secondary-margin: 1rem;
   --section-line: 3px dashed var(--primary-grey);
   --emphasis-color: #fc5c5c;
+  --highlight-color: rgba(255, 255, 0, 0.4);
 }
 
 html {
@@ -52,6 +53,25 @@ body {
 .emphasis {
   font-weight: bold;
   color: var(--emphasis-color);
+}
+
+.keyword {
+  display: inline-block;
+  padding: 0 1rem;
+  border: var(--primary-line);
+  border-radius: 100vh;
+  background-color: var(--highlight-color);
+}
+
+.keyword:link, .keyword:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.keyword--active {
+  cursor: none;
+  pointer-events: none;
+  background-color: var(--primary-grey);
 }
 
 .container {
@@ -120,15 +140,15 @@ body {
   border-radius: 100vh;
 }
 
+.nav__link:link, .nav__link:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
 .nav__link--active {
   cursor: none;
   pointer-events: none;
   background-color: var(--primary-grey);
-}
-
-.nav__link:link, .nav__link:visited {
-  text-decoration: none;
-  color: inherit;
 }
 
 .nav__theme {
@@ -162,6 +182,11 @@ body {
   padding: 0 1rem;
   border: var(--primary-line);
   border-radius: 100vh;
+}
+
+.content__link:link, .content__link:visited {
+  text-decoration: none;
+  color: inherit;
 }
 
 .content__link--active {

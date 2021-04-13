@@ -47,12 +47,6 @@
         @include link;
     }
 
-    &__link:link
-    ,&__link:visited {
-        text-decoration: none;
-        color: inherit;
-    }
-
     &__theme {
         font-size: 2rem;
         cursor: pointer;
