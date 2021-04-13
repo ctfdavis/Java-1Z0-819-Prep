@@ -1,0 +1,127 @@
+@import "./base";
+@import "./mixin";
+@import "./data";
+@import "./extra";
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-bg);
+    color: #000;
+
+    &--dark {
+        background-color: var(--secondary-bg);
+        color: #fff;
+    }
+
+
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: var(--primary-line);
+    padding: 1rem 0;
+    margin-bottom: var(--primary-margin);
+
+    &__title {
+        font-size: 2.5rem;
+        margin-bottom: var(--primary-margin);
+    }
+}
+
+.nav {
+    width: 75%;
+
+    &__links {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    &__link {
+        @include link;
+    }
+
+    &__link:link
+    ,&__link:visited {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &__theme {
+        font-size: 2rem;
+        cursor: pointer;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__topics {
+        list-style: none;
+    }
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: var(--primary-margin);
+        }
+    }
+
+    &__link {
+        @include link;
+    }
+
+    &__link:link,
+    &__link:visited {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+.topic {
+    width: 85%;
+    margin: 0 auto;
+
+    &__title {
+        text-align: center;
+        margin-bottom: var(--primary-margin);
+        font-size: 2.5rem;
+    }
+
+    &__subtitle {
+        margin-bottom: var(--secondary-margin);
+        font-size: 2rem;
+    }
+
+    &__goals {
+        margin-left: var(--primary-margin);
+        margin-bottom: var(--primary-margin);
+    }
+
+    &__section {
+        &>* {
+            padding: 1rem 0;
+        }
+        border-top: var(--section-line);
+
+        &:last-child(){
+            border-bottom: var(--section-line);
+            margin-bottom: var(--primary-margin);
+        }
+
+
+        &__title {
+            @extend .topic__subtitle;
+            font-style: oblique;
+        }
+
+        &__subtitle {
+            font-size: 1.75rem;
+        }
+    }
+}

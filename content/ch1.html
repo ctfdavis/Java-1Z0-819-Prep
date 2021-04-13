@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../styles/main.css" />
+    <title>Java 1Z0-819 Prep</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="header__title">Java 1Z0-819 Prep</h1>
+            <nav class="nav">
+                <ul class="nav__links">
+                    <li class="nav__item">
+                        <a href="../index.html" class="nav__link">Content</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Manual</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Contact</a>
+                    </li>
+                    <li class="nav__item nav__theme">
+                        &#9728;
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="topic">
+            <h1 class="topic__title">Topic 1: Java Data Types</h1>
+            <h2 class="topic__subtitle">Topic goals</h2>
+            <ol class="topic__goals">
+                <li class="topic__goals__item">understand primitive types in Java</li>
+                <li class="topic__goals__item">understand wrapper classes in Java</li>
+                <li class="topic__goals__item">understand type promotion and casting</li>
+                <li class="topic__goals__item">learn about operators and their precedence</li>
+                <li class="topic__goals__item">learn about var (local variable type inference) &amp; lambda parameters
+                </li>
+            </ol>
+
+            <section class="topic__section">
+                <h2 class="topic__section__title">1. understand primitive types in Java</h2>
+                <h3 class="topic__section__subtitle">The 8 types of primitive data</h3>
+                <table class="table">
+                    <thead>
+                        <tr class="table__row">
+                            <th>Types</th>
+                            <th>Size in bits</th>
+                            <th>Value range</th>
+                            <th>Optional suffix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table__row">
+                            <td>boolean</td>
+                            <td>n/a</td>
+                            <td>false, true</td>
+                            <td>n/a</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td>byte</td>
+                            <td>8</td>
+                            <td>from -128 to 127</td>
+                            <td>n/a</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td>char</td>
+                            <td>16</td>
+                            <td>from 0 to 2^16-1</td>
+                            <td>n/a</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td>short</td>
+                            <td>16</td>
+                            <td>from 2^15 to 2^15-1</td>
+                            <td>n/a</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td>int</td>
+                            <td>32</td>
+                            <td>from 2^(-31) to 2^31-1</td>
+                            <td>n/a</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td>long</td>
+                            <td>64</td>
+                            <td>from 2^(-63) to 2^63-1</td>
+                            <td>l or L</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td>float</td>
+                            <td>32</td>
+                            <td>from 2^-149 to (2-2^(-23))*2^127</td>
+                            <td>f or F</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td>double</td>
+                            <td>64</td>
+                            <td>from 2^-1074 to (2-2^(-52))*2^1023</td>
+                            <td>n/a</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Let's now look at some examples of declaring and initializing variables of the 8 primitive types of data below:</p>
+                <ul class="list">
+                    <li>boolean var1 = true;</li>
+                    <li>byte var2 = 1__0; //1_0 means 10, underscores in between numbers can be added (however many)</li>
+                    <li>char var3 = 0;</li>
+                    <li>short __var4 = 0; //underscores are allowed in variable names</li>
+                    <li>int var5 = 0123; //var5 will be assigned 83, as 0-prefixed numbers are considered octal</li>
+                    <li>long var6$$$ = 0L; //$ can appear anywhere except at the beginning of a variable name</li>
+                    <li>float var7 = 0.0f;</li>
+                    <li>double var8 = 0.0;</li>
+                </ul>
+                <p>Next, let's also look at some <span class="emphasis">invalid</span> examples below:</p>
+                <ul class="list">
+                    <li>boolean 9var = false; //DNC (does not compile) as variable name cannot start with a number</li>
+                    <li>byte var10 = 128; // DNC as 128 exceeds range of byte (128 is reckoned by compiler as int)</li>
+                    <li>char _ = 0; // DNC as a single underscore cannot be used as a variable name</li>
+                    <li>short var12 = _0; // DNC as an underscore can't be at the beginning of a number</li>
+                    <li>int var13 = 0.0; // DNC as 0.0 is reckoned as a double value which is bigger than an int</li>
+                    <li>long var14 = 0.0; // DNC, reason similar to above</li>
+                    <li>float var15 = 0.0; // DNC, reason similar to above (f suffix has to be explicitly added to mean float)</li>
+                    <li>double var16 = false; // DNC as boolean values can not be assigned to other primitive types</li>
+                </ul>
+                <h3 class="topic__section__subtitle">Basic operations on primitive data</h3>
+                <p>The basic arithmetic operations + (addition), - (subtraction), * (multiplication), / (division) and % (modulus) can be applied to all these types <span class="emphasis">except for boolean</span> (which is not numeric).</p>
+                <p>Note that these operators have different orders of precedence. In specific, *, /, % will carried out before +, - as one would expect.</p>
+                <p>More on operators and their precedence later.</p>
+            </section>
+            <section class="topic__section">
+                <h2 class="topic__section__title">2. understand wrapper classes in Java</h2>
+            </section>
+        </main>
+    </div>
+    <script src="../javascript/theme.js"></script>
+</body>
+
+</html>

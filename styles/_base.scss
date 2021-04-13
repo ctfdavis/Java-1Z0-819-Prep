@@ -1,0 +1,28 @@
+:root {
+    --primary-bg: #f0f8ff;
+    --secondary-bg: #000000;
+    --primary-grey: #7a7a7a;
+    --primary-line: 1px solid var(--primary-grey);
+    --primary-margin: 2rem;
+    --secondary-margin: 1rem;
+    --section-line: 3px dashed var(--primary-grey);
+    --emphasis-color: #fc5c5c;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}

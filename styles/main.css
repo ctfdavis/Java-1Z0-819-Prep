@@ -1,0 +1,219 @@
+:root {
+  --primary-bg: #f0f8ff;
+  --secondary-bg: #000000;
+  --primary-grey: #7a7a7a;
+  --primary-line: 1px solid var(--primary-grey);
+  --primary-margin: 2rem;
+  --secondary-margin: 1rem;
+  --section-line: 3px dashed var(--primary-grey);
+  --emphasis-color: #fc5c5c;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.table {
+  text-align: center;
+  border: var(--primary-line);
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table__row > * {
+  border: var(--primary-line);
+  padding: 0.5rem;
+}
+
+.list {
+  margin-left: 3rem;
+}
+
+.list > :not(:last-child) {
+  margin-bottom: var(--secondary-margin);
+}
+
+.emphasis {
+  font-weight: bold;
+  color: var(--emphasis-color);
+}
+
+.container {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: var(--primary-bg);
+  color: #000;
+}
+
+.container--dark {
+  background-color: var(--secondary-bg);
+  color: #fff;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: var(--primary-line);
+  padding: 1rem 0;
+  margin-bottom: var(--primary-margin);
+}
+
+.header__title {
+  font-size: 2.5rem;
+  margin-bottom: var(--primary-margin);
+}
+
+.nav {
+  width: 75%;
+}
+
+.nav__links {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.nav__link {
+  display: inline-block;
+  padding: 0 1rem;
+  border: var(--primary-line);
+  border-radius: 100vh;
+}
+
+.nav__link--active {
+  cursor: none;
+  pointer-events: none;
+  background-color: var(--primary-grey);
+}
+
+.nav__link:link, .nav__link:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav__theme {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content__topics {
+  list-style: none;
+}
+
+.content__item:not(:last-child) {
+  margin-bottom: var(--primary-margin);
+}
+
+.content__link {
+  display: inline-block;
+  padding: 0 1rem;
+  border: var(--primary-line);
+  border-radius: 100vh;
+}
+
+.content__link--active {
+  cursor: none;
+  pointer-events: none;
+  background-color: var(--primary-grey);
+}
+
+.content__link:link, .content__link:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.topic {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.topic__title {
+  text-align: center;
+  margin-bottom: var(--primary-margin);
+  font-size: 2.5rem;
+}
+
+.topic__subtitle, .topic__section__title {
+  margin-bottom: var(--secondary-margin);
+  font-size: 2rem;
+}
+
+.topic__goals {
+  margin-left: var(--primary-margin);
+  margin-bottom: var(--primary-margin);
+}
+
+.topic__section {
+  border-top: var(--section-line);
+}
+
+.topic__section > * {
+  padding: 1rem 0;
+}
+
+.topic__section:last-child {
+  border-bottom: var(--section-line);
+  margin-bottom: var(--primary-margin);
+}
+
+.topic__section__title {
+  font-style: oblique;
+}
+
+.topic__section__subtitle {
+  font-size: 1.75rem;
+}
+/*# sourceMappingURL=main.css.map */
