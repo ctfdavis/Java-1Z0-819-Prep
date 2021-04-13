@@ -1,33 +1,195 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../styles/main.css" />
     <title>Java 1Z0-819 Prep</title>
 </head>
+
 <body>
-<div class="container">
-<header class="header">
-    <h1 class="header__title">Java 1Z0-819 Prep</h1>
-    <nav class="nav">
-        <ul class="nav__links">
-            <li class="nav__item">
-                <a href="../index.html" class="nav__link">Content</a>
-            </li>
-            <li class="nav__item">
-                <a href="#" class="nav__link">Keywords</a>
-            </li>
-            <li class="nav__item">
-                <a href="#" class="nav__link">Contact</a>
-            </li>
-            <li class="nav__item nav__theme">
-                &#9728;
-            </li>
-        </ul>
-    </nav>
-</header>
-</div>
-<script src="../javascript/theme.js"></script>
+    <div class="container">
+        <header class="header">
+            <h1 class="header__title">Java 1Z0-819 Prep</h1>
+            <nav class="nav">
+                <ul class="nav__links">
+                    <li class="nav__item">
+                        <a href="../index.html" class="nav__link">Content</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Keywords</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Contact</a>
+                    </li>
+                    <li class="nav__item nav__theme">
+                        &#9728;
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="topic">
+            <h1 class="topic__title">Topic 7: Module System</h1>
+            <h2 class="topic__subtitle">Topic goals</h2>
+            <ol class="topic__goals">
+                <li class="topic__goals__item">understand the rationale &amp; structure of a module</li>
+                <li class="topic__goals__item">learn about different types of module</li>
+                <li class="topic__goals__item">learn to create module-info and its keywords</li>
+                <li class="topic__goals__item">learn to display information about modules</li>
+                <li class="topic__goals__item">learn about built-in JDK modules</li>
+                <li class="topic__goals__item">learn about migration</li>
+                <li class="topic__goals__item">learn about services</li>
+            </ol>
+            <section class="topic__section">
+                <h2 class="topic__section__title">1. understand the rationale &amp; structure of a module</h2>
+                <h3 class="topic__section__subtitle">The purpose of using modules</h3>
+                <p>Modules were introduced to group related packages together to offer (1) a particular set of
+                    functionalities, (2) reliable configuration and (3) strong encapsulation </p>
+                <p>Since Java 9, the <a href="https://en.wikipedia.org/wiki/Java_Platform_Module_System"
+                        class="external" target="_blank">Java Platform Module System</a> (JPMS) was introduced to
+                    specify the use of modules as a distribution format for collections of Java code and associated
+                    resources. Specifically, JPMS brings in the following:</p>
+                <ul class="list">
+                    <li>a standard format for module JAR files</li>
+                    <li>JDK which is parititioned into modules</li>
+                    <li>command-line options for modules</li>
+                </ul>
+                <h3 class="topic__section__subtitle">The basic structure of a module</h3>
+                <p>The structure formula of a basic module:<br />
+                    <span class="formula">a module = a group of one or more packages + a file named
+                        module-info.java</span> *<br />
+                    <span class="annotation">*: this formula only holds for a named module; details will be discussed
+                        below</span>
+                </p>
+                <p>Example of the structure of a module:</p>
+                <code class="preformat">[com.demo.feature_1]<br />
+                    ---[com.demo.feature_1.part_1]<br />
+                                                ------[Walk.java]<br />
+                                                ------[Run.java]<br />
+                    ---[com.demo.feature_1.part_2]<br />
+                                                ------[Duck.java]<br />
+                                                ------[Jump.java]<br />
+                    ---[com.demo.feature_1.part_3]<br />
+                                                ------[Spin.java]<br />
+                                                ------[Lay.java]<br />
+                    ---module-info.java
+                </code>
+            </section>
+            <section class="topic__section">
+                <h2 class="topic__section__title">2. learn about different types of module</h2>
+                <h3 class="topic__section__subtitle">named modules vs automatic modules vs unnamed modules</h3>
+                <p>A <a href="#" class="keyword">named module</a> must contain a module-info file. The module-info file will specify what packages inside to export to other modules (details discussed later).</p>
+                <p>An <a href="#" class="keyword">automatic module</a> does not contain a module-info file. However,
+                    it appears on the module path, i.e. it is a regular <a href="#" class="keyword">JAR</a> file placed
+                    on the module path.</p>
+                <p>An automatic module always exports all packages to other modules.</p>
+                <p>Below shows how the module name of an automatic module is determined by Java:</p>
+                <table class="table">
+                    <thead>
+                        <tr class="table__row">
+                            <th>Step</th>
+                            <th>Details of this step</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table__row">
+                            <td>1</td>
+                            <td>See if the MANIFEST.MF file inside the JAR file specifies an Automatic-Module-name. If
+                                so, use that; otherwise, proceed to next step.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td>2</td>
+                            <td>Take the JAR name</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td>3</td>
+                            <td>Remove the .jar extension</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td>4</td>
+                            <td>Remove the version information in the name</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td>5</td>
+                            <td>Replace all special characters with . (dot) in the name</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td>6</td>
+                            <td>Replace a sequence of dots with just a dot in the name</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td>7</td>
+                            <td>Remove leading/trailing dots in the name</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Below is an example of how the automatic module name will be got provided that the MANIFEST.MF file
+                    doesn't specify an Automatic-Module-name:</p>
+                <code class="preformat">
+                    Given JAR: $testing_1---1.0-BETA.jar<br />
+                        -> Step 2: $testing_1---1.0-BETA.jar<br />
+                        -> Step 3: $testing_1---1.0-BETA<br />
+                        -> Step 4: $testing_1--<br />
+                        -> Step 5: .testing.1..<br />
+                        -> Step 6: .testing.1.<br />
+                        -> Step 7: testing.1<br />
+                    The automatic module name: testing.1
+                </code>
+                <p>An <a href="#" class="keyword">unnamed module</a> is a regular JAR file which appears on the classpath instead of the module path. It may or may not include a module-info.java file.</p>
+                <p>Even if it contains a module-info.java file, it will be ignored. Also, it <span class="emphasis">does not</span> export any package to other modules.</p>
+            </section>
+            <section class="topic__section">
+                <h2 class="topic__section__title">3. learn to create module-info and its keywords</h2>
+                <h3 class="topic__section__subtitle">A case study on a modular program</h3>
+                <p>Say we have the below 3 modules:</p>
+                <h4 class="topic__section__subtitle--small">Module [com.demo.feature_1]:</h4>
+                <code class="preformat">[com.demo.feature_1]<br />
+                    ---[com.demo.feature_1.part_1]<br />
+                                                ------[Walk.java]<br />
+                                                ------[Run.java]<br />
+                    ---[com.demo.feature_1.part_2]<br />
+                                                ------[Duck.java]<br />
+                                                ------[Jump.java]<br />
+                    ---[com.demo.feature_1.part_3]<br />
+                                                ------[Spin.java]<br />
+                                                ------[Lay.java]<br />
+                    ---module-info.java
+                </code>
+                <h4 class="topic__section__subtitle--small">Module [com.demo.feature_2]:</h4>
+                <code class="preformat">[com.demo.feature_2]<br />
+                    ---[com.demo.feature_2.part_1]<br />
+                                                ------[DeepBreath.java]<br />
+                                                ------[HoldBreath.java]<br />
+                    ---[com.demo.feature_2.part_2]<br />
+                                                ------[LookUp.java]<br />
+                                                ------[LookDown.java]<br />
+                    ---module-info.java
+                </code>
+                <h4 class="topic__section__subtitle--small">Module [com.demo.feature_3]:</h4>
+                <code class="preformat">[com.demo.feature_3]<br />
+                    ---[MakeDecision.java]<br />
+                    ---module-info.java
+                </code>
+                <p>Let's say module <span class="specialName">[com.demo.feature_1]</span> depends on <span class="specialName">[com.demo.feature_2]</span> which in turn depends on <span class="specialName">[com.demo.feature_3]</span>. We can specify this relationship in their module-info.java files</p>
+                <p>Below is how you would write a module-info.java file. We'll start with that of <span class="specialName">[com.demo.feature_3]</span>:</p>
+                <h4 class="topic__section__subtitle--small">module-info.java for [com.demo.feature_3]:</h4>
+                <code class="preformat">module com.demo.feature_3 {
+                } <br />
+                <span class="comment">//This is the minimal setup for a module-info.java file. In fact, the file can be left empty.</span>
+                </code>
+                <p>To allow the other 2 modules to have access to its class, we need to declare that we export the module:</p>
+                <h4 class="topic__section__subtitle--small">module-info.java for [com.demo.feature_3]:</h4>
+                <code class="preformat">module com.demo.feature_3 {<br />
+                &nbsp;&nbsp;<span class="emphasis">exports</span> com.demo.feature_3;<br />
+                }
+                </code>
+                <p>The <a href="#" class="keyword">restricted keyword</a> <span class="specialName">exports</span> is how you export a class inside a module-info.java file.</p>
+                <p>Next, let's write the module-info.java file for module <span class="specialName">[com.demo.feature_2]</span>:</p>
+            </section>
+        </main>
+    </div>
+    <script src="../javascript/theme.js"></script>
 </body>
+
 </html>

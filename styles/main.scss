@@ -9,6 +9,7 @@
     flex-direction: column;
     background-color: var(--primary-bg);
     color: #000;
+    line-height: 1.6;
 
     &--dark {
         background-color: var(--secondary-bg);
@@ -116,6 +117,10 @@
 
         &__subtitle {
             font-size: 1.75rem;
+
+            &--small {
+                font-size: 1.4rem;
+            }
         }
     }
 }

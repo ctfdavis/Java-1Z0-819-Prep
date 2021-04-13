@@ -1,13 +1,14 @@
 :root {
   --primary-bg: #f0f8ff;
   --secondary-bg: #000000;
-  --primary-grey: #7a7a7a;
+  --primary-grey: rgba(122, 122, 122, 0.5);
   --primary-line: 1px solid var(--primary-grey);
   --primary-margin: 2rem;
   --secondary-margin: 1rem;
   --section-line: 3px dashed var(--primary-grey);
   --emphasis-color: #fc5c5c;
   --highlight-color: rgba(255, 255, 0, 0.4);
+  --link-color: #19965e;
 }
 
 html {
@@ -50,6 +51,10 @@ body {
   margin-bottom: var(--secondary-margin);
 }
 
+.preformat {
+  font-size: 2rem;
+}
+
 .emphasis {
   font-weight: bold;
   color: var(--emphasis-color);
@@ -74,6 +79,29 @@ body {
   background-color: var(--primary-grey);
 }
 
+.external {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.external:link, .external:visited {
+  color: var(--link-color);
+}
+
+.formula,
+.specialName {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.annotation {
+  font-size: 80%;
+  background-color: var(--highlight-color);
+}
+
+.comment {
+  font-size: 80%;
+  opacity: 0.8;
+}
+
 .container {
   min-height: 100vh;
   display: -webkit-box;
@@ -85,6 +113,7 @@ body {
           flex-direction: column;
   background-color: var(--primary-bg);
   color: #000;
+  line-height: 1.6;
 }
 
 .container--dark {
@@ -240,5 +269,9 @@ body {
 
 .topic__section__subtitle {
   font-size: 1.75rem;
+}
+
+.topic__section__subtitle--small {
+  font-size: 1.4rem;
 }
 /*# sourceMappingURL=main.css.map */

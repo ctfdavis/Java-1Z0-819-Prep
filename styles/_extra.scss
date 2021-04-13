@@ -7,3 +7,26 @@
     @include link;
     background-color: var(--highlight-color);
 }
+
+.external {
+    font-family:'Times New Roman', Times, serif;
+    &:link,
+    &:visited {
+        color: var(--link-color);
+    }
+}
+
+.formula,
+.specialName {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.annotation {
+    font-size: 80%;
+    background-color: var(--highlight-color);
+}
+
+.comment {
+    font-size: 80%;
+    opacity: 0.8;
+}
