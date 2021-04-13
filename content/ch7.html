@@ -65,21 +65,22 @@
                 <p>Example of the structure of a module:</p>
                 <code class="preformat">[com.demo.feature_1]<br />
                     ---[com.demo.feature_1.part_1]<br />
-                                                ------[Walk.java]<br />
-                                                ------[Run.java]<br />
+                                                ------Walk.java<br />
+                                                ------Run.java<br />
                     ---[com.demo.feature_1.part_2]<br />
-                                                ------[Duck.java]<br />
-                                                ------[Jump.java]<br />
+                                                ------Duck.java<br />
+                                                ------Jump.java<br />
                     ---[com.demo.feature_1.part_3]<br />
-                                                ------[Spin.java]<br />
-                                                ------[Lay.java]<br />
+                                                ------Spin.java<br />
+                                                ------Lay.java<br />
                     ---module-info.java
                 </code>
             </section>
             <section class="topic__section">
                 <h2 class="topic__section__title">2. learn about different types of module</h2>
                 <h3 class="topic__section__subtitle">named modules vs automatic modules vs unnamed modules</h3>
-                <p>A <a href="#" class="keyword">named module</a> must contain a module-info file. The module-info file will specify what packages inside to export to other modules (details discussed later).</p>
+                <p>A <a href="#" class="keyword">named module</a> must contain a module-info file. The module-info file
+                    will specify what packages inside to export to other modules (details discussed later).</p>
                 <p>An <a href="#" class="keyword">automatic module</a> does not contain a module-info file. However,
                     it appears on the module path, i.e. it is a regular <a href="#" class="keyword">JAR</a> file placed
                     on the module path.</p>
@@ -136,8 +137,10 @@
                         -> Step 7: testing.1<br />
                     The automatic module name: testing.1
                 </code>
-                <p>An <a href="#" class="keyword">unnamed module</a> is a regular JAR file which appears on the classpath instead of the module path. It may or may not include a module-info.java file.</p>
-                <p>Even if it contains a module-info.java file, it will be ignored. Also, it <span class="emphasis">does not</span> export any package to other modules.</p>
+                <p>An <a href="#" class="keyword">unnamed module</a> is a regular JAR file which appears on the
+                    classpath instead of the module path. It may or may not include a module-info.java file.</p>
+                <p>Even if it contains a module-info.java file, it will be ignored. Also, it <span class="emphasis">does
+                        not</span> export any package to other modules.</p>
             </section>
             <section class="topic__section">
                 <h2 class="topic__section__title">3. learn to create module-info and its keywords</h2>
@@ -146,46 +149,80 @@
                 <h4 class="topic__section__subtitle--small">Module [com.demo.feature_1]:</h4>
                 <code class="preformat">[com.demo.feature_1]<br />
                     ---[com.demo.feature_1.part_1]<br />
-                                                ------[Walk.java]<br />
-                                                ------[Run.java]<br />
+                                                ------Walk.java<br />
+                                                ------Run.java<br />
                     ---[com.demo.feature_1.part_2]<br />
-                                                ------[Duck.java]<br />
-                                                ------[Jump.java]<br />
+                                                ------Duck.java<br />
+                                                ------Jump.java<br />
                     ---[com.demo.feature_1.part_3]<br />
-                                                ------[Spin.java]<br />
-                                                ------[Lay.java]<br />
+                                                ------Spin.java<br />
+                                                ------Lay.java<br />
                     ---module-info.java
                 </code>
                 <h4 class="topic__section__subtitle--small">Module [com.demo.feature_2]:</h4>
                 <code class="preformat">[com.demo.feature_2]<br />
                     ---[com.demo.feature_2.part_1]<br />
-                                                ------[DeepBreath.java]<br />
-                                                ------[HoldBreath.java]<br />
+                                                ------DeepBreath.java<br />
+                                                ------HoldBreath.java<br />
                     ---[com.demo.feature_2.part_2]<br />
-                                                ------[LookUp.java]<br />
-                                                ------[LookDown.java]<br />
+                                                ------LookUp.java<br />
+                                                ------LookDown.java<br />
                     ---module-info.java
                 </code>
                 <h4 class="topic__section__subtitle--small">Module [com.demo.feature_3]:</h4>
                 <code class="preformat">[com.demo.feature_3]<br />
-                    ---[MakeDecision.java]<br />
+                    ---MakeDecision.java<br />
                     ---module-info.java
                 </code>
-                <p>Let's say module <span class="specialName">[com.demo.feature_1]</span> depends on <span class="specialName">[com.demo.feature_2]</span> which in turn depends on <span class="specialName">[com.demo.feature_3]</span>. We can specify this relationship in their module-info.java files</p>
-                <p>Below is how you would write a module-info.java file. We'll start with that of <span class="specialName">[com.demo.feature_3]</span>:</p>
+                <p>Let's say module <span class="specialName">[com.demo.feature_1]</span> depends on <span
+                        class="specialName">[com.demo.feature_2]</span> which in turn depends on <span
+                        class="specialName">[com.demo.feature_3]</span>. We can specify this relationship in their
+                    module-info.java files</p>
+                <p>Below is how you would write a module-info.java file. We'll start with that of <span
+                        class="specialName">[com.demo.feature_3]</span>:</p>
                 <h4 class="topic__section__subtitle--small">module-info.java for [com.demo.feature_3]:</h4>
                 <code class="preformat">module com.demo.feature_3 {
                 } <br />
                 <span class="comment">//This is the minimal setup for a module-info.java file. In fact, the file can be left empty.</span>
                 </code>
-                <p>To allow the other 2 modules to have access to its class, we need to declare that we export the module:</p>
+                <p>To allow the other 2 modules to have access to its class, we need to declare that we export the
+                    module:</p>
                 <h4 class="topic__section__subtitle--small">module-info.java for [com.demo.feature_3]:</h4>
                 <code class="preformat">module com.demo.feature_3 {<br />
                 &nbsp;&nbsp;<span class="emphasis">exports</span> com.demo.feature_3;<br />
                 }
                 </code>
-                <p>The <a href="#" class="keyword">restricted keyword</a> <span class="specialName">exports</span> is how you export a class inside a module-info.java file.</p>
-                <p>Next, let's write the module-info.java file for module <span class="specialName">[com.demo.feature_2]</span>:</p>
+                <p>The <a href="#" class="keyword">restricted keyword</a> <span class="specialName">exports</span> is
+                    how you export a class inside a module-info.java file.</p>
+                <p>Next, let's write the module-info.java file for module <span
+                        class="specialName">[com.demo.feature_2]</span>:</p>
+                <h4 class="topic__section__subtitle--small">module-info.java for [com.demo.feature_2]:</h4>
+                <code class="preformat">module com.demo.feature_2 {<br />
+                &nbsp;&nbsp;<span class="emphasis">requires</span> com.demo.feature_3; <span class="comment">//this is how you would normally "require" an exported class from another module</span><br />
+                &nbsp;&nbsp;<span class="emphasis">exports</span> com.demo.feature_2.part_1; <span class="comment">// the class will be required by module [com.demo.feature_1]</span><br />
+                &nbsp;&nbsp;<span class="emphasis">exports</span> com.demo.feature_2.part_2; <span class="comment">// the class will be required by module [com.demo.feature_1]</span><br />
+                &nbsp;&nbsp;<span class="emphasis">exports</span> com.demo.feature_2.part_3; <span class="comment">// the class will be required by module [com.demo.feature_1]</span><br />
+                }
+            </code>
+                <p>It is okay to write the module-info.java file like the above. However, let's also consider some more
+                    efficient and safer ways of writing this file, especially given the below points:</p>
+                <ol class="list">
+                    <li>module <span class="specialName">[com.demo.feature_1]</span> will require the module <span
+                            class="specialName">[com.demo.feature_3]</span> anyways, so is there a way to transfer it
+                        from <span class="specialName">[com.demo.feature_2]</span>?</li>
+                    <li>since only module <span class="specialName">[com.demo.feature_1]</span> will require the classes
+                        from the module <span class="specialName">[com.demo.feature_2]</span>, is there a way to
+                        disallow other modules to access those classes?</li>
+                </ol>
+                <p>The answers to both questions are yes. Below's how:</p>
+                <h4 class="topic__section__subtitle--small">module-info.java for [com.demo.feature_2]:</h4>
+                <code class="preformat">module com.demo.feature_2 {<br />
+                &nbsp;&nbsp;<span class="emphasis">requires transitive</span> com.demo.feature_3; <span class="comment">//this is how "require" will transfer from one module to another</span><br />
+                &nbsp;&nbsp;<span class="emphasis">exports</span> com.demo.feature_2.part_1 <span class="emphasis">to</span> com.demo.feature_1; <span class="comment">// the class will only be able to be required by module [com.demo.feature_1]</span><br />
+                &nbsp;&nbsp;<span class="emphasis">exports</span> com.demo.feature_2.part_2 <span class="emphasis">to</span> com.demo.feature_1; <span class="comment">// the class will only be able to be required by module [com.demo.feature_1]</span><br />
+                &nbsp;&nbsp;<span class="emphasis">exports</span> com.demo.feature_2.part_3 <span class="emphasis">to</span> com.demo.feature_1; <span class="comment">// the class will only be able to be required by module [com.demo.feature_1]</span><br />
+                }
+            </code>
             </section>
         </main>
     </div>
