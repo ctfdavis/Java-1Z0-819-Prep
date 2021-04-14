@@ -99,7 +99,7 @@
     }
 
     &__section {
-        &>* {
+        &>*:not(.box) {
             padding: 1rem 0;
         }
         border-top: var(--section-line);

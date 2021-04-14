@@ -10,6 +10,7 @@
 
 .external {
     font-family:'Times New Roman', Times, serif;
+    font-size: 1.8rem;
     &:link,
     &:visited {
         color: var(--link-color);
@@ -29,4 +30,9 @@
 .comment {
     font-size: 80%;
     opacity: 0.8;
+}
+
+.box {
+    border: var(--primary-line);
+    padding: 1rem;
 }
