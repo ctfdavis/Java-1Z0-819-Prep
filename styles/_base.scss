@@ -9,6 +9,9 @@
     --emphasis-color: #fc5c5c;
     --highlight-color: rgba(255, 255, 0, 0.4);
     --link-color: #29a29a;
+    --primary-shadow: 0 0.5rem 1rem 0.1rem var(--primary-grey);
+    --secondary-shadow: 0 0.3rem 0.5rem 0.05rem var(--primary-grey);
+    --tertiary-shadow: 0 0.1rem 0.2rem 0.02rem var(--primary-grey);
 }
 
 html {

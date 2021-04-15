@@ -21,10 +21,10 @@
                         <a href="../overview.html" class="nav__link">Overview</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Keywords</a>
+                        <a href="../keywords.html" class="nav__link">Keywords</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Contact</a>
+                        <a href="../contact.html" class="nav__link">Contact</a>
                     </li>
                     <li class="nav__item nav__theme">
                         &#9728;
@@ -108,10 +108,12 @@
                         </tr>
                     </tbody>
                 </table>
-                <p>Let's now look at some examples of declaring and initializing variables of the 8 primitive types of data below:</p>
+                <p>Let's now look at some examples of declaring and initializing variables of the 8 primitive types of
+                    data below:</p>
                 <ul class="list">
                     <li>boolean var1 = true;</li>
-                    <li>byte var2 = 1__0; //1_0 means 10, underscores in between numbers can be added (however many)</li>
+                    <li>byte var2 = 1__0; //1__0 is simply 10 since underscores in between numbers can be added for
+                        readability reasons</li>
                     <li>char var3 = 0;</li>
                     <li>short __var4 = 0; //underscores are allowed in variable names</li>
                     <li>int var5 = 0123; //var5 will be assigned 83, as 0-prefixed numbers are considered octal</li>
@@ -127,18 +129,67 @@
                     <li>short var12 = _0; // DNC as an underscore can't be at the beginning of a number</li>
                     <li>int var13 = 0.0; // DNC as 0.0 is reckoned as a double value which is bigger than an int</li>
                     <li>long var14 = 0.0; // DNC, reason similar to above</li>
-                    <li>float var15 = 0.0; // DNC, reason similar to above (f suffix has to be explicitly added to mean float)</li>
+                    <li>float var15 = 0.0; // DNC, reason similar to above (f suffix has to be explicitly added to mean
+                        float)</li>
                     <li>double var16 = false; // DNC as boolean values can not be assigned to other primitive types</li>
                 </ul>
                 <h3 class="topic__section__subtitle">Basic operations on primitive data</h3>
-                <p>The basic arithmetic operations + (addition), - (subtraction), * (multiplication), / (division) and % (modulus) can be applied to all these types <span class="emphasis">except for boolean</span> (which is not numeric).</p>
-                <p>Note that these operators have different orders of precedence. In specific, *, /, % will carried out before +, - as one would expect.</p>
+                <p>The basic arithmetic operations <span class="emphasis">+</span> (addition), <span
+                        class="emphasis">-</span> (subtraction), <span class="emphasis">*</span> (multiplication), <span
+                        class="emphasis">/</span> (division) and <span class="emphasis">%</span> (modulus) can be
+                    applied to all these types <span class="emphasis">except for boolean</span>.</p>
+                <p>Note that these operators have different orders of precedence. In specific, *, /, % will be carried
+                    out before +, - as one would expect.</p>
                 <p>More on operators and their precedence later.</p>
             </section>
             <section class="topic__section">
                 <h2 class="topic__section__title">2. understand wrapper classes in Java</h2>
                 <h3 class="topic__section__subtitle">Wrapper classes in a nutshell</h3>
-                <p>Basically, a wrapper class is an <a href="#" class="keyword">Object</a> that is used to contain a particular primitive type.</p>
+                <p>Basically, a wrapper class is an <a href="../keywords.html#Object" class="keyword" target="_blank">Object</a> that is used to contain a
+                    particular primitive type.</p>
+                <p>For all primitive types except int and char, their corresponding wrapper classes are represented by
+                    their names with a capitalized first letter.</p>
+                <p>For example, the wrapper class for boolean is <span class="emphasis">Boolean</span>, and for short,
+                    <span class="emphasis">Short</span>. This is possible because Java is case-sensitive.
+                </p>
+                <p>For the primitive types int and char, their wrapper classes are <span class="emphasis">Integer</span>
+                    and <span class="emphasis">Character</span> respectively.</p>
+                <p>As wrapper classes are objects, they have methods associated with them which one can use for
+                    different behaviours.</p>
+                <p>In particular, all these wrapper classes have methods to transform their values back to their
+                    primitive counterparts:</p>
+                <ul class="list">
+                    <li>Boolean: booleanValue()</li>
+                    <li>Byte: byteValue()</li>
+                    <li>Character: charValue()</li>
+                    <li>Short: shortValue()</li>
+                    <li>Integer: intValue()</li>
+                    <li>Long: longValue()</li>
+                    <li>Float: floatValue()</li>
+                    <li>Double: doubleValue()</li>
+                </ul>
+                <p>As an example, we may create a Boolean variable and assign to it a boolean value, and then get back
+                    the boolean value from the Boolean variable by using the booleanValue() function:</p>
+                <code class="preformat">
+                    Boolean booObj = true;<br />
+                    boolean booValue = booObj.booleanValue();
+                </code>
+                <p>But as we will see very soon, such explicit transformation from a wrapper class to its primitive type
+                    (and vice versa) is not necessary as this is done automatically under the hood. Therefore, the
+                    following will work directly:</p>
+                <code class="preformat">
+                    Boolean booObj = true;<br />
+                    boolean booValue = booObj;
+                </code>
+                <p>Such automatic conversion from a wrapper class to a primitive type is usually referred to as <a
+                        href="../keywords.html#unboxing" class="keyword" target="_blank">unboxing</a>. In fact, when we assign to the wrapper class object <span
+                        class="specialName">booObj</span> the primitive value <span class="emphasis">true</span>,
+                    automatic conversion from the primitive to the wrapper class has already been done for us. The
+                    automatic
+                    conversion
+                    from a primitive type to a wrapper class is known as <a href="../keywords.html#autoboxing" class="keyword" target="_blank">autoboxing</a>.</p>
+
+
             </section>
         </main>
     </div>

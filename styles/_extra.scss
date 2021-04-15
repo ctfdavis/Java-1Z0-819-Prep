@@ -36,3 +36,33 @@
     border: var(--primary-line);
     padding: 1rem;
 }
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--primary-margin);
+}
+
+.search-bar {
+    display: inline-block;
+    width: 50%;
+    height: 3rem;
+    font-size: 2rem;
+    outline: none;
+    border: none;
+    border-radius: 100vh;
+    padding: 0 1rem;
+    box-shadow: var(--primary-shadow);
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.davis-logo {
+    width: 10vw;
+    height: auto;
+    margin-right: var(--secondary-margin);
+}

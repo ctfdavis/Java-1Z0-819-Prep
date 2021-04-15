@@ -9,6 +9,9 @@
   --emphasis-color: #fc5c5c;
   --highlight-color: rgba(255, 255, 0, 0.4);
   --link-color: #29a29a;
+  --primary-shadow: 0 0.5rem 1rem 0.1rem var(--primary-grey);
+  --secondary-shadow: 0 0.3rem 0.5rem 0.05rem var(--primary-grey);
+  --tertiary-shadow: 0 0.1rem 0.2rem 0.02rem var(--primary-grey);
 }
 
 html {
@@ -55,6 +58,20 @@ body {
   font-size: 2rem;
 }
 
+.keywords {
+  list-style: none;
+  font-size: 1.75rem;
+  margin-left: 5rem;
+}
+
+.details {
+  margin-bottom: var(--primary-margin);
+}
+
+.summary {
+  outline: none;
+}
+
 .emphasis {
   font-weight: bold;
   color: var(--emphasis-color);
@@ -65,12 +82,22 @@ body {
   padding: 0 1rem;
   border: var(--primary-line);
   border-radius: 100vh;
+  -webkit-box-shadow: var(--secondary-shadow);
+          box-shadow: var(--secondary-shadow);
   background-color: var(--highlight-color);
 }
 
 .keyword:link, .keyword:visited {
   text-decoration: none;
   color: inherit;
+}
+
+.keyword:hover {
+  background-color: var(--highlight-color);
+  -webkit-box-shadow: var(--tertiary-shadow);
+          box-shadow: var(--tertiary-shadow);
+  -webkit-transform: translateY(0.1rem);
+          transform: translateY(0.1rem);
 }
 
 .keyword--active {
@@ -106,6 +133,47 @@ body {
 .box {
   border: var(--primary-line);
   padding: 1rem;
+}
+
+.search-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: var(--primary-margin);
+}
+
+.search-bar {
+  display: inline-block;
+  width: 50%;
+  height: 3rem;
+  font-size: 2rem;
+  outline: none;
+  border: none;
+  border-radius: 100vh;
+  padding: 0 1rem;
+  -webkit-box-shadow: var(--primary-shadow);
+          box-shadow: var(--primary-shadow);
+}
+
+.contact-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.davis-logo {
+  width: 10vw;
+  height: auto;
+  margin-right: var(--secondary-margin);
 }
 
 .container {
@@ -147,7 +215,8 @@ body {
 }
 
 .header__title {
-  font-size: 2.5rem;
+  font-family: monospace;
+  font-size: 3rem;
   margin-bottom: var(--primary-margin);
 }
 
@@ -173,11 +242,21 @@ body {
   padding: 0 1rem;
   border: var(--primary-line);
   border-radius: 100vh;
+  -webkit-box-shadow: var(--secondary-shadow);
+          box-shadow: var(--secondary-shadow);
 }
 
 .nav__link:link, .nav__link:visited {
   text-decoration: none;
   color: inherit;
+}
+
+.nav__link:hover {
+  background-color: var(--highlight-color);
+  -webkit-box-shadow: var(--tertiary-shadow);
+          box-shadow: var(--tertiary-shadow);
+  -webkit-transform: translateY(0.1rem);
+          transform: translateY(0.1rem);
 }
 
 .nav__link--active {
@@ -217,11 +296,21 @@ body {
   padding: 0 1rem;
   border: var(--primary-line);
   border-radius: 100vh;
+  -webkit-box-shadow: var(--secondary-shadow);
+          box-shadow: var(--secondary-shadow);
 }
 
 .content__link:link, .content__link:visited {
   text-decoration: none;
   color: inherit;
+}
+
+.content__link:hover {
+  background-color: var(--highlight-color);
+  -webkit-box-shadow: var(--tertiary-shadow);
+          box-shadow: var(--tertiary-shadow);
+  -webkit-transform: translateY(0.1rem);
+          transform: translateY(0.1rem);
 }
 
 .content__link--active {

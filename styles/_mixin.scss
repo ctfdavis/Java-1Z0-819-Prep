@@ -3,10 +3,16 @@
     padding: 0 1rem;
     border: var(--primary-line);
     border-radius: 100vh;
+    box-shadow: var(--secondary-shadow);
     &:link,
     &:visited {
         text-decoration: none;
         color: inherit;
+    }
+    &:hover {
+        background-color: var(--highlight-color);
+        box-shadow: var(--tertiary-shadow);
+        transform: translateY(0.1rem);
     }
     &--active {
         cursor: none;
