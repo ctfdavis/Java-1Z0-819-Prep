@@ -10,6 +10,11 @@
 
 <body>
     <div class="container">
+        <button class="backToTop">
+            <svg class="backToTop__icon">
+                 <use xlink:href="../src/sprite.svg#icon-arrow-up2"></use>
+            </svg>
+        </button>
         <header class="header">
             <h1 class="header__title">Java 1Z0-819 Prep</h1>
             <nav class="nav">
@@ -27,7 +32,9 @@
                         <a href="#" class="nav__link nav__link--active">Contact</a>
                     </li>
                     <li class="nav__item nav__theme">
-                        &#9728;
+                        <svg class="nav__theme-icon">
+                            <use xlink:href="../src/sprite.svg#icon-brightness-contrast"></use>
+                        </svg>
                     </li>
                 </ul>
             </nav>
@@ -35,13 +42,14 @@
         <main>
             <div class="contact-container">
                 <img src="./src/Davis.svg" alt="Davis personal logo" class="davis-logo">
-                <address>Creator: Davis Chan<br />
+                <address class="contact-info">Creator: Davis Chan<br />
                      <a href="mailto:davis.chan@aol.com" class="nav__link">davis.chan@aol.com</a><br />
                      <a href="https://davischan.pro" target="_blank" class="nav__link">davischan.pro</a></address>
             </div>
         </main>
     </div>
     <script src="./javascript/theme.js"></script>
+    <script src="../javascript/backToTop.js"></script>
 </body>
 
 </html>

@@ -42,7 +42,7 @@
         list-style: none;
         display: flex;
         justify-content: space-between;
-        align-items: baseline;
+        align-items: center;
     }
 
     &__link {
@@ -50,8 +50,12 @@
     }
 
     &__theme {
-        font-size: 2rem;
         cursor: pointer;
+        &-icon {
+            width: 2rem;
+            height: 2rem;
+            fill: currentColor;
+        }
     }
 }
 

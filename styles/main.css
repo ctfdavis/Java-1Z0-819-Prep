@@ -18,6 +18,7 @@ html {
   font-size: 62.5%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -170,10 +171,56 @@ body {
           align-items: center;
 }
 
+.contact-info {
+  font-size: 2rem;
+  font-style: normal;
+}
+
+.contact-info > *:not(:last-child) {
+  margin-bottom: var(--primary-margin);
+}
+
 .davis-logo {
-  width: 10vw;
+  width: 15vw;
   height: auto;
-  margin-right: var(--secondary-margin);
+  margin-right: var(--primary-margin);
+}
+
+.backToTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  font-size: 2.2rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100vh;
+  border: none;
+  background-color: var(--link-color);
+  cursor: pointer;
+  outline: none;
+  -webkit-box-shadow: var(--primary-shadow);
+          box-shadow: var(--primary-shadow);
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.backToTop:hover {
+  background-color: var(--highlight-color);
+}
+
+.backToTop__icon {
+  height: 2rem;
+  width: 2rem;
+  fill: #fff;
 }
 
 .container {
@@ -232,9 +279,9 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .nav__link {
@@ -266,8 +313,13 @@ body {
 }
 
 .nav__theme {
-  font-size: 2rem;
   cursor: pointer;
+}
+
+.nav__theme-icon {
+  width: 2rem;
+  height: 2rem;
+  fill: currentColor;
 }
 
 .content {

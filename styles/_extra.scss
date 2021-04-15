@@ -61,8 +61,48 @@
     align-items: center;
 }
 
+.contact-info {
+    font-size: 2rem;
+    font-style: normal;
+    
+    & > *:not(:last-child) {
+        margin-bottom: var(--primary-margin);
+    }
+}
+
 .davis-logo {
-    width: 10vw;
+    width: 15vw;
     height: auto;
-    margin-right: var(--secondary-margin);
+    margin-right: var(--primary-margin);
+}
+
+.backToTop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+    font-size: 2.2rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100vh;
+    border: none;
+    background-color: var(--link-color);
+    cursor: pointer;
+    outline: none;
+    box-shadow: var(--primary-shadow);
+    transition: all 0.5s ease 0s;
+
+    &:hover {
+        background-color: var(--highlight-color);
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+        fill: #fff;
+    }
+
+
 }

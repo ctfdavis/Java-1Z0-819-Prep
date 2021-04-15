@@ -10,6 +10,11 @@
 
 <body>
     <div class="container">
+        <button class="backToTop">
+            <svg class="backToTop__icon">
+                 <use xlink:href="../src/sprite.svg#icon-arrow-up2"></use>
+            </svg>
+        </button>
         <header class="header">
             <h1 class="header__title">Java 1Z0-819 Prep</h1>
             <nav class="nav">
@@ -27,7 +32,9 @@
                         <a href="../contact.html" class="nav__link">Contact</a>
                     </li>
                     <li class="nav__item nav__theme">
-                        &#9728;
+                        <svg class="nav__theme-icon">
+                            <use xlink:href="../src/sprite.svg#icon-brightness-contrast"></use>
+                        </svg>
                     </li>
                 </ul>
             </nav>
@@ -44,6 +51,7 @@
         </main>
     </div>
     <script src="../javascript/theme.js"></script>
+    <script src="../javascript/backToTop.js"></script>
 </body>
 
 </html>
