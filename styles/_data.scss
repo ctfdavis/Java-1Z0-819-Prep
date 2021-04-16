@@ -18,12 +18,12 @@
 }
 
 .preformat {
-    font-size: 2rem;
+    font-size: var(--big);
 }
 
 .keywords {
     list-style: none;
-    font-size: 1.75rem;
+    font-size: var(--big);
     margin-left: 5rem;
 }
 

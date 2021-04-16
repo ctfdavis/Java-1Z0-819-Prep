@@ -4,12 +4,15 @@
 @import "./extra";
 
 .container {
+    font-size: var(--regular);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: var(--primary-bg);
     color: #000;
     line-height: 1.6;
+    padding-bottom: 1rem;
+    overflow-y: auto;
 
     &--dark {
         background-color: var(--secondary-bg);
@@ -30,7 +33,7 @@
 
     &__title {
         font-family: monospace;
-        font-size: 3rem;
+        font-size: var(--biggest);
         margin-bottom: var(--primary-margin);
     }
 }
@@ -90,12 +93,12 @@
     &__title {
         text-align: center;
         margin-bottom: var(--primary-margin);
-        font-size: 2.5rem;
+        font-size: var(--bigger);
     }
 
     &__subtitle {
         margin-bottom: var(--secondary-margin);
-        font-size: 2rem;
+        font-size: var(--big);
     }
 
     &__goals {
@@ -121,10 +124,10 @@
         }
 
         &__subtitle {
-            font-size: 1.75rem;
+            font-size: var(--regular);
 
             &--small {
-                font-size: 1.4rem;
+                font-size: var(--smaller);
             }
         }
     }
