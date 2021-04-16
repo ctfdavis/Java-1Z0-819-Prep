@@ -103,6 +103,10 @@
         width: 1.5rem;
         fill: #fff;
     }
+
+    &--dark {
+        background-color: var(--primary-grey);
+    }
 }
 
 .size-control {
@@ -133,6 +137,9 @@
         }
         &:active {
             background-color: var(--highlight-color);
+        }
+        &--dark {
+            background-color: var(--primary-grey);
         }
         > * {
             height: 1.5rem;

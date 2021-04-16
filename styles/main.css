@@ -230,6 +230,10 @@ body {
   fill: #fff;
 }
 
+.backToTop--dark {
+  background-color: var(--primary-grey);
+}
+
 .size-control {
   position: fixed;
   display: -webkit-box;
@@ -280,6 +284,10 @@ body {
 
 .size-control__icon:active {
   background-color: var(--highlight-color);
+}
+
+.size-control__icon--dark {
+  background-color: var(--primary-grey);
 }
 
 .size-control__icon > * {
