@@ -4,18 +4,22 @@
 @import "./extra";
 
 .container {
+    font-family: 'Montserrat', sans-serif;
     font-size: var(--regular);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: var(--primary-bg);
+    background: var(--primary-gradient);
+    background-attachment: fixed;
     color: #000;
     line-height: 1.6;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     overflow-y: auto;
 
     &--dark {
         background-color: var(--secondary-bg);
+        background: var(--secondary-gradient);
         color: #fff;
     }
 
@@ -28,18 +32,20 @@
     justify-content: center;
     align-items: center;
     border-bottom: var(--primary-line);
-    padding: 1rem 0;
+    padding: 2rem 0;
     margin-bottom: var(--primary-margin);
 
     &__title {
-        font-family: monospace;
+        font-family: 'Montez', cursive;
         font-size: var(--biggest);
-        margin-bottom: var(--primary-margin);
+        letter-spacing: 1rem;
+        margin-bottom: var(--secondary-margin);
     }
 }
 
 .nav {
     width: 85%;
+    font-size: var(--smaller);
 
     &__links {
         list-style: none;
@@ -77,6 +83,7 @@
 
     &__link {
         @include link;
+        white-space: nowrap;
     }
 
     &__link:link,

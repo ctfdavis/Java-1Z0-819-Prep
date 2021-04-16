@@ -1,5 +1,5 @@
 :root {
-    --primary-bg: #f0f8ff;
+    --primary-bg: #d7fae7;
     --secondary-bg: #252525;
     --primary-grey: rgba(122, 122, 122, 0.5);
     --primary-line: 1px solid var(--primary-grey);
@@ -12,6 +12,9 @@
     --primary-shadow: 0 0.5rem 1rem 0.1rem var(--primary-grey);
     --secondary-shadow: 0 0.3rem 0.5rem 0.05rem var(--primary-grey);
     --tertiary-shadow: 0 0.1rem 0.2rem 0.02rem var(--primary-grey);
+
+    --primary-gradient: linear-gradient(45deg, #7fdac3, #6dd1d8 40%, #d7fae7);
+    --secondary-gradient: linear-gradient(45deg, #413f3f, #333333 40%, #252525);
 
     --smaller: 1.25rem;
     --regular: 1.5rem;
