@@ -82,10 +82,10 @@
     align-items: center;
     position: fixed;
     top: 2rem;
-    right: 2rem;
+    right: 1rem;
     font-size: 2.2rem;
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 100vh;
     border: none;
     background-color: var(--link-color);
@@ -99,8 +99,8 @@
     }
 
     &__icon {
-        height: 2rem;
-        width: 2rem;
+        height: 1.5rem;
+        width: 1.5rem;
         fill: #fff;
     }
 }
@@ -112,12 +112,15 @@
     align-items: center;
     justify-content: center;
     top: 50%;
-    right: 2rem;
+    right: 1rem;
     transform: translateY(-50%);
 
     &__icon {
-        width: 4rem;
-        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
         border-radius: 100vh;
         border: none;
         background-color: var(--link-color);
@@ -132,8 +135,8 @@
             background-color: var(--highlight-color);
         }
         > * {
-            height: 2rem;
-            width: 2rem;
+            height: 1.5rem;
+            width: 1.5rem;
             fill: #fff;
         }
     }
