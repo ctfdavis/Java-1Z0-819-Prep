@@ -10,7 +10,7 @@
 
 .external {
     font-family: "Times New Roman", Times, serif;
-    font-size: 1.8rem;
+    font-size: var(--regular);
     &:link,
     &:visited {
         color: var(--link-color);
