@@ -20,3 +20,21 @@
         background-color: var(--primary-grey);
     }
 }
+
+@mixin side-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 1rem;
+    font-size: 2.2rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100vh;
+    border: none;
+    background-color: var(--link-color);
+    cursor: pointer;
+    outline: none;
+    box-shadow: var(--primary-shadow);
+    transition: all 0.5s ease 0s;
+}

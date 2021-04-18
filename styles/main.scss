@@ -38,33 +38,24 @@
     &__title {
         font-family: 'Montez', cursive;
         font-size: var(--biggest);
-        letter-spacing: 1rem;
+        letter-spacing: 0.25rem;
         margin-bottom: var(--secondary-margin);
     }
 }
 
 .nav {
-    width: 85%;
-    font-size: var(--smaller);
+    width: 100%;
 
     &__links {
         list-style: none;
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        justify-content: space-around;
         align-items: center;
     }
 
     &__link {
         @include link;
-    }
-
-    &__theme {
-        cursor: pointer;
-        &-icon {
-            width: 2rem;
-            height: 2rem;
-            fill: currentColor;
-        }
     }
 }
 

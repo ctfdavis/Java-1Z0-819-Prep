@@ -15,9 +15,15 @@
     <div class="container">
         <button class="backToTop">
             <svg class="backToTop__icon">
-                 <use xlink:href="../src/sprite.svg#icon-arrow-up2"></use>
+                 <use xlink:href="../src/sprite.svg#icon-arrow-up"></use>
             </svg>
         </button>
+       <button class="theme">
+           <svg class="theme__icon">
+                 <use class="theme__icon--light" xlink:href="../src/sprite.svg#icon-sun"></use>
+                 <use class="theme__icon--dark" xlink:href="../src/sprite.svg#icon-moon"></use>
+           </svg>
+       </button> 
         <div class="size-control">
             <button class="size-control__icon size-control__icon-plus">
             <svg>
@@ -46,11 +52,6 @@
                     <li class="nav__item">
                         <a href="../contact.html" class="nav__link">Contact</a>
                     </li>
-                    <li class="nav__item nav__theme">
-                        <svg class="nav__theme-icon">
-                            <use xlink:href="../src/sprite.svg#icon-brightness-contrast"></use>
-                        </svg>
-                    </li>
                 </ul>
             </nav>
         </header>
@@ -62,6 +63,23 @@
                 <li class="topic__goals__item">learn about various Collections types (List, Set, Map &amp; Deque)</li>
                 <li class="topic__goals__item">learn about Comparator &amp; Comparable Interfaces</li>
             </ol>
+
+            <section class="topic__section">
+                <h2 class="topic__section__title">1. learn about arrays</h2>
+                <p>According to the <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html" class="external" target="_blank">Oracle Java Docs</a>, it is said that <q>an array is a container object that holds a fixed number of values of a single type.</q>
+                For example, we may have an array that contains only int, only Integer, or only String as demonstrated in the below examples:</p>
+                <ul class="list">
+                    <li>int[] intArray;</li>
+                    <li>Integer[] integerArray;</li>
+                    <li>String[] stringArray;</li>
+                </ul>
+                <p>Now, let's look at how each of these declarations can be initialized via different ways:</p>
+                <ul class="list">
+                    <li>intArray = <span class="emphasis">new</span> int[5]; //this creates an int array that has capacity for storing 5 int's (all initialized to 0)</li>
+                    <li>integerArray = <span class="emphasis">new</span> Integer[] {1,2,3}; //this creates an Integer array that has capacity of 3 which is already set to 1, 2 &amp; 3</li>
+                    <li>stringArray = <span class="emphasis">new</span> String[0]; //this creates an empty array that cannot store anything (capacity of 0)</li>
+                </ul>
+            </section>
         </main>
     </div>
     <script src="../javascript/theme.js"></script>
