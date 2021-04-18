@@ -74,6 +74,8 @@
 
             if (hashIdx > -1) {
                 filter = url.substring(hashIdx + 1);
+                /*check if the filter contains space(s), if so remove them*/
+                filter = filter.replace('%20', ' ');
                 input = document.getElementById("search");
                 input.value = filter;
                 searchFunction();

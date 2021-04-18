@@ -9,8 +9,6 @@ const themeToggle = () => {
     container.classList.toggle("container--dark");
     themeIcon.classList.toggle('theme--dark');
     if (backToTopIcon !== null) {
-        console.log(backToTopIcon);
-        console.log(typeof backToTopIcon);
         backToTopIcon.classList.toggle("backToTop--dark");
     }
     if (typeof sizeControlIcons !== 'undefined') {

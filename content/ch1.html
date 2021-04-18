@@ -18,12 +18,12 @@
                 <use xlink:href="../src/sprite.svg#icon-arrow-up"></use>
             </svg>
         </button>
-       <button class="theme">
-           <svg class="theme__icon">
-                 <use class="theme__icon--light" xlink:href="../src/sprite.svg#icon-sun"></use>
-                 <use class="theme__icon--dark" xlink:href="../src/sprite.svg#icon-moon"></use>
-           </svg>
-       </button> 
+        <button class="theme">
+            <svg class="theme__icon">
+                <use class="theme__icon--light" xlink:href="../src/sprite.svg#icon-sun"></use>
+                <use class="theme__icon--dark" xlink:href="../src/sprite.svg#icon-moon"></use>
+            </svg>
+        </button>
         <div class="size-control">
             <button class="size-control__icon size-control__icon-plus">
                 <svg>
@@ -120,13 +120,13 @@
                         <tr class="table__row">
                             <td>float</td>
                             <td>32</td>
-                            <td>from 2^-149 to (2-2^(-23))*2^127</td>
+                            <td>from 2^(-149) to (2-2^(-23))*2^127</td>
                             <td>f or F</td>
                         </tr>
                         <tr class="table__row">
                             <td>double</td>
                             <td>64</td>
-                            <td>from 2^-1074 to (2-2^(-52))*2^1023</td>
+                            <td>from 2^(-1074) to (2-2^(-52))*2^1023</td>
                             <td>n/a</td>
                         </tr>
                     </tbody>
@@ -199,7 +199,7 @@
                     boolean booValue = booObj.booleanValue();
                 </code>
                 <p>But as we will see very soon, such explicit transformation from a wrapper class to its primitive type
-                    (and vice versa) is not necessary as this is done automatically under the hood. Therefore, the
+                    (and vice versa) is not necessary as this will be done automatically under the hood. Therefore, the
                     following will work directly:</p>
                 <code class="preformat">
                     Boolean booObj = true;<br />
@@ -214,8 +214,307 @@
                     conversion
                     from a primitive type to a wrapper class is known as <a href="../keywords.html#autoboxing"
                         class="keyword" target="_blank">autoboxing</a>.</p>
-
-
+            </section>
+            <section class="topic__section">
+                <h2 class="topic__section__title">3. understand auto-boxing &amp; auto-unboxing</h2>
+                <p>As described above, both auto-boxing and auto-unboxing are automatic processes that the Java compiler
+                    does for you.</p>
+                <p>Now, what are these processes exactly? The following <a
+                        href="https://stackoverflow.com/questions/22648627/how-does-auto-boxing-unboxing-work-in-java#answer-55972678"
+                        class="external" target="_blank">answer from stackoverflow</a> is by far one of the best
+                    explanations I have
+                    seen:</p>
+                <p>So basically what the answer says is that you can use the command <span class="formula">javac
+                        -XD-printflat</span> on a .java file
+                    which will output another .java file with the syntactic sugar removed (including autoboxing &amp;
+                    unboxing). So the answer provides us with a small programme as the following:</p>
+                <code class="preformat">
+                    import java.util.*;<br />
+<br />
+                    public class Boxing{<br />
+                       &nbsp;public static void main(String[] args){<br />
+                         &nbsp;&nbsp;Double d1 = 10.123;<br />
+                         &nbsp;&nbsp;Float  f1 = 12.12f;<br />
+                         &nbsp;&nbsp;Long   l1 = 1234L;<br />
+                         &nbsp;&nbsp;Integer i1 = 55555;<br />
+                         &nbsp;&nbsp;Short   s1 = 2345;<br />
+                         &nbsp;&nbsp;Byte    b1 = 89;<br />
+<br />
+                         &nbsp;&nbsp;double d2 = d1;<br />
+                         &nbsp;&nbsp;float  f2 = f1;<br />
+                         &nbsp;&nbsp;long   l2 = l1;<br />
+                         &nbsp;&nbsp;int    i2 = i1;<br />
+                         &nbsp;&nbsp;short  s2 = s1;<br />
+                         &nbsp;&nbsp;byte   b2 = b1;<br />
+                        &nbsp;}<br />
+                    } 
+                </code>
+                <p>Then, using the command <span class="formula">javac -XD-printflat Boxing.java</span> (assuming we are
+                    in the same directory as the file Boxing.java) will output a .java file with content as below:</p>
+                <code class="preformat">
+                    import java.util.*;<br />
+<br />
+                    public class Boxing {<br />
+<br />
+                        &nbsp;public Boxing() {<br />
+                             &nbsp;&nbsp;super();<br />
+                         &nbsp;}<br />
+<br />
+                        &nbsp;public static void main(String[] args) {<br />
+                           &nbsp;&nbsp;Double d1 = <span class="emphasis">Double.valueOf</span>(10.123);<br />
+                           &nbsp;&nbsp;Float f1 = <span class="emphasis">Float.valueOf</span>(12.12F);<br />
+                           &nbsp;&nbsp;Long l1 = <span class="emphasis">Long.valueOf</span>(1234L);<br />
+                           &nbsp;&nbsp;Integer i1 = <span class="emphasis">Integer.valueOf</span>(55555);<br />
+                           &nbsp;&nbsp;Short s1 = <span class="emphasis">Short.valueOf</span>(2345);<br />
+                           &nbsp;&nbsp;Byte b1 = <span class="emphasis">Byte.valueOf</span>(89);<br />
+<br />
+                           &nbsp;&nbsp;double d2 = d1<span class="emphasis">.doubleValue()</span>;<br />
+                           &nbsp;&nbsp;float f2 = f1<span class="emphasis">.floatValue()</span>;<br />
+                           &nbsp;&nbsp;long l2 = l1<span class="emphasis">.longValue()</span>;<br />
+                           &nbsp;&nbsp;int i2 = i1<span class="emphasis">.intValue()</span>;<br />
+                           &nbsp;&nbsp;short s2 = s1<span class="emphasis">.shortValue()</span>;<br />
+                           &nbsp;&nbsp;byte b2 = b1<span class="emphasis">.byteValue()</span>;<br />
+                        &nbsp;}<br />
+                    }
+                </code>
+                <p>As seen in the above, auto-boxing and auto-unboxing are simply convenient things (the <span
+                        class="emphasis">red addition</span> above) that the Java compiler does for us so that we don't
+                    have to worry about changing a primitive data type to its corresponding wrapper class or vice versa
+                    explicitly.</p>
+            </section>
+            <section class="topic__section">
+                <h2 class="topic__section__title">4. understand type promotion and casting</h2>
+                <h3 class="topic__section__subtitle">What is type promotion?</h3>
+                <p>I personally don't like the term <span class="specialName">type promotion</span>. I like to use the
+                    term <span class="specialName">type conversion</span> instead. When it comes to type conversion,
+                    there are two kinds:</p>
+                <ul class="list">
+                    <li>widening conversion (i.e. type promotion)</li>
+                    <li>narrowing conversion</li>
+                </ul>
+                <p>When it comes to these two kinds of type conversions, we need to bear in mind the fact that widening
+                    in Java is done automatically under the hood (similar to auto-boxing and auto-unboxing), but
+                    narrowing is not.</p>
+                <h4 class="topic__section__subtitle--small">Widening conversion (type promotion)</h4>
+                <p>So what does it do exactly? Below is a list of widening that can automatically be performed by the
+                    Java compiler for you:</p>
+                <ul class="list">
+                    <li>byte to short, int, long, float, or double</li>
+                    <li>short to int, long, float, or double</li>
+                    <li>char to int, long, float, or double</li>
+                    <li>int to long, float, or double</li>
+                    <li>long to float or double</li>
+                    <li>float to double</li>
+                </ul>
+                <p>The above list contains only primitives, so you may now ask what about the wrapper classes, and
+                    perhaps objects too in general?</p>
+                <p>In the case of wrapper classes and objects in Java, widening is done by the compiler for you.
+                    However, the way widening works for objects (what we will also call <a
+                        href="../keywords.html#reference type" class="keyword" target="_blank">reference type</a>) has a
+                    different mechanism. Basically, if a reference type is a <a href="../keywords.html#subtype"
+                        class="keyword" target="_blank">subtype</a> of another, then widening is the process of
+                    transforming from the subtype to the <a href="../keywords.html#supertype" class="keyword"
+                        target="_blank">supertype</a>.</p>
+                <p>Let's see some code in action next:</p>
+                <code class="preformat">
+                    public TypeWidening  {<br />
+                        &nbsp;byte b1 = 1;<br />
+                        &nbsp;short s1 = 1;<br />
+                        &nbsp;char c1 = 'a';<br />
+                        &nbsp;long l1 = 1L;<br />
+<br />
+                        &nbsp;public static main (String []) {<br />
+                            &nbsp;&nbsp;int i1 = b1; // fine, widening will be done by Java<br />
+                            &nbsp;&nbsp;int i2 = s1; // same<br />
+                            &nbsp;&nbsp;double d1 = c1; // same<br />
+                            &nbsp;&nbsp;float f1 = l1; // same<br />
+                        &nbsp;}<br />
+                    }<br />
+                </code>
+                <p>Bear in mind that reference types work differently, so the below will not compile:</p>
+                <code class="preformat">
+                    public WrongWidening {<br />
+                        &nbsp;Integer integer1 = 1;<br />
+<br />
+                        &nbsp;public static main (String[]) {<br />
+                            &nbsp;&nbsp;<span class="emphasis">Long long1 = integer1;</span> // DNC, type Integer is not a subtype of Long<br />
+                        &nbsp;}<br />
+                    }<br />
+                </code>
+                <p>There's a point worth noticing in the above: note how char will not widen to short or the other round
+                    (although they have the same size in bits), and byte will not widen to char (despite byte being
+                    smaller than char), right? On top of that, why long can be promoted to float when long uses more
+                    bits (64) than float (32)?</p>
+                <p>If we go back to the primitive type table above, we can see that char is <span
+                        class="emphasis">unsigned</span>, meaning that it does not allow negative values, whereas both
+                    byte and short are signed. That's why byte will not be promoted to char, nor will short. These data
+                    types have incompatible ranges that it makes sense not to allow automatic conversion between them.
+                </p>
+                <p>As for why long can be promoted to float despite the fact that long is clearly larger in size, the
+                    answer is that long actually has a smaller range than float (as shown in the table above). The
+                    reason is that float may lose some precision as the number gets larger, but in return it gets a
+                    larger range to operate in.</p>
+                <h4 class="topic__section__subtitle--small">Narrowing conversion</h4>
+                <p>As the names tell, narrowing is the opposite of widening. For example, if going from int to long is a
+                    widening conversion, then the opposite &#8212; going from long to int &#8212; is a narrowing
+                    conversion. In the case of a narrowing conversion, the Java compiler will not permit it unless an
+                    explicit <a href="../keywords.html#cast" class="keyword" target="_blank">cast</a> is given.</p>
+                <p>Here, an explicit cast means you need to tell the Java compiler that you really mean to narrow down
+                    the data type (by specifying the data type to narrow down to) so that Java knows that it is not a
+                    mistake and will permit it to happen.</p>
+                <p>But why? Why is narrowing more restricted than widening in Java? As we can see in the above table,
+                    whenever we are doing widening, the source value is actually preserved because the "bigger"/"upper"
+                    type is in actuality bigger than the "smaller"/"lower" type. That's why Java assumes that as a safe
+                    move to take which it will carry out happily for you.</p>
+                <p>However, in the case of narrowing, the original value is not guaranteed to be preserved. What happens
+                    if you have an int value 10_0000_0000 which is within the range of int and now you want to downcast
+                    it to a short value. In that case, the value is outside the range of short, so the original value
+                    will definitely not be preserved shall the conversion takes place. Thus, Java assumes such a move to
+                    be "not safe" by default, and will not carry it out for you unless you state explicitly.</p>
+                <p>Now, let's see how we can force Java to do a narrowing conversion for us with an explicit cast:</p>
+                <code class="preformat">
+                    public TypeNarrowing {<br />
+                       &nbsp;int i1 = 10_0000_0000;<br />
+<br />
+                        &nbsp;public static main (String[]) {<br />
+                            &nbsp;&nbsp;short s1 = (short) i1; // the parentheses plus the type name inside: (short) is required to be in front of the variable to be downcast<br />
+                        &nbsp;}<br />
+                    }<br />
+                </code>
+                <p>So an explicit cast is done just like that: <span class="formula">(&lt;type&gt;)
+                        &lt;variable_name&gt;</span>. In fact, in the case of widening, we can also use an explicit
+                    cast, but such is unnecessary as it is done automatically by the Java compiler.</p>
+                <p>When it comes to reference types, the idea is the same. However, make sure when you downcast S to T,
+                    you know that T is a subtype of S. As an example:</p>
+                <code class="preformat">
+                    public RefTypeNarrowing {<br />
+                        &nbsp;Object obj1 = "I am actually a string";<br />
+<br />
+                        &nbsp;public static main (String[]) {<br />
+                            &nbsp;&nbsp;String str1 = (String) obj1; // Okay, as obj1 is really a String value<br />
+                        &nbsp;}<br />
+                    }<br />
+                </code>
+            </section>
+            <section class="topic__section">
+                <h2 class="topic__section__title">5. learn about operators and their precedence</h2>
+                <p>Now let's learn about some common operators of the primitive data types. In the above, we have
+                    already briefly talked about the numeric operators: <span class="specialName">+, -, *, /, %</span>.
+                    What else are there?</p>
+                <p>We have been using one which we may have taken for granted: the equal sign <span
+                        class="emphasis">=</span> which is used for assignment.</p>
+                <p>That explains why we have something like: <span class="formula">int i1 = 1 + 1 * 1 / 1 % 1; // i1
+                        will be 2</span></p>
+                <p>In the above, we can also observe how the operator precedence plays out as what we have learnt from
+                    our arithmetics classes: while we read from left to right, we would do the calculation first before
+                    we go back to the assignment operator (=), and we will carry out *, /, % before we do + or -.</p>
+                <p>So with all this knowledge, we should be ready to look at a table of operators below: (a modified version from <a href="http://www.cs.bilkent.edu.tr/~guvenir/courses/CS101/op_precedence.html" class="external" target="_blank">Bilkent University</a>)</p>
+                <table class="table">
+                    <tr class="table__row">
+                        <th>Precedence</th>
+                        <th>Operator</th>
+                        <th>Type</th>
+                        <th>Associativity</th>
+                    </tr>
+                    <tr class="table__row">
+                        <td>15</td>
+                        <td>()<br>[]<br>·</td>
+                        <td>Parentheses<br>Array subscript<br>Member selection<br></td>
+                        <td>Left to Right</p>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td>14</td>
+                        <td>++<br>--</td>
+                        <td>Unary post-increment<br>Unary post-decrement</td>
+                        <td>Right to left</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td>13</td>
+                        <td>++<br>--<br>+<br>-<br>!<br>~<br>( <i>type</i> )</td>
+                        <td>Unary pre-increment<br>Unary pre-decrement<br>Unary plus<br>Unary minus<br>Unary logical
+                            negation<br>Unary bitwise complement<br>Unary type cast</td>
+                        <td>Right to left</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td>12</td>
+                        <td> * <br> / <br> % </td>
+                        <td>Multiplication<br>Division<br>Modulus</td>
+                        <td>Left to right</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td>11</td>
+                        <td>+<br>-<o:p>
+                        </td>
+                        <td>Addition<br>Subtraction</td>
+                        <td>Left to right</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td>10</td>
+                        <td>&lt;&lt;<br>&gt;&gt;<br>&gt;&gt;&gt;</td>
+                        <td>Bitwise left shift<br>Bitwise right shift with sign extension<br>Bitwise right shift with
+                            zero extension</td>
+                        <td>Left to right</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td>9</td>
+                        <td>&lt;<br>&lt;=<br>&gt;<br>&gt;=<br>instanceof</td>
+                        <td>Relational less than<br>Relational less than or equal<br>Relational greater
+                            than<br>Relational greater than or equal<br>Type comparison (objects only)</td>
+                        <td>Left to right</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td>8</td>
+                        <td>==<br>!=</td>
+                        <td>Relational is equal to<br>Relational is not equal to</td>
+                        <td>Left to right</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td>7</td>
+                        <td>&amp;</td>
+                        <td>Bitwise AND</td>
+                        <td>Left to right</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td>6</td>
+                        <td>^</td>
+                        <td>Bitwise exclusive OR</td>
+                        <td>Left to right</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td>5</td>
+                        <td>|</td>
+                        <td>Bitwise inclusive OR</td>
+                        <td>Left to right</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td>4</td>
+                        <td>&amp;&amp;</td>
+                        <td>Logical AND</p>
+                        </td>
+                        <td>Left to right</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td>3</td>
+                        <td>||</td>
+                        <td>Logical OR</td>
+                        <td>Left to right</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td>2</td>
+                        <td>? :</td>
+                        <td>Ternary conditional</td>
+                        <td>Right to left</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td>1</td>
+                        <td>=<br>+=<br>-=<br>*=<br>/=<br>%=</td>
+                        <td>Assignment<br>Addition assignment<br>Subtraction assignment<br>Multiplication
+                            assignment<br>Division assignment<br>Modulus assignment</td>
+                        <td>Right to left</td>
+                    </tr>
+                </table>
+                <p>Note that precedence 15 is the highest precedence in the table and will always be the first to carry out in a statement, whereas precedence 1 is the lowest and will be carried out at last.</p>
             </section>
         </main>
     </div>
