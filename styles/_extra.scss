@@ -164,3 +164,79 @@
         }
     }
 }
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+
+    &__btn {
+        order: 1;
+        position: absolute;
+        top: 50vh;
+        left: -2.25rem;
+        transform: translateY(-50%);
+        border: none;
+        outline: none;
+        border-radius: 100vh;
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &--expand {
+            left: 28rem;
+        }
+    }
+
+    &__icon {
+        width: 2.5rem;
+        height: 2.5rem;
+
+        &-2 {
+            display: none;
+        }
+
+        &--expand {
+            & > .sidebar__icon-2 {
+                display: block;
+            }
+            & > .sidebar__icon-1 {
+                display: none;
+            }
+        }
+    }
+
+    &__links {
+        overflow-y: auto;
+        line-height: 2;
+        padding: 2rem 1rem;
+        background-color: var(--secondary-grey);
+        color: #fff;
+        position: absolute;
+        list-style: none;
+        top: 0;
+        left: -100vw;
+        width: 30rem;
+        height: 100vh;
+        transition: all 0.2s;
+
+        & > :not(:last-child) {
+            margin-bottom: var(--primary-margin);
+        }
+
+        &--expand {
+            left: 0rem;
+        }
+    }
+
+    &__link:link,
+    &__link:visited {
+        color: inherit;
+        text-decoration: none;
+    }
+}

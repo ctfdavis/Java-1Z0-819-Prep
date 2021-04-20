@@ -13,6 +13,23 @@
 
 <body>
     <div class="container">
+        <aside class="sidebar">
+            <button class="sidebar__btn">
+                <svg class="sidebar__icon">
+                    <use xlink:href="../src/sprite.svg#icon-chevron-right" class="sidebar__icon-1"></use>
+                    <use xlink:href="../src/sprite.svg#icon-chevron-left" class="sidebar__icon-2"></use>
+                </svg>
+            </button>
+            <ul class="sidebar__links">
+                <li><a href="#goals" class="sidebar__link">Topic goals</a></li>
+                <li><a href="#item-1" class="sidebar__link">1. understand primitive types in Java</a></li>
+                <li><a href="#item-2" class="sidebar__link">2. understand wrapper classes in Java</a></li>
+                <li><a href="#item-3" class="sidebar__link">3. understand auto-boxing &amp; auto-unboxing</a></li>
+                <li><a href="#item-4" class="sidebar__link">4. understand type promotion and casting</a></li>
+                <li><a href="#item-5" class="sidebar__link">5. learn about operators and their precedence</a></li>
+                <li><a href="#item-6" class="sidebar__link">6. learn about var (local variable type inference) &amp; lambda parameters</a></li>
+            </ul>
+        </aside>
         <button class="backToTop">
             <svg class="backToTop__icon">
                 <use xlink:href="../src/sprite.svg#icon-arrow-up"></use>
@@ -57,7 +74,7 @@
         </header>
         <main class="topic">
             <h1 class="topic__title">Topic 1: Java Data Types</h1>
-            <h2 class="topic__subtitle">Topic goals</h2>
+            <h2 class="topic__subtitle" id="goals">Topic goals</h2>
             <ol class="topic__goals">
                 <li class="topic__goals__item">understand primitive types in Java</li>
                 <li class="topic__goals__item">understand wrapper classes in Java</li>
@@ -69,7 +86,7 @@
             </ol>
 
             <section class="topic__section">
-                <h2 class="topic__section__title">1. understand primitive types in Java</h2>
+                <h2 class="topic__section__title" id="item-1">1. understand primitive types in Java</h2>
                 <h3 class="topic__section__subtitle">The 8 types of primitive data</h3>
                 <table class="table">
                     <thead>
@@ -166,7 +183,7 @@
                 <p>More on operators and their precedence later.</p>
             </section>
             <section class="topic__section">
-                <h2 class="topic__section__title">2. understand wrapper classes in Java</h2>
+                <h2 class="topic__section__title" id="item-2">2. understand wrapper classes in Java</h2>
                 <h3 class="topic__section__subtitle">Wrapper classes in a nutshell</h3>
                 <p>Basically, a wrapper class is an <a href="../keywords.html#Object" class="keyword"
                         target="_blank">Object</a> that is used to contain a
@@ -216,7 +233,7 @@
                         class="keyword" target="_blank">autoboxing</a>.</p>
             </section>
             <section class="topic__section">
-                <h2 class="topic__section__title">3. understand auto-boxing &amp; auto-unboxing</h2>
+                <h2 class="topic__section__title" id="item-3">3. understand auto-boxing &amp; auto-unboxing</h2>
                 <p>As described above, both auto-boxing and auto-unboxing are automatic processes that the Java compiler
                     does for you.</p>
                 <p>Now, what are these processes exactly? The following <a
@@ -283,7 +300,7 @@
                     explicitly.</p>
             </section>
             <section class="topic__section">
-                <h2 class="topic__section__title">4. understand type promotion and casting</h2>
+                <h2 class="topic__section__title" id="item-4">4. understand type promotion and casting</h2>
                 <h3 class="topic__section__subtitle">What is type promotion?</h3>
                 <p>I personally don't like the term <span class="specialName">type promotion</span>. I like to use the
                     term <span class="specialName">type conversion</span> instead. When it comes to type conversion,
@@ -397,7 +414,7 @@
                 </code>
             </section>
             <section class="topic__section">
-                <h2 class="topic__section__title">5. learn about operators and their precedence</h2>
+                <h2 class="topic__section__title" id="item-5">5. learn about operators and their precedence</h2>
                 <p>Now let's learn about some common operators of the primitive data types. In the above, we have
                     already briefly talked about the numeric operators: <span class="specialName">+, -, *, /, %</span>.
                     What else are there?</p>
@@ -521,6 +538,7 @@
     <script src="../javascript/theme.js"></script>
     <script src="../javascript/backToTop.js"></script>
     <script src="../javascript/sizeControl.js"></script>
+    <script src="../javascript/sidebar.js"></script>
 </body>
 
 </html>
