@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="../src/favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:wght@200;400&display=swap"
         rel="stylesheet">
@@ -149,7 +150,7 @@
                     </tbody>
                 </table>
                 <p>Let's now look at some examples of declaring and initializing variables of the 8 primitive types of
-                    data below:</p>
+                    data below (note that in Java, what comes after <span class="specialName">//</span> is considered as comments, i.e. things we add as comments in a program that will not be compiled):</p>
                 <ul class="list">
                     <li>boolean var1 = true;</li>
                     <li>byte var2 = 1__0; //1__0 is simply 10 since underscores in between numbers can be added for
@@ -226,11 +227,12 @@
                         href="../keywords.html#unboxing" class="keyword" target="_blank">unboxing</a>. In fact, when we
                     assign to the wrapper class object <span class="specialName">booObj</span> the primitive value <span
                         class="emphasis">true</span>,
-                    automatic conversion from the primitive to the wrapper class has already been performed for us. The
+                    automatic conversion from the primitive to the wrapper class has already been performed for us (by using a function <span class="specialName">.valueOf()</span> of the wrapper class). The
                     automatic
                     conversion
                     from a primitive type to a wrapper class is known as <a href="../keywords.html#autoboxing"
                         class="keyword" target="_blank">autoboxing</a>.</p>
+                        <p>As an example, when we wrote the assignment <span class="formula">Boolean booObj = true;</span> in the above, the Java compiler actually used <span class="formula">Boolean booObj = <span class="emphasis">Boolean.valueOf(</span>true<span class="emphasis">)</span></span> to convert the primitive boolean value true to a Boolean value first before the assignment under the hood.</p>
             </section>
             <section class="topic__section">
                 <h2 class="topic__section__title" id="item-3">3. understand auto-boxing &amp; auto-unboxing</h2>
@@ -425,7 +427,7 @@
                 <p>In the above, we can also observe how the operator precedence plays out as what we have learnt from
                     our arithmetics classes: while we read from left to right, we would do the calculation first before
                     we go back to the assignment operator (=), and we will carry out *, /, % before we do + or -.</p>
-                <p>So with all this knowledge, we should be ready to look at a table of operators below: (a modified version from <a href="http://www.cs.bilkent.edu.tr/~guvenir/courses/CS101/op_precedence.html" class="external" target="_blank">Bilkent University</a>)</p>
+                <p>So with all this knowledge, we should be ready to look at the table of operators below: (a modified version from <a href="http://www.cs.bilkent.edu.tr/~guvenir/courses/CS101/op_precedence.html" class="external" target="_blank">Bilkent University</a>)</p>
                 <table class="table">
                     <tr class="table__row">
                         <th>Precedence</th>
@@ -531,7 +533,26 @@
                         <td>Right to left</td>
                     </tr>
                 </table>
-                <p>Note that precedence 15 is the highest precedence in the table and will always be the first to carry out in a statement, whereas precedence 1 is the lowest and will be carried out at last.</p>
+                <p>Note that <span class="emphasis">precedence 15</span> in the table is of the highest precedence and will always be first to carry out in a statement, whereas <span class="emphasis">precedence 1</span> is the lowest and will be carried out at last.</p>
+                <p>Now let's kick off with (), [] &amp; . in row <span class="emphasis">precedence 15</span>. () states that what is inside the parentheses should be executed first. For example:</p>
+                <h4 class="topic__section__subtitle--small">Precedence 15</h4>
+                <code class="preformat">int i1 = (1 + 3) * 5 // will be 20 because 1 + 3 will be executed before * 5</code>
+                <p>As for [] (square brackets), they are used for declaration of arrays and for selection of array elements. We will talk more about arrays in a later topic: <a href="ch5.html" class="nav__link">Topic 5: Arrays &amp; Collections</a>. For now, let's look at a couple examples below:</p>
+                <code class="preformat">int[] intArray = new int[5]; // declare an int array called intArray and assign it to an int array with 5 elements to allocate in memory</code>
+                <p>The above can actually be divided into two separate steps:</p>
+                <code class="preformat">int [] intArray; // declare an int array called intArray<br />
+                intArray = new int[5]; // now assign the variable to an int array with 5 elements</code>
+                <p>We can also then assign a int value to the first element inside the int array as follows:</p>
+                <code class="preformat">intArray[0] = 1; // select index 0 of intArray (i.e. the first element in intArray) and assign it to 1</code>
+                <p>We will talk about <span class="emphasis">indexing</span> in Java in details later. For now, (just like any other programming languages) index always starts at 0 in Java. That's why index 0 refers to the first element, and index 1 refers to the second element, etc.</p>
+                <p>We have actually seen and used the member selection operator . a few times above. For example:</p>
+                <code class="preformat">Integer integer1 = Integer<span class="emphasis">.</span>valueOf(123);</code>
+                <p>We use . to select the member <span class="specialName">valueOf</span> (which is a method here) of the Integer class in the example.</p>
+                <p>Let's look at another example below:</p>
+                <code class="preformat">System.out.println(Math<span class="emphasis">.</span>PI); // this will print out 3.141592653589793</code>
+                <p>This time, we use . to select the member <span class="specialName">PI</span> (which is a variable) of the Math class and print it out to the console via <span class="specialName">System.out.println()</span>.</p>
+                <h4 class="topic__section__subtitle--small">Precedence 14</h4>
+                
             </section>
         </main>
     </div>
