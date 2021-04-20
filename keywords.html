@@ -57,11 +57,18 @@
             filter = input.value.toUpperCase();
             ul = document.querySelector(".keywords");
             li = ul.getElementsByTagName('li');
-
+            console.log(input.value);
+            
             for (i = 0; i < li.length; i++) {
                 key = li[i].getElementsByTagName("summary")[0].firstChild.data;
+                if (input.value === "") {
+                        li[i].firstElementChild.open = false;
+                    }
                 if (key.toUpperCase().indexOf(filter) > -1) {
                     li[i].style.display = "";
+                    if (key.toUpperCase() === filter) {
+                        li[i].firstElementChild.open = true;
+                    }
                 }
                 else {
                     li[i].style.display = "none";

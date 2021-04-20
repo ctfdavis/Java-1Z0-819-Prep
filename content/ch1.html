@@ -153,26 +153,26 @@
                     data below (note that in Java, what comes after <span class="specialName">//</span> is considered as comments, i.e. things we add as comments in a program that will not be compiled):</p>
                 <ul class="list">
                     <li>boolean var1 = true;</li>
-                    <li>byte var2 = 1__0; //1__0 is simply 10 since underscores in between numbers can be added for
-                        readability reasons</li>
+                    <li>byte var2 = 1__0; <span class="comment">// 1__0 is simply 10 since underscores in between numbers can be added for
+                        readability reasons</span></li>
                     <li>char var3 = 0;</li>
-                    <li>short __var4 = 0; //underscores are allowed in variable names</li>
-                    <li>int var5 = 0123; //var5 will be assigned 83, as 0-prefixed numbers are considered octal</li>
-                    <li>long var6$$$ = 0L; //$ can appear anywhere except at the beginning of a variable name</li>
+                    <li>short __var4 = 0; <span class="comment">// underscores are allowed in variable names</span></li>
+                    <li>int var5 = 0123; <span class="comment">// var5 will be assigned 83, as 0-prefixed numbers are considered octal</span></li>
+                    <li>long var6$$$ = 0L; <span class="comment">// $ can appear anywhere except at the beginning of a variable name</span></li>
                     <li>float var7 = 0.0f;</li>
                     <li>double var8 = 0.0;</li>
                 </ul>
                 <p>Next, let's also look at some <span class="emphasis">invalid</span> examples below:</p>
                 <ul class="list">
-                    <li>boolean 9var = false; //DNC (does not compile) as variable name cannot start with a number</li>
-                    <li>byte var10 = 128; // DNC as 128 exceeds range of byte (128 is reckoned by compiler as int)</li>
-                    <li>char _ = 0; // DNC as a single underscore cannot be used as a variable name</li>
-                    <li>short var12 = _0; // DNC as an underscore can't be at the beginning of a number</li>
-                    <li>int var13 = 0.0; // DNC as 0.0 is reckoned as a double value which is bigger than an int</li>
-                    <li>long var14 = 0.0; // DNC, reason similar to above</li>
-                    <li>float var15 = 0.0; // DNC, reason similar to above (f suffix has to be explicitly added to mean
-                        float)</li>
-                    <li>double var16 = false; // DNC as boolean values can not be assigned to other primitive types</li>
+                    <li>boolean 9var = false; <span class="comment">// DNC (does not compile) as variable name cannot start with a number</span></li>
+                    <li>byte var10 = 128; <span class="comment">// DNC as 128 exceeds range of byte (128 is reckoned by compiler as int)</span></li>
+                    <li>char _ = 0; <span class="comment">// DNC as a single underscore cannot be used as a variable name</span></li>
+                    <li>short var12 = _0; <span class="comment">// DNC as an underscore can't be at the beginning of a number</span></li>
+                    <li>int var13 = 0.0; <span class="comment">// DNC as 0.0 is reckoned as a double value which is bigger than an int</span></li>
+                    <li>long var14 = 0.0; <span class="comment">// DNC, reason similar to above</span></li>
+                    <li>float var15 = 0.0; <span class="comment">// DNC, reason similar to above (f suffix has to be explicitly added to mean
+                        float)</span></li>
+                    <li>double var16 = false; <span class="comment">// DNC as boolean values can not be assigned to other primitive types</span></li>
                 </ul>
                 <h3 class="topic__section__subtitle">Basic operations on primitive data</h3>
                 <p>The basic arithmetic operations <span class="emphasis">+</span> (addition), <span
@@ -343,10 +343,10 @@
                         &nbsp;long l1 = 1L;<br />
 <br />
                         &nbsp;public static main (String []) {<br />
-                            &nbsp;&nbsp;int i1 = b1; // fine, widening will be done by Java<br />
-                            &nbsp;&nbsp;int i2 = s1; // same<br />
-                            &nbsp;&nbsp;double d1 = c1; // same<br />
-                            &nbsp;&nbsp;float f1 = l1; // same<br />
+                            &nbsp;&nbsp;int i1 = b1; <span class="comment">// fine, widening will be done by Java</span><br />
+                            &nbsp;&nbsp;int i2 = s1; <span class="comment">// same</span><br />
+                            &nbsp;&nbsp;double d1 = c1; <span class="comment">// same</span><br />
+                            &nbsp;&nbsp;float f1 = l1; <span class="comment">// same</span><br />
                         &nbsp;}<br />
                     }<br />
                 </code>
@@ -356,7 +356,7 @@
                         &nbsp;Integer integer1 = 1;<br />
 <br />
                         &nbsp;public static main (String[]) {<br />
-                            &nbsp;&nbsp;<span class="emphasis">Long long1 = integer1;</span> // DNC, type Integer is not a subtype of Long<br />
+                            &nbsp;&nbsp;<span class="emphasis">Long long1 = integer1;</span> <span class="comment">// DNC, type Integer is not a subtype of Long</span><br />
                         &nbsp;}<br />
                     }<br />
                 </code>
@@ -396,7 +396,7 @@
                        &nbsp;int i1 = 10_0000_0000;<br />
 <br />
                         &nbsp;public static main (String[]) {<br />
-                            &nbsp;&nbsp;short s1 = (short) i1; // the parentheses plus the type name inside: (short) is required to be in front of the variable to be downcast<br />
+                            &nbsp;&nbsp;short s1 = (short) i1; <span class="comment">// the parentheses plus the type name inside: (short) is required to be in front of the variable to be downcast</span><br />
                         &nbsp;}<br />
                     }<br />
                 </code>
@@ -406,11 +406,11 @@
                 <p>When it comes to reference types, the idea is the same. However, make sure when you downcast S to T,
                     you know that T is a subtype of S. As an example:</p>
                 <code class="preformat">
-                    public RefTypeNarrowing {<br />
+                    public ReferenceTypeNarrowing {<br />
                         &nbsp;Object obj1 = "I am actually a string";<br />
 <br />
                         &nbsp;public static main (String[]) {<br />
-                            &nbsp;&nbsp;String str1 = (String) obj1; // Okay, as obj1 is really a String value<br />
+                            &nbsp;&nbsp;String str1 = (String) obj1; <span class="comment">// Okay, as obj1 is really a String value</span><br />
                         &nbsp;}<br />
                     }<br />
                 </code>
@@ -422,8 +422,8 @@
                     What else are there?</p>
                 <p>We have been using one which we may have taken for granted: the equal sign <span
                         class="emphasis">=</span> which is used for assignment.</p>
-                <p>That explains why we have something like: <span class="formula">int i1 = 1 + 1 * 1 / 1 % 1; // i1
-                        will be 2</span></p>
+                <p>That explains why we have something like: <span class="formula">int i1 = 1 + 1 * 1 / 1 % 1; <span class="comment">// i1
+                        will be 2</span></span></p>
                 <p>In the above, we can also observe how the operator precedence plays out as what we have learnt from
                     our arithmetics classes: while we read from left to right, we would do the calculation first before
                     we go back to the assignment operator (=), and we will carry out *, /, % before we do + or -.</p>
@@ -536,23 +536,67 @@
                 <p>Note that <span class="emphasis">precedence 15</span> in the table is of the highest precedence and will always be first to carry out in a statement, whereas <span class="emphasis">precedence 1</span> is the lowest and will be carried out at last.</p>
                 <h4 class="topic__section__subtitle--small">Precedence 15</h4>
                 <p>Now let's kick off with (), [] &amp; . in row <span class="emphasis">precedence 15</span>. () states that what is inside the parentheses should be executed first. For example:</p>
-                <code class="preformat">int i1 = (1 + 3) * 5 // will be 20 because 1 + 3 will be executed before * 5</code>
+                <code class="preformat">int i1 = (1 + 3) * 5 <span class="comment">// will be 20 because 1 + 3 will be executed before * 5</span></code>
                 <p>As for [] (square brackets), they are used for declaration of arrays and for selection of array elements. We will talk more about arrays in a later topic: <a href="ch5.html" class="nav__link">Topic 5: Arrays &amp; Collections</a>. For now, let's look at a couple examples below:</p>
-                <code class="preformat">int[] intArray = new int[5]; // declare an int array called intArray and assign it to an int array with 5 elements to allocate in memory</code>
+                <code class="preformat">int[] intArray = new int[5]; <span class="comment">// declare an int array called intArray and assign it to an int array with 5 elements to allocate in memory</span></code>
                 <p>The above can actually be divided into two separate steps:</p>
-                <code class="preformat">int [] intArray; // declare an int array called intArray<br />
-                intArray = new int[5]; // now assign the variable to an int array with 5 elements</code>
-                <p>We can also then assign a int value to the first element inside the int array as follows:</p>
-                <code class="preformat">intArray[0] = 1; // select index 0 of intArray (i.e. the first element in intArray) and assign it to 1</code>
+                <code class="preformat">int [] intArray; <span class="comment">// declare an int array called intArray</span><br />
+                intArray = new int[5]; <span class="comment">// now assign the variable to an int array with 5 elements</span></code>
+                <p>We can also then assign an int value to the first element inside the int array as follows:</p>
+                <code class="preformat">intArray[0] = 1; <span class="comment">// select index 0 of intArray (i.e. the first element in intArray) and assign it to 1</span></code>
                 <p>We will talk about <span class="emphasis">indexing</span> in Java in details later. For now, (just like any other programming languages) index always starts at 0 in Java. That's why index 0 refers to the first element, and index 1 refers to the second element, etc.</p>
                 <p>We have actually seen and used the member selection operator . a few times above. For example:</p>
                 <code class="preformat">Integer integer1 = Integer<span class="emphasis">.</span>valueOf(123);</code>
                 <p>We use . to select the member <span class="specialName">valueOf</span> (which is a method here) of the Integer class in the example.</p>
                 <p>Let's look at another example below:</p>
-                <code class="preformat">System.out.println(Math<span class="emphasis">.</span>PI); // this will print out 3.141592653589793</code>
-                <p>This time, we use . to select the member <span class="specialName">PI</span> (which is a variable) of the Math class and print it out to the console via <span class="specialName">System.out.println()</span>.</p>
-                <h4 class="topic__section__subtitle--small">Precedence 14</h4>
-                
+                <code class="preformat">System.out.println(Math<span class="emphasis">.</span>PI); <span class="comment">// this will print out 3.141592653589793</span></code>
+                <p>This time, we use <span class="specialName">.</span> to select the member <span class="specialName">PI</span> (which is a variable) of the Math class and print it out to the console via <span class="specialName">System.out.println()</span>.</p>
+                <h3 class="topic__section__subtitle">Unary operators in depth</h3>
+                <h4 class="topic__section__subtitle--small">Precedence 14 &amp; Precedence 13</h4>
+                <p>Note that the two rows <span class="emphasis">precedence 14 &amp; 13</span> are composed of <span class="specialName">unary operators</span>: they are operators that work with one and only one variable or value.</p>
+                <p>We can see <span class="specialName">++</span> &amp; <span class="specialName">--</span> in both rows <span class="emphasis">precedence 14 &amp; 13</span>. In row <span class="emphasis">precedence 14</span>, they are <span class="emphasis">post</span>-increment and decrement respectively, whereas in <span class="emphasis">precedence 13</span>, they are <span class="emphasis">pre</span>-increment &amp; decrement. So, what are their differences?</p>
+                <p>As can be told from their names, the post-operators in row <span class="emphasis">precedence 14</span> are placed after a numeric variable, whereas the pre-operators in <span class="emphasis">precendence 13</span> are placed in front:</p>
+                <code class="preformat">
+                    int i1 = 0;<br />
+                    int i2 = 0;<br />
+                    System.out.println(i1++); <span class="comment">// this is a post-increment: it prints out 0, and then increments i1 by 1, so after the printing i1 becomes 1</span><br />
+                    System.out.prinlnt(++i2); <span class="comment">// this is a pre-increment: it increments i2 by 1 first, and then prints out the current i2 value, which is 1</span><br />
+                </code>
+                <p>For the exam, please do understand the above and the differences between a post-increment(decrement) and pre-increment(decrement). In short, a <span class="emphasis">post</span> operator will delay the increment or decrement until the statement completes, whereas a <span class="emphasis">pre</span> operator will immediately do the increment/decrement before the rest of statement continues to be evaluated. </p>
+                <p>Next, let's look at the logical negation <span class="specialName">!</span>. It is a simple operator that negates a boolean value (i.e. true / false):</p>
+                <code class="preformat">
+                    boolean b1 = !true; <span class="comment">// !true is false; b1 is assigned to false</span><br />
+                    Boolean b2 = !b1; <span class="comment">// !b1 is simply !false, which is true; b2 is then assigned to true</span><br />
+                    System.out.println(!b2); <span class="comment">// prints out false</span><br />
+                </code>
+                <p>For the unary operators <span class="specialName">+ &amp; -</span>, while the former is not usually used, the latter is as it can indicate a negative value:</p>
+                <code class="preformat">
+                    double d1 = <span class="emphasis">-</span>1.0;<br />
+                    long l1 = <span class="emphasis">+</span>1; <span class="comment">// +1 is just 1</span><br />
+                </code>
+                <p>Now it comes the bitwise operator <span class="specialName">~</span>. This one is used for manipulating individual bits. Specifically, it turns the '1' bits to '0', and the '0' bits to '1'. Please note that this operator is based on <a href="https://en.wikipedia.org/wiki/Two%27s_complement" class="external">two's complement</a> used in binary arithmetics. In short, <span class="emphasis">an integer N will become -(N+1)</span> after the bitwise complement conversion. Let's have a look at the below example:</p>
+                <code class="preformat">
+                    int i1 = 17; <span class="comment">// 17 in <span class="emphasis">binary </span>is 0001 0001</span><br />
+                    int i2 = ~i1; <span class="comment">// the one's complement of 0001 0001 is 1110 1110, which is equal to the two's complement of -18, so i2 is assigned to -18</span><br />
+                </code>
+                <p>Last but not least, we have already seen the type cast opeartor above when we were discussing type conversion. Now, let's revise its usage with an example below:</p>
+                <code class="preformat">
+                    char c1 = 'a';<br />
+                    byte b1 = (byte) (short) c1; <span class="comment">// since unary opeartors work from right to left, we first cast c1 to short, and then cast the short value to byte</span><br />
+                    byte b2 = (byte) c1; <span class="comment">// it could work directly like this as well</span><br />
+                </code>
+                <h3 class="topic__section__subtitle">Binary operators in depth</h3>
+                <p>Note that the rest of table (except row <span class="emphasis">precedence 2</span>) is composed of <span class="specialName">binary operators</span>: they are operators that work with two variables/values</p>
+                <h4 class="topic__section__subtitle--small">Precedence 12 to Precedence 10: Numeric operations</h4>
+                <p>From rows precedence 12 to 10, all the operators are for numeric operations. In particular, we will just focus on the bitwise operators in precedence 10 below because the others are assumed to be well-understood already.</p>
+                <p>First, let's talk about <span class="specialName">&lt;&lt;</span>, which is called the bitwise left shift operator. If we shift a number to the left by 1, all the bits in it will be pushed to the left by 1 position, which will result in a missing last position. The missing last position will then be filled with the bit '0'.</p>
+                <p>This may sound confusing now. So let's take a look at what it actually does with a quick example:</p>
+                <code class="preformat">
+                    int i1 = 10; <span class="comment">// 10 in binary is 0000 1010</span><br />
+                    int i2 = i1&lt;&lt;1 <span class="comment">// pushed to the left by 1, so we will have 0001 010_, where _ is the missing last position to be filled with '0', so we'll have 0001 0100, which is 20 in decimal</span>
+                </code>
+
+
             </section>
         </main>
     </div>

@@ -20,6 +20,10 @@
 .preformat {
     display: block;
     font-size: var(--big);
+    background-color: var(--code-block);
+    border-radius: 0.5rem;
+    border: var(--primary-line);
+    padding: 3rem;
 }
 
 .keywords {

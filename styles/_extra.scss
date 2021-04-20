@@ -9,11 +9,13 @@
 }
 
 .external {
-    font-family: "Times New Roman", Times, serif;
-    font-size: var(--big);
+    font-size: var(--regular);
     &:link,
     &:visited {
         color: var(--link-color);
+    }
+    &:hover {
+        background-color: var(--highlight-color);
     }
 }
 
@@ -28,8 +30,8 @@
 }
 
 .comment {
-    font-size: 80%;
-    opacity: 0.8;
+    font-size: 90%;
+    color: var(--comment-color);
 }
 
 .box {
@@ -236,6 +238,12 @@
         &--expand {
             left: 0rem;
         }
+    }
+
+    &__link {
+        @include link;
+        border-radius: 5rem;
+        padding: 0 2rem;
     }
 
     &__link:link,

@@ -9,10 +9,12 @@
   --section-line: 3px dashed var(--primary-grey);
   --emphasis-color: #f13232;
   --highlight-color: rgba(255, 255, 0, 0.4);
-  --link-color: #099625;
+  --link-color: #354A12;
   --primary-shadow: 0 0.5rem 1rem 0.1rem var(--primary-grey);
   --secondary-shadow: 0 0.3rem 0.5rem 0.05rem var(--primary-grey);
   --tertiary-shadow: 0 0.1rem 0.2rem 0.02rem var(--primary-grey);
+  --comment-color: #4b4b4b;
+  --code-block: #d7fae7;
   --primary-gradient: linear-gradient(45deg, #a8e7d7, #75d9e0 40%, #d7fae7);
   --secondary-gradient: linear-gradient(45deg, #413f3f, #333333 40%, #252525);
   --smaller: 1.25rem;
@@ -66,6 +68,10 @@ body {
 .preformat {
   display: block;
   font-size: var(--big);
+  background-color: var(--code-block);
+  border-radius: 0.5rem;
+  border: var(--primary-line);
+  padding: 3rem;
 }
 
 .keywords {
@@ -117,12 +123,15 @@ body {
 }
 
 .external {
-  font-family: "Times New Roman", Times, serif;
-  font-size: var(--big);
+  font-size: var(--regular);
 }
 
 .external:link, .external:visited {
   color: var(--link-color);
+}
+
+.external:hover {
+  background-color: var(--highlight-color);
 }
 
 .formula,
@@ -136,8 +145,8 @@ body {
 }
 
 .comment {
-  font-size: 80%;
-  opacity: 0.8;
+  font-size: 90%;
+  color: var(--comment-color);
 }
 
 .box {
@@ -446,6 +455,36 @@ body {
   left: 0rem;
 }
 
+.sidebar__link {
+  display: inline-block;
+  padding: 0 1rem;
+  border: var(--primary-line);
+  border-radius: 100vh;
+  -webkit-box-shadow: var(--secondary-shadow);
+          box-shadow: var(--secondary-shadow);
+  border-radius: 5rem;
+  padding: 0 2rem;
+}
+
+.sidebar__link:link, .sidebar__link:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebar__link:hover {
+  background-color: var(--highlight-color);
+  -webkit-box-shadow: var(--tertiary-shadow);
+          box-shadow: var(--tertiary-shadow);
+  -webkit-transform: translateY(0.1rem);
+          transform: translateY(0.1rem);
+}
+
+.sidebar__link--active {
+  cursor: none;
+  pointer-events: none;
+  background-color: var(--primary-grey);
+}
+
 .sidebar__link:link, .sidebar__link:visited {
   color: inherit;
   text-decoration: none;
@@ -629,7 +668,7 @@ body {
   border-top: var(--section-line);
 }
 
-.topic__section > *:not(.box) {
+.topic__section > *:not(.box):not(.preformat) {
   padding: 1rem 0;
 }
 
