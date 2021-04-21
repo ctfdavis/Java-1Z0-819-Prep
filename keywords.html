@@ -14,15 +14,37 @@
 
 <body onload="getURL()">
     <div class="container">
+        <button class="backToTop">
+            <svg class="backToTop__icon">
+                <use xlink:href="./src/sprite.svg#icon-arrow-up"></use>
+            </svg>
+        </button>
        <button class="theme">
            <svg class="theme__icon">
                  <use class="theme__icon--light" xlink:href="./src/sprite.svg#icon-sun"></use>
                  <use class="theme__icon--dark" xlink:href="./src/sprite.svg#icon-moon"></use>
            </svg>
        </button> 
+        <div class="size-control">
+            <button class="size-control__icon size-control__icon-plus">
+                <svg>
+                    <use xlink:href="./src/sprite.svg#icon-plus"></use>
+                </svg>
+            </button>
+            <button class="size-control__icon size-control__icon-minus">
+                <svg>
+                    <use xlink:href="./src/sprite.svg#icon-minus"></use>
+                </svg>
+            </button>
+        </div>
         <header class="header">
-            <h1 class="header__title">Java 1Z0-819 Prep</h1>
+            <h1 class="header__title">Keywords</h1>
             <nav class="nav">
+                <button class="nav__icon">
+                    <svg class="nav__icon__svg">
+                        <use xlink:href="../src/sprite.svg#icon-more"></use>
+                    </svg>
+                </button>
                 <ul class="nav__links">
                     <li class="nav__item">
                         <a href="./index.html" class="nav__link">Content</a>
@@ -48,6 +70,9 @@
         </main>
     </div>
 
+    <script src="./javascript/nav.js"></script>
+    <script src="./javascript/backToTop.js"></script>
+    <script src="./javascript/sizeControl.js"></script>
     <script src="./javascript/theme.js"></script>
     <script src="./javascript/keywords.js"></script>
     <script>

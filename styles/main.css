@@ -7,7 +7,7 @@
   --primary-margin: 2rem;
   --secondary-margin: 1rem;
   --section-line: 3px dashed var(--primary-grey);
-  --emphasis-color: #f13232;
+  --emphasis-color: #d4258b;
   --highlight-color: rgba(255, 255, 0, 0.4);
   --link-color: #354A12;
   --primary-shadow: 0 0.5rem 1rem 0.1rem var(--primary-grey);
@@ -16,9 +16,9 @@
   --comment-color: #4b4b4b;
   --code-block: #d7fae7;
   --primary-gradient: linear-gradient(45deg, #a8e7d7, #75d9e0 40%, #d7fae7);
-  --secondary-gradient: linear-gradient(45deg, #413f3f, #333333 40%, #252525);
-  --smaller: 1.25rem;
-  --regular: 1.5rem;
+  --secondary-gradient: linear-gradient(45deg, #333030, #202020 40%, #1a1818);
+  --smaller: 1.4rem;
+  --regular: 1.6rem;
   --big: 2rem;
   --bigger: 2.25rem;
   --biggest: 2.75rem;
@@ -178,15 +178,21 @@ body {
 }
 
 .contact-container {
+  height: calc(100vh - 20rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 2rem;
 }
 
 .contact-info {
@@ -212,7 +218,7 @@ body {
 }
 
 .davis-logo {
-  width: 15vw;
+  width: 20rem;
   height: auto;
   margin-right: var(--primary-margin);
 }
@@ -392,6 +398,7 @@ body {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   border: none;
+  border-right: var(--primary-line);
   outline: none;
   border-radius: 100vh;
   width: 4rem;
@@ -406,8 +413,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .sidebar__btn--expand {
@@ -440,7 +447,7 @@ body {
   position: absolute;
   list-style: none;
   top: 0;
-  left: -100vw;
+  left: -110vw;
   width: 30rem;
   height: 100vh;
   -webkit-transition: all 0.2s;
@@ -491,7 +498,7 @@ body {
 }
 
 .container {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: var(--regular);
   min-height: 100vh;
   display: -webkit-box;
@@ -530,34 +537,68 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: var(--primary-line);
-  padding: 2rem 0;
-  margin-bottom: var(--primary-margin);
+  margin: var(--primary-margin) 0;
 }
 
 .header__title {
-  font-family: 'Montez', cursive;
+  font-family: "Montez", cursive;
   font-size: var(--biggest);
   letter-spacing: 0.25rem;
   margin-bottom: var(--secondary-margin);
 }
 
-.nav {
-  width: 100%;
+.nav__item {
+  font-size: 1.5rem;
 }
 
-.nav__links {
-  list-style: none;
+.nav__icon {
+  position: fixed;
+  top: 2rem;
+  right: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 100vh;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: var(--emphasis-color);
+}
+
+.nav__icon__svg {
+  height: 3rem;
+  width: 3rem;
+  fill: #fff;
+}
+
+.nav__links {
+  position: fixed;
+  top: 6rem;
+  right: 1.5rem;
+  list-style: none;
+  height: 18rem;
+  width: 18rem;
+  border: 3px solid var(--code-block);
+  border-radius: 2rem;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: var(--code-block);
 }
 
 .nav__link {
@@ -588,10 +629,15 @@ body {
   background-color: var(--primary-grey);
 }
 
+.nav__link:link, .nav__link:visited {
+  color: currentColor;
+}
+
 .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: calc(100vh - 15rem);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -599,6 +645,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: var(--smaller);
 }
 
 .content__topics {
@@ -649,7 +699,6 @@ body {
 }
 
 .topic__title {
-  text-align: center;
   margin-bottom: var(--primary-margin);
   font-size: var(--bigger);
 }

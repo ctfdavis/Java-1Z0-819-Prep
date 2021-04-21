@@ -28,7 +28,7 @@ const themeToggle = () => {
     }
     else {
         localStorage.setItem('dark-mode', 'light');
-        root_theme.style.setProperty('--emphasis-color', "#f13232");
+        root_theme.style.setProperty('--emphasis-color', "#d4258b");
         root_theme.style.setProperty('--link-color', "#354A12");
         root_theme.style.setProperty('--comment-color', '#4b4b4b');
         root_theme.style.setProperty('--code-block', "#d7fae7");
