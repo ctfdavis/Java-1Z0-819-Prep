@@ -15,7 +15,8 @@
   --tertiary-shadow: 0 0.1rem 0.2rem 0.02rem var(--primary-grey);
   --comment-color: #4b4b4b;
   --code-block: #d7fae7;
-  --primary-gradient: linear-gradient(45deg, #bcf1e4, #aeeff5 40%, #d7fae7);
+  --primary-gradient: linear-gradient(45deg, #a8e7d7, #75d9e0 40%, #d7fae7);
+  --primary-gradient: linear-gradient(45deg, #a8e7d7, #75d9e0 40%, #d7fae7);
   --secondary-gradient: linear-gradient(45deg, #333030, #202020 40%, #1a1818);
   --smaller: 1.4rem;
   --regular: 1.6rem;
@@ -581,6 +582,15 @@ body {
   margin-bottom: var(--secondary-margin);
 }
 
+@media only screen and (max-height: 43.75em) {
+  .header {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-left: var(--secondary-margin);
+  }
+}
+
 .nav {
   font-family: "Montserrat", sans-serif;
 }
@@ -754,6 +764,12 @@ body {
 .topic__title {
   margin-bottom: var(--primary-margin);
   font-size: var(--bigger);
+}
+
+@media only screen and (max-height: 43.75em) {
+  .topic__title {
+    padding-top: 1rem;
+  }
 }
 
 .topic__subtitle, .topic__section__title {

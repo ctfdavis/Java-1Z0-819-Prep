@@ -37,6 +37,10 @@
         letter-spacing: 0.25rem;
         margin-bottom: var(--secondary-margin);
     }
+        @media only screen and (max-height: 43.75em) {
+            align-items: flex-start;
+            margin-left: var(--secondary-margin);
+        }
 }
 
 .nav {
@@ -136,6 +140,10 @@
     &__title {
         margin-bottom: var(--primary-margin);
         font-size: var(--bigger);
+
+        @media only screen and (max-height: 43.75em) {
+            padding-top: 1rem;
+        }
     }
 
     &__subtitle {
