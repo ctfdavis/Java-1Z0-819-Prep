@@ -37,7 +37,7 @@
         letter-spacing: 0.25rem;
         margin-bottom: var(--secondary-margin);
     }
-        @media only screen and (max-height: 43.75em) {
+        @media only screen and (max-height: 43.75em) and (max-width: 40.625em) { //height: 700px, width: 650px
             align-items: flex-start;
             margin-left: var(--secondary-margin);
         }

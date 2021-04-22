@@ -581,7 +581,7 @@ body {
   margin-bottom: var(--secondary-margin);
 }
 
-@media only screen and (max-height: 43.75em) {
+@media only screen and (max-height: 43.75em) and (max-width: 40.625em) {
   .header {
     -webkit-box-align: start;
         -ms-flex-align: start;
