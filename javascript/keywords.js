@@ -28,11 +28,3 @@ var keywords = [
         "definition": "Cast can mean two things: (1) the transformation of one value type to another; (2) the way you make (1) happen in Java."
     },
 ]
-
-const template = (word, definition) => `<details class="details" id=${word}><summary class="summary">${word}</summary><p>${definition}</p></details>`;
-
-keywords.forEach(item => {
-    var child = document.createElement('li');
-    child.innerHTML = template(item.word, item.definition);
-    document.querySelector('.keywords').appendChild(child);
-})

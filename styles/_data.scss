@@ -12,7 +12,7 @@
 
 .list {
     margin-left: 3rem;
-    &>:not(:last-child) {
+    & > :not(:last-child) {
         margin-bottom: var(--secondary-margin);
     }
 }
@@ -38,4 +38,39 @@
 
 .summary {
     outline: none;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(#000, 0.45);
+    z-index: 10;
+
+    &__container {
+        position: absolute;
+        width: 80%;
+        background-color: var(--code-block);
+        border-radius: 1.5rem;
+        box-shadow: var(--primary-shadow);
+        padding: 3rem;
+    }
+
+    &__keyword {
+        margin-bottom: var(--primary-margin);
+        font-family: "Montserrat", sans-serif;
+    }
+
+    &__definition {
+        margin-bottom: var(--primary-margin);
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+    }
 }

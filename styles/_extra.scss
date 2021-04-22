@@ -6,6 +6,7 @@
 .keyword {
     @include link;
     background-color: var(--highlight-color);
+    cursor: pointer;
 }
 
 .external {
@@ -149,6 +150,7 @@
 
 .size-control {
     position: fixed;
+    z-index: 20;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -250,10 +252,10 @@
 
     &__links {
         overflow-y: auto;
-        line-height: 2;
+        line-height: 1.5;
         padding: 2rem 1rem;
-        background-color: var(--secondary-grey);
-        color: #fff;
+        background-color: var(--code-block);
+        color: currentColor;
         position: absolute;
         list-style: none;
         top: 0;
@@ -281,5 +283,18 @@
     &__link:visited {
         color: inherit;
         text-decoration: none;
+    }
+}
+
+.close-btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: currentColor;
+
+    &::after {
+        content: "×";
+        font-size: 3.5rem;
+        cursor: pointer;
     }
 }

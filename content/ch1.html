@@ -202,8 +202,8 @@
             <section class="topic__section">
                 <h2 class="topic__section__title" id="item-2">2. understand wrapper classes in Java</h2>
                 <h3 class="topic__section__subtitle">Wrapper classes in a nutshell</h3>
-                <p>Basically, a wrapper class is an <a href="../keywords.html#Object" class="keyword"
-                        target="_blank">Object</a> that is used to contain a
+                <p>Basically, a wrapper class is an <span class="keyword"
+                        >Object</span> that is used to contain a
                     particular primitive type.</p>
                 <p>For all primitive types except int and char, their corresponding wrapper classes are represented by
                     their names with a capitalized first letter.</p>
@@ -239,16 +239,16 @@
                     Boolean booObj = true;<br />
                     boolean booValue = booObj;
                 </code>
-                <p>Such automatic conversion from a wrapper class to a primitive type is usually referred to as <a
-                        href="../keywords.html#unboxing" class="keyword" target="_blank">unboxing</a>. In fact, when we
+                <p>Such automatic conversion from a wrapper class to a primitive type is usually referred to as <span
+                        class="keyword">unboxing</span>. In fact, when we
                     assign to the wrapper class object <span class="specialName">booObj</span> the primitive value <span
                         class="emphasis">true</span>,
                     automatic conversion from the primitive to the wrapper class has already been performed for us (by
                     using a function <span class="specialName">.valueOf()</span> of the wrapper class). The
                     automatic
                     conversion
-                    from a primitive type to a wrapper class is known as <a href="../keywords.html#autoboxing"
-                        class="keyword" target="_blank">autoboxing</a>.</p>
+                    from a primitive type to a wrapper class is known as <span
+                        class="keyword">autoboxing</span>.</p>
                 <p>As an example, when we wrote the assignment <span class="formula">Boolean booObj = true;</span> in
                     the above, the Java compiler actually used <span class="formula">Boolean booObj = <span
                             class="emphasis">Boolean.valueOf(</span>true<span class="emphasis">)</span></span> to
@@ -349,12 +349,12 @@
                 <p>The above list contains only primitives, so you may now ask what about the wrapper classes, and
                     perhaps objects too in general?</p>
                 <p>In the case of wrapper classes and objects in Java, widening is done by the compiler for you.
-                    However, the way widening works for objects (what we will also call <a
-                        href="../keywords.html#reference type" class="keyword" target="_blank">reference type</a>) has a
-                    different mechanism. Basically, if a reference type is a <a href="../keywords.html#subtype"
-                        class="keyword" target="_blank">subtype</a> of another, then widening is the process of
-                    transforming from the subtype to the <a href="../keywords.html#supertype" class="keyword"
-                        target="_blank">supertype</a>.</p>
+                    However, the way widening works for objects (what we will also call <span
+                         class="keyword">reference type</span>) has a
+                    different mechanism. Basically, if a reference type is a <span
+                        class="keyword">subtype</span> of another, then widening is the process of
+                    transforming from the subtype to the <span class="keyword"
+                        >supertype</span>.</p>
                 <p>Let's see some code in action next:</p>
                 <code class="preformat">
                     public TypeWidening  {<br />
@@ -398,7 +398,7 @@
                 <p>As the names tell, narrowing is the opposite of widening. For example, if going from int to long is a
                     widening conversion, then the opposite &#8212; going from long to int &#8212; is a narrowing
                     conversion. In the case of a narrowing conversion, the Java compiler will not permit it unless an
-                    explicit <a href="../keywords.html#cast" class="keyword" target="_blank">cast</a> is given.</p>
+                    explicit <span class="keyword">cast</span> is given.</p>
                 <p>Here, an explicit cast means you need to tell the Java compiler that you really mean to narrow down
                     the data type (by specifying the data type to narrow down to) so that Java knows that it is not a
                     mistake and will permit it to happen.</p>
@@ -672,6 +672,8 @@
     <script src="../javascript/backToTop.js"></script>
     <script src="../javascript/sizeControl.js"></script>
     <script src="../javascript/sidebar.js"></script>
+    <script src="../javascript/keywords.js"></script>
+    <script src="../javascript/keywordModal.js"></script>
 </body>
 
 </html>
