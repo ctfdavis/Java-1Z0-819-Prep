@@ -703,6 +703,7 @@ body {
 
 .nav__icon {
   position: fixed;
+  z-index: 10;
   top: 2rem;
   right: 1rem;
   display: -webkit-box;
@@ -735,6 +736,7 @@ body {
 
 .nav__links {
   position: fixed;
+  z-index: 10;
   top: 6rem;
   right: 1.5rem;
   list-style: none;
