@@ -22,6 +22,12 @@
         background: var(--secondary-gradient);
         color: #fff;
     }
+
+    &--home {
+        background: var(--tertiary-gradient), url("../src/sky.jpg");
+        background-size: cover;
+        background-position: center;
+    }
 }
 
 .header {
@@ -110,7 +116,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: var(--smaller);
+    font-family: "Montserrat", sans-serif;
+    font-size: calc(var(--smaller)*0.95);
     padding: 3rem 0;
     &__topics {
         list-style: none;
@@ -131,6 +138,7 @@
         text-decoration: none;
         color: inherit;
     }
+
 }
 
 .topic {

@@ -18,6 +18,7 @@
   --code-block: #d7fae7;
   --primary-gradient: linear-gradient(45deg, #bcf1e4, #aeeff5 40%, #d7fae7);
   --secondary-gradient: linear-gradient(45deg, #333030, #202020 40%, #1a1818);
+  --tertiary-gradient: linear-gradient(45deg, rgba(188, 241, 228, 0.7), rgba(174, 239, 245, 0.7) 40%, rgba(215, 250, 231, 0.7));
   --smaller: 1.4rem;
   --regular: 1.6rem;
   --big: 2rem;
@@ -617,6 +618,12 @@ body {
   color: #fff;
 }
 
+.container--home {
+  background: var(--tertiary-gradient), url("../src/sky.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -769,7 +776,8 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: var(--smaller);
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(var(--smaller)*0.95);
   padding: 3rem 0;
 }
 
