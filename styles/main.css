@@ -69,6 +69,7 @@ body {
 
 .preformat {
   display: block;
+  position: relative;
   font-size: calc(var(--regular) * 1.1);
   background-color: var(--code-block);
   border-radius: 0.5rem;
@@ -580,6 +581,9 @@ body {
 }
 
 .close-btn {
+  height: 3.8rem;
+  width: 3.8rem;
+  border-radius: 50%;
   border: none;
   outline: none;
   background-color: transparent;
@@ -590,6 +594,38 @@ body {
   content: "×";
   font-size: 3.5rem;
   cursor: pointer;
+}
+
+.close-btn:hover, .close-btn:active {
+  background-color: var(--highlight-color);
+}
+
+.commentToggle {
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background-color: var(--emphasis-color);
+  cursor: pointer;
+  color: #e6e6e6;
+  width: 2.25rem;
+  height: 2.25rem;
+  font-weight: 700;
+  font-size: 2rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.commentOff > .comment {
+  display: none;
+}
+
+.commentOff > .commentToggle {
+  opacity: 0.5;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.3rem;
 }
 
 .container {
@@ -872,5 +908,6 @@ body {
 
 .topic__section__subtitle--small {
   font-size: var(--smaller);
+  text-decoration: underline;
 }
 /*# sourceMappingURL=main.css.map */

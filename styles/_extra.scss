@@ -287,6 +287,9 @@
 }
 
 .close-btn {
+    height: 3.8rem;
+    width: 3.8rem;
+    border-radius: 50%;
     border: none;
     outline: none;
     background-color: transparent;
@@ -296,5 +299,38 @@
         content: "×";
         font-size: 3.5rem;
         cursor: pointer;
+    }
+
+    &:hover,
+    &:active {
+        background-color: var(--highlight-color);
+    }
+}
+
+.commentToggle {
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background-color: var(--emphasis-color);
+    cursor: pointer;
+    color: #e6e6e6;
+    width: 2.25rem;
+    height: 2.25rem;
+    font-weight: 700;
+    font-size: 2rem;
+    transition: all 0.2s;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.commentOff {
+    & > .comment {
+        display: none;
+    }
+    & > .commentToggle {
+        opacity: 0.5;
+        text-decoration: line-through;
+        text-decoration-thickness: 0.3rem;
     }
 }
