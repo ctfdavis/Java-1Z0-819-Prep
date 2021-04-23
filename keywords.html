@@ -19,12 +19,12 @@
                 <use xlink:href="./src/sprite.svg#icon-arrow-up"></use>
             </svg>
         </button>
-       <button class="theme">
-           <svg class="theme__icon">
-                 <use class="theme__icon--light" xlink:href="./src/sprite.svg#icon-sun"></use>
-                 <use class="theme__icon--dark" xlink:href="./src/sprite.svg#icon-moon"></use>
-           </svg>
-       </button> 
+        <button class="theme">
+            <svg class="theme__icon">
+                <use class="theme__icon--light" xlink:href="./src/sprite.svg#icon-sun"></use>
+                <use class="theme__icon--dark" xlink:href="./src/sprite.svg#icon-moon"></use>
+            </svg>
+        </button>
         <div class="size-control">
             <button class="size-control__icon size-control__icon-plus">
                 <svg>
@@ -83,13 +83,12 @@
             filter = input.value.toUpperCase();
             ul = document.querySelector(".keywords");
             li = ul.getElementsByTagName('li');
-            console.log(input.value);
-            
+
             for (i = 0; i < li.length; i++) {
                 key = li[i].getElementsByTagName("summary")[0].firstChild.data;
                 if (input.value === "") {
-                        li[i].firstElementChild.open = false;
-                    }
+                    li[i].firstElementChild.open = false;
+                }
                 if (key.toUpperCase().indexOf(filter) > -1) {
                     li[i].style.display = "";
                     if (key.toUpperCase() === filter) {
@@ -97,7 +96,11 @@
                     }
                 }
                 else {
-                    li[i].style.display = "none";
+                    if (input.value === "") {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
                 }
             }
         }

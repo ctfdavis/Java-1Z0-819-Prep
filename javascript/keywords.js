@@ -27,4 +27,8 @@ var keywords = [
         "word": "cast",
         "definition": "Cast can mean two things: (1) the transformation of one value type to another; (2) the way you make (1) happen in Java."
     },
+    {
+        "word": "relational operators",
+        "definition": "Relational operators compare between operands and show their relationship."
+    }
 ]
