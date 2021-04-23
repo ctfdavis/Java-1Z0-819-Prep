@@ -47,6 +47,22 @@ body {
           box-sizing: inherit;
 }
 
+::-webkit-scrollbar {
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .table {
   text-align: center;
   border: var(--primary-line);
@@ -70,11 +86,25 @@ body {
 .preformat {
   display: block;
   position: relative;
-  font-size: calc(var(--regular) * 1.1);
+  font-size: var(--smaller);
   background-color: var(--code-block);
   border-radius: 0.5rem;
   border: var(--primary-line);
   padding: 3rem;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+@media only screen and (min-width: 56.25em) {
+  .preformat {
+    font-size: var(--regular);
+  }
+}
+
+@media only screen and (min-width: 87.5em) {
+  .preformat {
+    font-size: calc(var(--regular)*1.05);
+  }
 }
 
 .keywords {
@@ -608,15 +638,15 @@ body {
   background-color: var(--emphasis-color);
   cursor: pointer;
   color: #e6e6e6;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 1.8rem;
+  height: 1.8rem;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 0.75rem;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0.5rem;
+  left: 0.5rem;
 }
 
 .commentOff > .comment {
@@ -627,6 +657,53 @@ body {
   opacity: 0.5;
   text-decoration: line-through;
   text-decoration-thickness: 0.3rem;
+}
+
+.gsap_ani--1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: var(--bigger);
+}
+
+.gsap_ani--1 > :not(:first-child) {
+  letter-spacing: 1rem;
+}
+
+.gsap_ani--2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: var(--bigger);
+}
+
+.gsap_ani--2 > :not(:first-child) {
+  letter-spacing: 0.3rem;
+}
+
+#ani--1_3 {
+  opacity: 0;
+}
+
+#ani--2_3 {
+  opacity: 0;
+}
+
+.gsap_play {
+  width: 5rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  margin-right: var(--primary-margin);
+  -webkit-box-shadow: var(--primary-shadow);
+          box-shadow: var(--primary-shadow);
+}
+
+.gsap_play:hover, .gsap_play:active {
+  color: var(--primary-grey);
+  background-color: var(--highlight-color);
 }
 
 .container {

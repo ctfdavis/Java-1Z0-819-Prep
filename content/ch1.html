@@ -202,8 +202,7 @@
             <section class="topic__section">
                 <h2 class="topic__section__title" id="item-2">2. understand wrapper classes in Java</h2>
                 <h3 class="topic__section__subtitle">Wrapper classes in a nutshell</h3>
-                <p>Basically, a wrapper class is an <span class="keyword"
-                        >Object</span> that is used to contain a
+                <p>Basically, a wrapper class is an <span class="keyword">Object</span> that is used to contain a
                     particular primitive type.</p>
                 <p>For all primitive types except int and char, their corresponding wrapper classes are represented by
                     their names with a capitalized first letter.</p>
@@ -247,8 +246,7 @@
                     using a function <span class="specialName">.valueOf()</span> of the wrapper class). The
                     automatic
                     conversion
-                    from a primitive type to a wrapper class is known as <span
-                        class="keyword">autoboxing</span>.</p>
+                    from a primitive type to a wrapper class is known as <span class="keyword">autoboxing</span>.</p>
                 <p>As an example, when we wrote the assignment <span class="formula">Boolean booObj = true;</span> in
                     the above, the Java compiler actually used <span class="formula">Boolean booObj = <span
                             class="emphasis">Boolean.valueOf(</span>true<span class="emphasis">)</span></span> to
@@ -349,12 +347,11 @@
                 <p>The above list contains only primitives, so you may now ask what about the wrapper classes, and
                     perhaps objects too in general?</p>
                 <p>In the case of wrapper classes and objects in Java, widening is done by the compiler for you.
-                    However, the way widening works for objects (what we will also call <span
-                         class="keyword">reference type</span>) has a
-                    different mechanism. Basically, if a reference type is a <span
-                        class="keyword">subtype</span> of another, then widening is the process of
-                    transforming from the subtype to the <span class="keyword"
-                        >supertype</span>.</p>
+                    However, the way widening works for objects (what we will also call <span class="keyword">reference
+                        type</span>) has a
+                    different mechanism. Basically, if a reference type is a <span class="keyword">subtype</span> of
+                    another, then widening is the process of
+                    transforming from the subtype to the <span class="keyword">supertype</span>.</p>
                 <p>Let's see some code in action next:</p>
                 <code class="preformat">
                     public TypeWidening  {<br />
@@ -600,7 +597,8 @@
                     <span class="emphasis">precedence 14 &amp; 13</span>. In row <span class="emphasis">precedence
                         14</span>, they are <span class="emphasis">post</span>-increment and decrement respectively,
                     whereas in <span class="emphasis">precedence 13</span>, they are <span
-                        class="emphasis">pre</span>-increment &amp; decrement. So, what are their differences?</p>
+                        class="emphasis">pre</span>-increment &amp; decrement. So, what are their differences?
+                </p>
                 <p>As can be told from their names, the post-operators in row <span class="emphasis">precedence
                         14</span> are placed after a numeric variable, whereas the pre-operators in <span
                         class="emphasis">precendence 13</span> are placed in front:</p>
@@ -648,7 +646,8 @@
                 <h3 class="topic__section__subtitle">Binary operators in depth</h3>
                 <p>Note that the rest of table (except row <span class="emphasis">precedence 2</span>) is composed of
                     <span class="specialName">binary operators</span>: they are operators that work with two
-                    variables/values</p>
+                    variables/values
+                </p>
                 <h4 class="topic__section__subtitle--small">Precedence 12 to Precedence 10: Numeric operations</h4>
                 <p>From rows precedence 12 to 10, all the operators are for numeric operations. In particular, we will
                     just focus on the bitwise operators in precedence 10 below because the others are assumed to be
@@ -660,13 +659,44 @@
                 <p>This may sound confusing now. So let's take a look at what it actually does with a quick example:</p>
                 <code class="preformat">
                     int i1 = 10; <span class="comment">// 10 in binary is 0000 1010</span><br />
-                    int i2 = i1&lt;&lt;1 <span class="comment">// pushed to the left by 1, so we will have 0001 010_, where _ is the missing last position to be filled with '0', so we'll have 0001 0100, which is 20 in decimal</span>
+                    int i2 = i1&lt;&lt;1; <span class="comment">// pushed to the left by 1, so we will have 0001 010_, where _ is the missing last position to be filled with '0', so we'll have 0001 0100, which is 20 in decimal</span>
                 </code>
-
+                <p>Here's an animation of what happened in the code above:</p>
+                <div class="gsap_ani gsap_ani--1">
+                    <button class="gsap_play" id="tl_1_player">play</button>
+                    <div id="ani--1_1">0</div>
+                    <div id="ani--1_2">0001010</div>
+                    <div id="ani--1_3">0</div>
+                </div>
+                <p>Next, let's talk about <span class="specialName">&gt;&gt;</span>, which is known as the <span class="emphasis">signed</span> bitwise right shift.
+                Since it is "signed", this operator will use the left most bit to fill in the trailing positions after right shift. As a side note, Java uses <span class="specialName">two's complement</span> to represent negative integers in binary. Therefore, the integer -10 is 1111111111110110 in Java binary. With that piece of information, we can now look at an example below:</p>
+                <code class="preformat">
+                    int i1 = -10; <span class="comment">// 1111111111110110</span><br />
+                    int i2 = i1&gt;&gt;2; <span class="comment">// pushed to the right by 2, so we will have _ _11111111111101, where _ _ are two missing trailing positions to be filled with the originial rightmost bit, which is '1', so we'll have 1111111111111101, which is -3 in decimal</span>
+                </code>
+                <p>Here's an animation of the above signed right-shift example:</p>
+                <div class="gsap_ani gsap_ani--2">
+                    <button class="gsap_play" id="tl_2_player">play</button>
+                    <div id="ani--2_3">11</div>
+                    <div id="ani--2_2">11111111111101</div>
+                    <div id="ani--2_1">10</div>
+                </div>
+                <p>Finally, <span class="specialName">&gt;&gt;&gt;</span> which is called <span class="emphasis">unsigned</span> bitwise right shift, will use '0' to fill in the trailing positions after right shift. As an example:</p>
+                <code class="preformat">
+                    int i1 = -10; <span class="comment">// 1111111111110110</span><br />
+                    int i2 = i1&gt;&gt;&gt;2; <span class="comment">// pushed to the right by 2, so we will have _ _11111111111101, where _ _ are two missing trailing positions to be filled with '0', so it will be 0011111111111101, which is 1073741821</span>
+                </code>
+                <p>If the above <span class="emphasis">unsigned</span> bitwise right shift is a bit confusing, that's entirely normal. The thing about these bitwise right shift operators is, in effect they actually divide a given number (the left operand) by the 2 to the power of the right operand. This may be useful in a situation like this: <span class="formula">int mid_to_calc = (small + big) / 2</span>.</p>
+                <p>Instead of doing the above, we can do this: <span class="formula">int mid_to_calc = (small + big) >>> 1</span>, given that both small and big are positive integers here.</p>
+                <p>If you are interested in more details on this topic, you may refer to <a href="https://stackoverflow.com/questions/19058859/what-does-mean-in-java/19058871" class="external" target="_blank">this stackoverflow post</a> which I personally find very helpful.</p>
+                <h4 class="topic__section__subtitle--small">Precedence 9 to Precedence 8: Relational operations</h4>
 
             </section>
         </main>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
+        integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ=="
+        crossorigin="anonymous"></script>
     <script src="../javascript/nav.js"></script>
     <script src="../javascript/theme.js"></script>
     <script src="../javascript/backToTop.js"></script>
@@ -675,6 +705,36 @@
     <script src="../javascript/keywords.js"></script>
     <script src="../javascript/keywordModal.js"></script>
     <script src="../javascript/commentToggle.js"></script>
+
+    <script>
+        var tl_1 = gsap.timeline({ paused: true, onComplete: () => {Reset(tl_1)} });
+        tl_1.to("#ani--1_1", { opacity: 0, duration: 1 });
+        tl_1.to("#ani--1_2", { x: -15, duration: 1 });
+        tl_1.to("#ani--1_3", { opacity: 1, duration: 1 });
+        tl_1.to("#ani--1_3", { x: -15, duration: 1 });
+        tl_1.to("#ani--1_2", { opacity: 0, duration: 5, delay: 2 });
+        tl_1.to("#ani--1_3", { opacity: 0, duration: 5 }, 6);
+
+        var tl_1_play = document.querySelector("#tl_1_player");
+        tl_1_play.addEventListener('click', () => { tl_1.restart() });
+
+        var tl_2 = gsap.timeline({ paused: true, onComplete: () => {Reset(tl_2)}});
+        tl_2.to("#ani--2_1", { opacity: 0, duration: 1});
+        tl_2.to("#ani--2_2", { x: 20, duration: 1});
+        tl_2.to("#ani--2_3", { opacity: 1, duration: 1});
+        tl_2.to("#ani--2_3", { x: 20, duration: 1});
+        tl_2.to("#ani--2_2", { opacity: 0, duration: 5, delay: 2});
+        tl_2.to("#ani--2_3", { opacity: 0, duration: 5}, 6);
+
+        var tl_2_play = document.querySelector("#tl_2_player");
+        tl_2_play.addEventListener('click', () => { tl_2.restart() });
+
+        function Reset(tl){
+            tl.pause();
+            tl.progress(0);
+        }
+
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,40 @@
+.gsap_ani--1 {
+    display: flex;
+    font-size: var(--bigger);
+    & > :not(:first-child) {
+        letter-spacing: 1rem;
+    }
+}
+
+.gsap_ani--2 {
+    display: flex;
+    font-size: var(--bigger);
+    & > :not(:first-child) {
+        letter-spacing: 0.3rem;
+    }
+}
+
+#ani--1_3 {
+    opacity: 0;
+}
+
+#ani--2_3 {
+    opacity: 0;
+}
+
+.gsap_play {
+    width: 5rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    margin-right: var(--primary-margin);
+    box-shadow: var(--primary-shadow);
+
+    &:hover,
+    &:active {
+        color: var(--primary-grey);
+        background-color: var(--highlight-color);
+    }
+}

@@ -20,11 +20,21 @@
 .preformat {
     display: block;
     position: relative;
-    font-size: calc(var(--regular) * 1.1);
+    font-size: var(--smaller);
     background-color: var(--code-block);
     border-radius: 0.5rem;
     border: var(--primary-line);
     padding: 3rem;
+    white-space: nowrap;
+    overflow-x: auto;
+
+    @media only screen and (min-width: 56.25em) { //900px
+        font-size: var(--regular);
+    }
+
+    @media only screen and (min-width: 87.5em) { //1400px
+        font-size: calc(var(--regular)*1.05);
+    }
 }
 
 .keywords {
