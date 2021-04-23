@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="../src/favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:wght@200;400&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/main.css" />
     <title>Java 1Z0-819 Prep</title>
 </head>
@@ -60,6 +59,7 @@
                 <button class="nav__icon">
                     <svg class="nav__icon__svg">
                         <use xlink:href="../src/sprite.svg#icon-more"></use>
+                        <use xlink:href="../src/sprite.svg#icon-x"></use>
                     </svg>
                 </button>
                 <ul class="nav__links">
@@ -191,9 +191,7 @@
                             other primitive types</span></li>
                 </ul>
                 <h3 class="topic__section__subtitle">Basic operations on primitive data</h3>
-                <p>The basic arithmetic operations <span class="emphasis">+</span> (addition), <span
-                        class="emphasis">-</span> (subtraction), <span class="emphasis">*</span> (multiplication), <span
-                        class="emphasis">/</span> (division) and <span class="emphasis">%</span> (modulus) can be
+                <p>The basic arithmetic operations <span class="emphasis">+</span> (addition), <span class="emphasis">-</span> (subtraction), <span class="emphasis">*</span> (multiplication), <span class="emphasis">/</span> (division) and <span class="emphasis">%</span> (modulus) can be
                     applied to all these types <span class="emphasis">except for boolean</span>.</p>
                 <p>Note that these operators have different orders of precedence. In specific, *, /, % will be carried
                     out before +, - as one would expect.</p>
@@ -238,18 +236,15 @@
                     Boolean booObj = true;<br />
                     boolean booValue = booObj;
                 </code>
-                <p>Such automatic conversion from a wrapper class to a primitive type is usually referred to as <span
-                        class="keyword">unboxing</span>. In fact, when we
-                    assign to the wrapper class object <span class="specialName">booObj</span> the primitive value <span
-                        class="emphasis">true</span>,
+                <p>Such automatic conversion from a wrapper class to a primitive type is usually referred to as <span class="keyword">unboxing</span>. In fact, when we
+                    assign to the wrapper class object <span class="specialName">booObj</span> the primitive value <span class="emphasis">true</span>,
                     automatic conversion from the primitive to the wrapper class has already been performed for us (by
                     using a function <span class="specialName">.valueOf()</span> of the wrapper class). The
                     automatic
                     conversion
                     from a primitive type to a wrapper class is known as <span class="keyword">autoboxing</span>.</p>
                 <p>As an example, when we wrote the assignment <span class="formula">Boolean booObj = true;</span> in
-                    the above, the Java compiler actually used <span class="formula">Boolean booObj = <span
-                            class="emphasis">Boolean.valueOf(</span>true<span class="emphasis">)</span></span> to
+                    the above, the Java compiler actually used <span class="formula">Boolean booObj = <span class="emphasis">Boolean.valueOf(</span>true<span class="emphasis">)</span></span> to
                     convert the primitive boolean value true to a Boolean value first before the assignment under the
                     hood.</p>
             </section>
@@ -257,9 +252,7 @@
                 <h2 class="topic__section__title" id="item-3">3. understand auto-boxing &amp; auto-unboxing</h2>
                 <p>As described above, both auto-boxing and auto-unboxing are automatic processes that the Java compiler
                     does for you.</p>
-                <p>Now, what are these processes exactly? The following <a
-                        href="https://stackoverflow.com/questions/22648627/how-does-auto-boxing-unboxing-work-in-java#answer-55972678"
-                        class="external" target="_blank">answer from stackoverflow</a> is by far one of the best
+                <p>Now, what are these processes exactly? The following <a href="https://stackoverflow.com/questions/22648627/how-does-auto-boxing-unboxing-work-in-java#answer-55972678" class="external" target="_blank">answer from stackoverflow</a> is by far one of the best
                     explanations I have
                     seen:</p>
                 <p>So basically what the answer says is that you can use the command <span class="formula">javac
@@ -268,55 +261,54 @@
                     unboxing). So the answer provides us with a small programme as the following:</p>
                 <code class="preformat">
                     import java.util.*;<br />
-<br />
+                    <br />
                     public class Boxing{<br />
-                       &nbsp;public static void main(String[] args){<br />
-                         &nbsp;&nbsp;Double d1 = 10.123;<br />
-                         &nbsp;&nbsp;Float  f1 = 12.12f;<br />
-                         &nbsp;&nbsp;Long   l1 = 1234L;<br />
-                         &nbsp;&nbsp;Integer i1 = 55555;<br />
-                         &nbsp;&nbsp;Short   s1 = 2345;<br />
-                         &nbsp;&nbsp;Byte    b1 = 89;<br />
-<br />
-                         &nbsp;&nbsp;double d2 = d1;<br />
-                         &nbsp;&nbsp;float  f2 = f1;<br />
-                         &nbsp;&nbsp;long   l2 = l1;<br />
-                         &nbsp;&nbsp;int    i2 = i1;<br />
-                         &nbsp;&nbsp;short  s2 = s1;<br />
-                         &nbsp;&nbsp;byte   b2 = b1;<br />
-                        &nbsp;}<br />
-                    } 
+                    &nbsp;public static void main(String[] args){<br />
+                    &nbsp;&nbsp;Double d1 = 10.123;<br />
+                    &nbsp;&nbsp;Float f1 = 12.12f;<br />
+                    &nbsp;&nbsp;Long l1 = 1234L;<br />
+                    &nbsp;&nbsp;Integer i1 = 55555;<br />
+                    &nbsp;&nbsp;Short s1 = 2345;<br />
+                    &nbsp;&nbsp;Byte b1 = 89;<br />
+                    <br />
+                    &nbsp;&nbsp;double d2 = d1;<br />
+                    &nbsp;&nbsp;float f2 = f1;<br />
+                    &nbsp;&nbsp;long l2 = l1;<br />
+                    &nbsp;&nbsp;int i2 = i1;<br />
+                    &nbsp;&nbsp;short s2 = s1;<br />
+                    &nbsp;&nbsp;byte b2 = b1;<br />
+                    &nbsp;}<br />
+                    }
                 </code>
                 <p>Then, using the command <span class="formula">javac -XD-printflat Boxing.java</span> (assuming we are
                     in the same directory as the file Boxing.java) will output a .java file with content as below:</p>
                 <code class="preformat">
                     import java.util.*;<br />
-<br />
+                    <br />
                     public class Boxing {<br />
-<br />
-                        &nbsp;public Boxing() {<br />
-                             &nbsp;&nbsp;super();<br />
-                         &nbsp;}<br />
-<br />
-                        &nbsp;public static void main(String[] args) {<br />
-                           &nbsp;&nbsp;Double d1 = <span class="emphasis">Double.valueOf</span>(10.123);<br />
-                           &nbsp;&nbsp;Float f1 = <span class="emphasis">Float.valueOf</span>(12.12F);<br />
-                           &nbsp;&nbsp;Long l1 = <span class="emphasis">Long.valueOf</span>(1234L);<br />
-                           &nbsp;&nbsp;Integer i1 = <span class="emphasis">Integer.valueOf</span>(55555);<br />
-                           &nbsp;&nbsp;Short s1 = <span class="emphasis">Short.valueOf</span>(2345);<br />
-                           &nbsp;&nbsp;Byte b1 = <span class="emphasis">Byte.valueOf</span>(89);<br />
-<br />
-                           &nbsp;&nbsp;double d2 = d1<span class="emphasis">.doubleValue()</span>;<br />
-                           &nbsp;&nbsp;float f2 = f1<span class="emphasis">.floatValue()</span>;<br />
-                           &nbsp;&nbsp;long l2 = l1<span class="emphasis">.longValue()</span>;<br />
-                           &nbsp;&nbsp;int i2 = i1<span class="emphasis">.intValue()</span>;<br />
-                           &nbsp;&nbsp;short s2 = s1<span class="emphasis">.shortValue()</span>;<br />
-                           &nbsp;&nbsp;byte b2 = b1<span class="emphasis">.byteValue()</span>;<br />
-                        &nbsp;}<br />
+                    <br />
+                    &nbsp;public Boxing() {<br />
+                    &nbsp;&nbsp;super();<br />
+                    &nbsp;}<br />
+                    <br />
+                    &nbsp;public static void main(String[] args) {<br />
+                    &nbsp;&nbsp;Double d1 = <span class="emphasis">Double.valueOf</span>(10.123);<br />
+                    &nbsp;&nbsp;Float f1 = <span class="emphasis">Float.valueOf</span>(12.12F);<br />
+                    &nbsp;&nbsp;Long l1 = <span class="emphasis">Long.valueOf</span>(1234L);<br />
+                    &nbsp;&nbsp;Integer i1 = <span class="emphasis">Integer.valueOf</span>(55555);<br />
+                    &nbsp;&nbsp;Short s1 = <span class="emphasis">Short.valueOf</span>(2345);<br />
+                    &nbsp;&nbsp;Byte b1 = <span class="emphasis">Byte.valueOf</span>(89);<br />
+                    <br />
+                    &nbsp;&nbsp;double d2 = d1<span class="emphasis">.doubleValue()</span>;<br />
+                    &nbsp;&nbsp;float f2 = f1<span class="emphasis">.floatValue()</span>;<br />
+                    &nbsp;&nbsp;long l2 = l1<span class="emphasis">.longValue()</span>;<br />
+                    &nbsp;&nbsp;int i2 = i1<span class="emphasis">.intValue()</span>;<br />
+                    &nbsp;&nbsp;short s2 = s1<span class="emphasis">.shortValue()</span>;<br />
+                    &nbsp;&nbsp;byte b2 = b1<span class="emphasis">.byteValue()</span>;<br />
+                    &nbsp;}<br />
                     }
                 </code>
-                <p>As seen in the above, auto-boxing and auto-unboxing are simply convenient things (the <span
-                        class="emphasis">red addition</span> above) that the Java compiler does for us so that we don't
+                <p>As seen in the above, auto-boxing and auto-unboxing are simply convenient things (the <span class="emphasis">red addition</span> above) that the Java compiler does for us so that we don't
                     have to worry about changing a primitive data type to its corresponding wrapper class or vice versa
                     explicitly.</p>
             </section>
@@ -355,36 +347,35 @@
                 </p>
                 <p>Let's see some code in action next:</p>
                 <code class="preformat">
-                    public TypeWidening  {<br />
-                        &nbsp;byte b1 = 1;<br />
-                        &nbsp;short s1 = 1;<br />
-                        &nbsp;char c1 = 'a';<br />
-                        &nbsp;long l1 = 1L;<br />
-<br />
-                        &nbsp;public static main (String []) {<br />
-                            &nbsp;&nbsp;int i1 = b1; <span class="comment">// fine, widening will be done by Java</span><br />
-                            &nbsp;&nbsp;int i2 = s1; <span class="comment">// same</span><br />
-                            &nbsp;&nbsp;double d1 = c1; <span class="comment">// same</span><br />
-                            &nbsp;&nbsp;float f1 = l1; <span class="comment">// same</span><br />
-                        &nbsp;}<br />
+                    public TypeWidening {<br />
+                    &nbsp;byte b1 = 1;<br />
+                    &nbsp;short s1 = 1;<br />
+                    &nbsp;char c1 = 'a';<br />
+                    &nbsp;long l1 = 1L;<br />
+                    <br />
+                    &nbsp;public static main (String []) {<br />
+                    &nbsp;&nbsp;int i1 = b1; <span class="comment">// fine, widening will be done by Java</span><br />
+                    &nbsp;&nbsp;int i2 = s1; <span class="comment">// same</span><br />
+                    &nbsp;&nbsp;double d1 = c1; <span class="comment">// same</span><br />
+                    &nbsp;&nbsp;float f1 = l1; <span class="comment">// same</span><br />
+                    &nbsp;}<br />
                     }<br />
                 </code>
                 <p>Bear in mind that reference types work differently, so the below will not compile:</p>
                 <code class="preformat">
                     public WrongWidening {<br />
-                        &nbsp;Integer integer1 = 1;<br />
-<br />
-                        &nbsp;public static main (String[]) {<br />
-                            &nbsp;&nbsp;<span class="emphasis">Long long1 = integer1;</span> <span class="comment">// DNC, type Integer is not a subtype of Long</span><br />
-                        &nbsp;}<br />
+                    &nbsp;Integer integer1 = 1;<br />
+                    <br />
+                    &nbsp;public static main (String[]) {<br />
+                    &nbsp;&nbsp;<span class="emphasis">Long long1 = integer1;</span> <span class="comment">// DNC, type Integer is not a subtype of Long</span><br />
+                    &nbsp;}<br />
                     }<br />
                 </code>
                 <p>There's a point worth noticing in the above: note how char will not widen to short or the other round
                     (although they have the same size in bits), and byte will not widen to char (despite byte being
                     smaller than char), right? On top of that, why long can be promoted to float when long uses more
                     bits (64) than float (32)?</p>
-                <p>If we go back to the primitive type table above, we can see that char is <span
-                        class="emphasis">unsigned</span>, meaning that it does not allow negative values, whereas both
+                <p>If we go back to the primitive type table above, we can see that char is <span class="emphasis">unsigned</span>, meaning that it does not allow negative values, whereas both
                     byte and short are signed. That's why byte will not be promoted to char, nor will short. These data
                     types have incompatible ranges that it makes sense not to allow automatic conversion between them.
                 </p>
@@ -412,11 +403,11 @@
                 <p>Now, let's see how we can force Java to do a narrowing conversion for us with an explicit cast:</p>
                 <code class="preformat">
                     public TypeNarrowing {<br />
-                       &nbsp;int i1 = 10_0000_0000;<br />
-<br />
-                        &nbsp;public static main (String[]) {<br />
-                            &nbsp;&nbsp;short s1 = (short) i1; <span class="comment">// the parentheses plus the type name inside: (short) is required to be in front of the variable to be downcast</span><br />
-                        &nbsp;}<br />
+                    &nbsp;int i1 = 10_0000_0000;<br />
+                    <br />
+                    &nbsp;public static main (String[]) {<br />
+                    &nbsp;&nbsp;short s1 = (short) i1; <span class="comment">// the parentheses plus the type name inside: (short) is required to be in front of the variable to be downcast</span><br />
+                    &nbsp;}<br />
                     }<br />
                 </code>
                 <p>So an explicit cast is done just like that: <span class="formula">(&lt;type&gt;)
@@ -426,11 +417,11 @@
                     you know that T is a subtype of S. As an example:</p>
                 <code class="preformat">
                     public ReferenceTypeNarrowing {<br />
-                        &nbsp;Object obj1 = "I am actually a string";<br />
-<br />
-                        &nbsp;public static main (String[]) {<br />
-                            &nbsp;&nbsp;String str1 = (String) obj1; <span class="comment">// Okay, as obj1 is really a String value</span><br />
-                        &nbsp;}<br />
+                    &nbsp;Object obj1 = "I am actually a string";<br />
+                    <br />
+                    &nbsp;public static main (String[]) {<br />
+                    &nbsp;&nbsp;String str1 = (String) obj1; <span class="comment">// Okay, as obj1 is really a String value</span><br />
+                    &nbsp;}<br />
                     }<br />
                 </code>
             </section>
@@ -439,17 +430,14 @@
                 <p>Now let's learn about some common operators of the primitive data types. In the above, we have
                     already briefly talked about the numeric operators: <span class="specialName">+, -, *, /, %</span>.
                     What else are there?</p>
-                <p>We have been using one which we may have taken for granted: the equal sign <span
-                        class="emphasis">=</span> which is used for assignment.</p>
-                <p>That explains why we have something like: <span class="formula">int i1 = 1 + 1 * 1 / 1 % 1; <span
-                            class="comment">// i1
+                <p>We have been using one which we may have taken for granted: the equal sign <span class="emphasis">=</span> which is used for assignment.</p>
+                <p>That explains why we have something like: <span class="formula">int i1 = 1 + 1 * 1 / 1 % 1; <span class="comment">// i1
                             will be 2</span></span></p>
                 <p>In the above, we can also observe how the operator precedence plays out as what we have learnt from
                     our arithmetics classes: while we read from left to right, we would do the calculation first before
                     we go back to the assignment operator (=), and we will carry out *, /, % before we do + or -.</p>
                 <p>So with all this knowledge, we should be ready to look at the table of operators below: (a modified
-                    version from <a href="http://www.cs.bilkent.edu.tr/~guvenir/courses/CS101/op_precedence.html"
-                        class="external" target="_blank">Bilkent University</a>)</p>
+                    version from <a href="http://www.cs.bilkent.edu.tr/~guvenir/courses/CS101/op_precedence.html" class="external" target="_blank">Bilkent University</a>)</p>
                 <table class="table">
                     <tr class="table__row">
                         <th>Precedence</th>
@@ -561,21 +549,16 @@
                 <h4 class="topic__section__subtitle--small">Precedence 15</h4>
                 <p>Now let's kick off with (), [] &amp; . in row <span class="emphasis">precedence 15</span>. () states
                     that what is inside the parentheses should be executed first. For example:</p>
-                <code
-                    class="preformat">int i1 = (1 + 3) * 5 <span class="comment">// will be 20 because 1 + 3 will be executed before * 5</span></code>
+                <code class="preformat">int i1 = (1 + 3) * 5 <span class="comment">// will be 20 because 1 + 3 will be executed before * 5</span></code>
                 <p>As for [] (square brackets), they are used for declaration of arrays and for selection of array
-                    elements. We will talk more about arrays in a later topic: <a href="ch5.html"
-                        class="nav__link">Topic 5: Arrays &amp; Collections</a>. For now, let's look at a couple
+                    elements. We will talk more about arrays in a later topic: <a href="ch5.html" class="nav__link">Topic 5: Arrays &amp; Collections</a>. For now, let's look at a couple
                     examples below:</p>
-                <code
-                    class="preformat">int[] intArray = new int[5]; <span class="comment">// declare an int array called intArray and assign it to an int array with 5 elements to allocate in memory</span></code>
+                <code class="preformat">int[] intArray = new int[5]; <span class="comment">// declare an int array called intArray and assign it to an int array with 5 elements to allocate in memory</span></code>
                 <p>The above can actually be divided into two separate steps:</p>
-                <code
-                    class="preformat">int [] intArray; <span class="comment">// declare an int array called intArray</span><br />
-                intArray = new int[5]; <span class="comment">// now assign the variable to an int array with 5 elements</span></code>
+                <code class="preformat">int [] intArray; <span class="comment">// declare an int array called intArray</span><br />
+                    intArray = new int[5]; <span class="comment">// now assign the variable to an int array with 5 elements</span></code>
                 <p>We can also then assign an int value to the first element inside the int array as follows:</p>
-                <code
-                    class="preformat">intArray[0] = 1; <span class="comment">// select index 0 of intArray (i.e. the first element in intArray) and assign it to 1</span></code>
+                <code class="preformat">intArray[0] = 1; <span class="comment">// select index 0 of intArray (i.e. the first element in intArray) and assign it to 1</span></code>
                 <p>We will talk about <span class="emphasis">indexing</span> in Java in details later. For now, (just
                     like any other programming languages) index always starts at 0 in Java. That's why index 0 refers to
                     the first element, and index 1 refers to the second element, etc.</p>
@@ -584,25 +567,20 @@
                 <p>We use . to select the member <span class="specialName">valueOf</span> (which is a method here) of
                     the Integer class in the example.</p>
                 <p>Let's look at another example below:</p>
-                <code
-                    class="preformat">System.out.println(Math<span class="emphasis">.</span>PI); <span class="comment">// this will print out 3.141592653589793</span></code>
-                <p>This time, we use <span class="specialName">.</span> to select the member <span
-                        class="specialName">PI</span> (which is a variable) of the Math class and print it out to the
+                <code class="preformat">System.out.println(Math<span class="emphasis">.</span>PI); <span class="comment">// this will print out 3.141592653589793</span></code>
+                <p>This time, we use <span class="specialName">.</span> to select the member <span class="specialName">PI</span> (which is a variable) of the Math class and print it out to the
                     console via <span class="specialName">System.out.println()</span>.</p>
                 <h3 class="topic__section__subtitle">Unary operators in depth</h3>
                 <h4 class="topic__section__subtitle--small">Precedence 14 &amp; Precedence 13</h4>
-                <p>Note that the two rows <span class="emphasis">precedence 14 &amp; 13</span> are composed of <span
-                        class="specialName">unary operators</span>: they are operators that work with one and only one
+                <p>Note that the two rows <span class="emphasis">precedence 14 &amp; 13</span> are composed of <span class="specialName">unary operators</span>: they are operators that work with one and only one
                     variable or value.</p>
                 <p>We can see <span class="specialName">++</span> &amp; <span class="specialName">--</span> in both rows
                     <span class="emphasis">precedence 14 &amp; 13</span>. In row <span class="emphasis">precedence
                         14</span>, they are <span class="emphasis">post</span>-increment and decrement respectively,
-                    whereas in <span class="emphasis">precedence 13</span>, they are <span
-                        class="emphasis">pre</span>-increment &amp; decrement. So, what are their differences?
+                    whereas in <span class="emphasis">precedence 13</span>, they are <span class="emphasis">pre</span>-increment &amp; decrement. So, what are their differences?
                 </p>
                 <p>As can be told from their names, the post-operators in row <span class="emphasis">precedence
-                        14</span> are placed after a numeric variable, whereas the pre-operators in <span
-                        class="emphasis">precendence 13</span> are placed in front:</p>
+                        14</span> are placed after a numeric variable, whereas the pre-operators in <span class="emphasis">precendence 13</span> are placed in front:</p>
                 <code class="preformat">
                     int i1 = 0;<br />
                     int i2 = 0;<br />
@@ -629,8 +607,7 @@
                 </code>
                 <p>Now it comes the bitwise operator <span class="specialName">~</span>. This one is used for
                     manipulating individual bits. Specifically, it turns the '1' bits to '0', and the '0' bits to '1'.
-                    Please note that this operator is based on <a
-                        href="https://en.wikipedia.org/wiki/Two%27s_complement" class="external">two's complement</a>
+                    Please note that this operator is based on <a href="https://en.wikipedia.org/wiki/Two%27s_complement" class="external">two's complement</a>
                     used in binary arithmetics. In short, <span class="emphasis">an integer N will become -(N+1)</span>
                     after the bitwise complement conversion. Let's have a look at the below example:</p>
                 <code class="preformat">
@@ -669,8 +646,7 @@
                     <div id="ani--1_2">0001010</div>
                     <div id="ani--1_3">0</div>
                 </div>
-                <p>Next, let's talk about <span class="specialName">&gt;&gt;</span>, which is known as the <span
-                        class="emphasis">signed</span> bitwise right shift.
+                <p>Next, let's talk about <span class="specialName">&gt;&gt;</span>, which is known as the <span class="emphasis">signed</span> bitwise right shift.
                     Since it is "signed", this operator will use the left most bit to fill in the trailing positions
                     after right shift. As a side note, Java uses <span class="specialName">two's complement</span> to
                     represent negative integers in binary. Therefore, the integer -10 is 1111111111110110 in Java
@@ -686,8 +662,7 @@
                     <div id="ani--2_2">11111111111101</div>
                     <div id="ani--2_1">10</div>
                 </div>
-                <p>Finally, <span class="specialName">&gt;&gt;&gt;</span> which is called <span
-                        class="emphasis">unsigned</span> bitwise right shift, will use '0' to fill in the trailing
+                <p>Finally, <span class="specialName">&gt;&gt;&gt;</span> which is called <span class="emphasis">unsigned</span> bitwise right shift, will use '0' to fill in the trailing
                     positions after right shift. As an example:</p>
                 <code class="preformat">
                     int i1 = -10; <span class="comment">// 1111111111110110</span><br />
@@ -700,24 +675,20 @@
                 </p>
                 <p>Instead of doing the above, we can do this: <span class="formula">int mid_to_calc = (small + big) >>>
                         1</span>, given that both small and big are positive integers here.</p>
-                <p>If you are interested in more details on this topic, I suggest that you refer to <a
-                        href="https://stackoverflow.com/questions/19058859/what-does-mean-in-java/19058871"
-                        class="external" target="_blank">this stackoverflow post</a> which I personally find very
+                <p>If you are interested in more details on this topic, I suggest that you refer to <a href="https://stackoverflow.com/questions/19058859/what-does-mean-in-java/19058871" class="external" target="_blank">this stackoverflow post</a> which I personally find very
                     helpful.</p>
                 <h4 class="topic__section__subtitle--small">Precedence 9 to Precedence 8: Relational operations</h4>
-                <p>In the rows of precedence 9 and precedence 8, we can see six <span class="keyword">relational
-                        operators</span>. There's also the <span class="specialName">instanceof</span> operator, which
+                <p>In the rows of precedence 9 and precedence 8, we can see six <span class="keyword">relational operators</span>. There's also the <span class="specialName">instanceof</span> operator, which
                     we will talk about at the end of this section. Right now, let's dive into the six relational
                     operators first.</p>
                 <p>They are <span class="specialName">==</span> (is equal to), <span class="specialName">!=</span> (is
-                    not equal to), <span class="specialName">&gt;</span> (greater than), <span
-                        class="specialName">&lt;</span> (less than), <span class="specialName">&gt;=</span> (greater
+                    not equal to), <span class="specialName">&gt;</span> (greater than), <span class="specialName">&lt;</span> (less than), <span class="specialName">&gt;=</span> (greater
                     than or equal to), and <span class="specialName">&lt;=</span> (less than or equal to).</p>
                 <p>The output of these relational operators is a boolena value (either true or false). Below shows an
                     example.</p>
                 <code class="preformat">
                     int i1 = 1;<br />
-                    int i2 = 2; <span class="comment">// or simply write "int i1 = 1, i2 = 2";</span><br /> 
+                    int i2 = 2; <span class="comment">// or simply write "int i1 = 1, i2 = 2";</span><br />
                     System.out.println(i1 == i2); <span class="comment">false as 1 is not equal to 2</span><br />
                     System.out.println(i1 != i2); <span class="comment">true as 1 is not equal to 2</span><br />
                     System.out.println(i1 &lt; i2); <span class="comment">true as 1 is less than 2</span><br />
@@ -725,21 +696,42 @@
                     System.out.println(i1 &lt;= i2); <span class="comment">true as 1 is less than or equal to 2</span><br />
                     System.out.println(i1 &gt;= i2); <span class="comment">false as 1 is not greater than or equal to 2</span>
                 </code>
-                <p>There's one thing we need to pay attention to when we're using relational operators with primitive types, which is that they can all be compared across all types:</p>
+                <p>There's one thing we need to pay attention to when we're using relational operators with primitive
+                    types, which is that they can all be compared across all types:</p>
                 <code class="preformat">
                     float f1 = 2; char c1 = '\001'; short s1 = 0; <span class="comment">f1 is 2.0, c1 is '\001' (i.e. 1) and s1 is 0. Note the use of ; instead of ,</span><br />
                     System.out.println(f1 > c1); <span class="comment">// true</span><br />
                     System.out.println(c1 = s1); <span class="comment">// true</span>
                 </code>
+                <p>When it comes to reference types, things get quite tricky pretty fast as we need to consider different things. First, recall that a reference type is just a means to access the object it references stored in memory.
+                    Now when we use the <span class="specialName">==</span> operator on reference types, we are <span class="emphasis">NOT</span> testing whether they have the same values anymore, but we're testing if the reference types actually <span class="emphasis">refer to the same object in the memory</span>.
+                </p>
+                <p>So here's the deal: if I create two instances (a.k.a. objects) of the Integer class (or some other classes), regardless of whether they have the same value, the two reference types that point to the two instances are not equal under the <span class="specialName">==</span> test.</p>
+                <p>That said, when you're ready to create two Integer instances that have the same value and expect them to be not equal, there's a caveat. That caveat comes from a concept called <span class="keyword">Integer caching</span> in Java. For example:</p>
+                <code class="preformat">
+                    Integer a = 1; <span class="comment">// autoboxing values between -128 &amp; 127, caching takes place</span><br />
+                    Integer b = 1; <span class="comment">// again, pointing to the created instance above as it has the same value</span><br />
+                    Integer c = new Integer(1); <span class="comment">// using the keyword new forces Java to create a new Integer instance!</span><br />
+                    System.out.println(a == b); <span class="comment">// true due to caching</span><br />
+                    System.out.println(a == c); <span class="comment">// false, as c is a new Integer object</span><br />
+<br />
+
+                </code>
+                <p>Caching also applies to other non-floating wrapper classes like Long, Char and Short as demonstrated below.</p>
+                <code class="preformat">
+                    Short.valueOf((short) 5) == Short.valueOf((short) 5); <span class="comment">// true as caching takes place in range [-127, 128]</span><br />
+                    Character.valueOf('\001') == Character.valueOf('\001'); <span class="comment">// true again</span><br />
+                    Long.valueOf(130) == Long.valueOf(130); <span class="comment">// false this time as caching does not work when out of range [-127, 128]</span>
+                </code>
+                <p>When it comes to comparing values with <span class="specialName">&lt;, &gt;, &lt;= &amp; &gt;=</span>, they are more straightforward.
+                Just know that they work across all types of wrapper classes, which means you can compare a Double value and a Short value without encountering an issue.</p>
 
 
 
             </section>
         </main>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
-        integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ=="
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous"></script>
     <script src="../javascript/nav.js"></script>
     <script src="../javascript/theme.js"></script>
     <script src="../javascript/backToTop.js"></script>
@@ -750,33 +742,84 @@
     <script src="../javascript/commentToggle.js"></script>
 
     <script>
-        var tl_1 = gsap.timeline({ paused: true, onComplete: () => { Reset(tl_1) } });
-        tl_1.to("#ani--1_1", { opacity: 0, duration: 1 });
-        tl_1.to("#ani--1_2", { x: -15, duration: 1 });
-        tl_1.to("#ani--1_3", { opacity: 1, duration: 1 });
-        tl_1.to("#ani--1_3", { x: -15, duration: 1 });
-        tl_1.to("#ani--1_2", { opacity: 0, duration: 5, delay: 2 });
-        tl_1.to("#ani--1_3", { opacity: 0, duration: 5 }, 6);
+        var tl_1 = gsap.timeline({
+            paused: true,
+            onComplete: () => {
+                Reset(tl_1)
+            }
+        });
+        tl_1.to("#ani--1_1", {
+            opacity: 0,
+            duration: 1
+        });
+        tl_1.to("#ani--1_2", {
+            x: -15,
+            duration: 1
+        });
+        tl_1.to("#ani--1_3", {
+            opacity: 1,
+            duration: 1
+        });
+        tl_1.to("#ani--1_3", {
+            x: -15,
+            duration: 1
+        });
+        tl_1.to("#ani--1_2", {
+            opacity: 0,
+            duration: 5,
+            delay: 2
+        });
+        tl_1.to("#ani--1_3", {
+            opacity: 0,
+            duration: 5
+        }, 6);
 
         var tl_1_play = document.querySelector("#tl_1_player");
-        tl_1_play.addEventListener('click', () => { tl_1.restart() });
+        tl_1_play.addEventListener('click', () => {
+            tl_1.restart()
+        });
 
-        var tl_2 = gsap.timeline({ paused: true, onComplete: () => { Reset(tl_2) } });
-        tl_2.to("#ani--2_1", { opacity: 0, duration: 1 });
-        tl_2.to("#ani--2_2", { x: 20, duration: 1 });
-        tl_2.to("#ani--2_3", { opacity: 1, duration: 1 });
-        tl_2.to("#ani--2_3", { x: 20, duration: 1 });
-        tl_2.to("#ani--2_2", { opacity: 0, duration: 5, delay: 2 });
-        tl_2.to("#ani--2_3", { opacity: 0, duration: 5 }, 6);
+        var tl_2 = gsap.timeline({
+            paused: true,
+            onComplete: () => {
+                Reset(tl_2)
+            }
+        });
+        tl_2.to("#ani--2_1", {
+            opacity: 0,
+            duration: 1
+        });
+        tl_2.to("#ani--2_2", {
+            x: 20,
+            duration: 1
+        });
+        tl_2.to("#ani--2_3", {
+            opacity: 1,
+            duration: 1
+        });
+        tl_2.to("#ani--2_3", {
+            x: 20,
+            duration: 1
+        });
+        tl_2.to("#ani--2_2", {
+            opacity: 0,
+            duration: 5,
+            delay: 2
+        });
+        tl_2.to("#ani--2_3", {
+            opacity: 0,
+            duration: 5
+        }, 6);
 
         var tl_2_play = document.querySelector("#tl_2_player");
-        tl_2_play.addEventListener('click', () => { tl_2.restart() });
+        tl_2_play.addEventListener('click', () => {
+            tl_2.restart()
+        });
 
         function Reset(tl) {
             tl.pause();
             tl.progress(0);
         }
-
     </script>
 </body>
 

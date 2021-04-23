@@ -30,5 +30,10 @@ var keywords = [
     {
         "word": "relational operators",
         "definition": "Relational operators compare between operands and show their relationship."
-    }
+    },
+    {
+        "word": "Integer caching",
+        "definition": "Introduced in Java 5, this feature applies when autoboxing to Integer values in between -128 to 127; the created Integer references will point to the same objects of the same values previously created." 
+    },
+
 ]

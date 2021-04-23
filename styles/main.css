@@ -812,6 +812,18 @@ body {
   fill: #fff;
 }
 
+.nav__icon__svg > *:last-child {
+  display: none;
+}
+
+.nav__icon__svg--open > *:first-child {
+  display: none;
+}
+
+.nav__icon__svg--open > *:last-child {
+  display: block;
+}
+
 .nav__links {
   position: fixed;
   z-index: 10;
@@ -893,7 +905,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   font-family: "Montserrat", sans-serif;
-  font-size: calc(var(--smaller)*0.95);
+  font-size: calc(var(--smaller) * 0.95);
   padding: 3rem 0;
 }
 
