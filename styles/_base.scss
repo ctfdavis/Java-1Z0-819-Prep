@@ -27,6 +27,14 @@
     --biggest: 2.75rem;
 
     font-size: 62.5%;
+
+    @media screen and (min-width: 81.25em) { // 1300px
+        font-size: 66%;
+    }
+
+    @media screen and (min-width: 93.75em) { // 1500px
+        font-size: 69%;
+    }
 }
 
 html {

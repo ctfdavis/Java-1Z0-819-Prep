@@ -39,19 +39,19 @@
 
 /* old keyword page */
 
-.keywords {
-    list-style: none;
-    font-size: var(--big);
-    margin-left: 5rem;
-}
+// .keywords {
+//     list-style: none;
+//     font-size: var(--big);
+//     margin-left: 5rem;
+// }
 
-.details {
-    margin-bottom: var(--primary-margin);
-}
+// .details {
+//     margin-bottom: var(--primary-margin);
+// }
 
-.summary {
-    outline: none;
-}
+// .summary {
+//     outline: none;
+// }
 
 /* new keyword page */
 
@@ -62,6 +62,10 @@
     gap: 2rem;
     padding: 5rem;
     justify-content: center;
+
+    @media only screen and (max-width: 37.5em) { //600px
+        grid-auto-rows: min-content;
+    }
 }
 
 .card {

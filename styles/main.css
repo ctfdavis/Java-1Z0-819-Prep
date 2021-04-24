@@ -27,6 +27,18 @@
   font-size: 62.5%;
 }
 
+@media screen and (min-width: 81.25em) {
+  :root {
+    font-size: 66%;
+  }
+}
+
+@media screen and (min-width: 93.75em) {
+  :root {
+    font-size: 69%;
+  }
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -109,20 +121,6 @@ body {
 }
 
 /* old keyword page */
-.keywords {
-  list-style: none;
-  font-size: var(--big);
-  margin-left: 5rem;
-}
-
-.details {
-  margin-bottom: var(--primary-margin);
-}
-
-.summary {
-  outline: none;
-}
-
 /* new keyword page */
 .cards {
   display: -ms-grid;
@@ -136,6 +134,13 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .cards {
+    grid-auto-rows: -webkit-min-content;
+    grid-auto-rows: min-content;
+  }
 }
 
 .card {
