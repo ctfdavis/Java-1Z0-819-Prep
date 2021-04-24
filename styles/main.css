@@ -129,8 +129,10 @@ body {
   display: grid;
   -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-auto-rows: minmax(30rem, -webkit-max-content);
+  grid-auto-rows: minmax(30rem, max-content);
   gap: 2rem;
-  padding: 3rem;
+  padding: 5rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -144,7 +146,6 @@ body {
           box-shadow: var(--primary-shadow);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  height: 30rem;
 }
 
 .card:hover {
@@ -155,7 +156,7 @@ body {
 }
 
 .card__title {
-  height: 4rem;
+  min-height: 4rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   text-align: center;
@@ -167,9 +168,7 @@ body {
 }
 
 .card__details {
-  margin: auto 0;
-  overflow-y: auto;
-  height: 20rem;
+  margin-bottom: var(--secondary-margin);
 }
 
 .modal {
@@ -580,6 +579,10 @@ body {
   cursor: pointer;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+}
+
+.sidebar__btn:hover {
+  background-color: var(--highlight-color);
 }
 
 .sidebar__btn--expand {

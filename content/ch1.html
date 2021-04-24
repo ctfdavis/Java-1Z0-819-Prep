@@ -724,7 +724,18 @@
                     Long.valueOf(130) == Long.valueOf(130); <span class="comment">// false this time as caching does not work when out of range [-127, 128]</span>
                 </code>
                 <p>When it comes to comparing values with <span class="specialName">&lt;, &gt;, &lt;= &amp; &gt;=</span>, they are more straightforward.
-                Just know that they work across all types of wrapper classes, which means you can compare a Double value and a Short value without encountering an issue.</p>
+                You need to know that they work across all types of wrapper classes, which means you can compare a Double value and a Short value without encountering an issue. For instance:</p>
+                <code class="preformat">
+                    Short s1 = (short) 5;<br />
+                    Double d1 = 5.1;<br />
+                    System.out.println(d1 > s1); <span class="comment">// true</span>
+                </code>
+                <p>Finally, let's talk about the <span class="specialName">instanceof</span> operator. It only works for objects because it tests if an object belongs to (is an instance of) a particular class.</p>
+                <p>For example, if we create an Integer value <span class="specialName">int1</span>, then <span class="formula">int1 instanceof Integer</span> will return <span class="emphasis">true</span>. Since all objects in Java ultimately inherit from the <span class="specialName">Object</span> class, <span class="formula">int1 instanceof Object</span> will also return true.</p>
+                <p>How about <span class="formula">int1 instanceof Double</span>? Yes, it will return <span class="emphasis">false</span> since the Integer class is not a subtype of the Double class. We will dive into objects and the concepts behind OOP (object-oriented programming) in Java in topic 3: <a href="./ch3.html" class="nav__link">Object-oriented Programming Concepts</a>.</p>
+                <h4 class="topic__section__subtitle--small">Precedence 7 to Precedence 3: Bitwise &amp; Logical operations</h4>
+                <p>Similar to relational operators, logical operators return a boolean value (either true or false), but instead of performing comparison between values, logical operators take two boolean values and apply <span class="emphasis">AND/OR</span> to them to evaulate the final boolean value.</p>
+                <p>Notice that in rows precedence 7 to precendence 5, <span class="specialName">&, ^, |</span> are the bitwise operators of "AND/OR". Before we talk about them though, we will first look at the logical counterparts: <span class="specialName">&& and ||</span>.</p>
 
 
 

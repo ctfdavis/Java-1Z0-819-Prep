@@ -228,6 +228,10 @@
         cursor: pointer;
         transition: all 0.3s ease-out;
 
+        &:hover {
+            background-color: var(--highlight-color);
+        }
+
         &--expand {
             left: 28rem;
         }
