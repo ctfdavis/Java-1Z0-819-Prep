@@ -18,7 +18,7 @@
   --code-block: #d7fae7;
   --primary-gradient: linear-gradient(45deg, #bcf1e4, #aeeff5 40%, #d7fae7);
   --secondary-gradient: linear-gradient(45deg, #333030, #202020 40%, #1a1818);
-  --tertiary-gradient: linear-gradient(45deg, rgba(188, 241, 228, 0.7), rgba(174, 239, 245, 0.7) 40%, rgba(215, 250, 231, 0.7));
+  --tertiary-gradient: linear-gradient(45deg, rgba(188, 241, 228, 0.6), rgba(174, 239, 245, 0.7) 40%, rgba(215, 250, 231, 0.6));
   --smaller: 1.4rem;
   --regular: 1.6rem;
   --big: 2rem;
@@ -49,6 +49,7 @@ body {
 
 ::-webkit-scrollbar {
   height: 6px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -107,6 +108,7 @@ body {
   }
 }
 
+/* old keyword page */
 .keywords {
   list-style: none;
   font-size: var(--big);
@@ -119,6 +121,55 @@ body {
 
 .summary {
   outline: none;
+}
+
+/* new keyword page */
+.cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem;
+  padding: 3rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card {
+  background-color: var(--code-block);
+  padding: 2rem;
+  border-radius: 2rem;
+  -webkit-box-shadow: var(--primary-shadow);
+          box-shadow: var(--primary-shadow);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  height: 30rem;
+}
+
+.card:hover {
+  -webkit-box-shadow: var(--secondary-shadow);
+          box-shadow: var(--secondary-shadow);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.card__title {
+  height: 4rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: var(--small);
+  overflow-x: auto;
+  border-bottom: var(--primary-line);
+}
+
+.card__details {
+  margin: auto 0;
+  overflow-y: auto;
+  height: 20rem;
 }
 
 .modal {
@@ -814,6 +865,11 @@ body {
 
 .nav__icon__svg > *:last-child {
   display: none;
+}
+
+.nav__icon__svg--open {
+  height: 2.5rem;
+  width: 2.5rem;
 }
 
 .nav__icon__svg--open > *:first-child {

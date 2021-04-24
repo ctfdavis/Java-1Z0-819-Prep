@@ -2,6 +2,7 @@ var sidebar__icon = document.querySelector('.sidebar__icon');
 var sidebar__btn = document.querySelector('.sidebar__btn');
 var sidebar__links = document.querySelector('.sidebar__links');
 var sidebar__link = document.querySelectorAll('.sidebar__link');
+var nonSidebar = document.querySelectorAll('.container > *:not(.sidebar__links)');
 const expandSidebar = () => {
     sidebar__icon.classList.toggle('sidebar__icon--expand');
     sidebar__btn.classList.toggle('sidebar__btn--expand');

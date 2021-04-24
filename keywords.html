@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="src/favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:wght@200;400&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css" />
     <title>Java 1Z0-819 Prep</title>
 </head>
@@ -64,10 +63,10 @@
         </header>
         <main>
             <div class="search-container">
-                <input type="search" name="search" id="search" class="search-bar" placeholder="search..."
-                    onkeyup="searchFunction()" onchange="searchFunction()">
+                <input type="search" name="search" id="search" class="search-bar" placeholder="search..." onkeyup="searchFunction()" onchange="searchFunction()">
             </div>
-            <ul class="keywords"></ul>
+            <!-- <ul class="keywords"></ul> -->
+            <div class="cards"></div>
         </main>
     </div>
 
@@ -76,31 +75,50 @@
     <script src="./javascript/sizeControl.js"></script>
     <script src="./javascript/theme.js"></script>
     <script src="./javascript/keywords.js"></script>
-    <script src="./javascript/keywordsPage.js"></script>
+    <!-- <script src="./javascript/keywordsPage.js"></script> -->
+    <script src="./javascript/keywordsPage_new.js"></script>
     <script>
         const searchFunction = () => {
             var input, filter, ul, li;
             input = document.getElementById("search");
             filter = input.value.toUpperCase();
-            ul = document.querySelector(".keywords");
-            li = ul.getElementsByTagName('li');
+            cards = document.querySelector(".cards");
+            card = cards.querySelectorAll(".card");
+            if (input.value.length < 1) {
+                cards.style.gridTemplateColumns = "repeat(auto-fit, minmax(25rem, 1fr))";
+            } else {
+                cards.style.gridTemplateColumns = "repeat(auto-fit, 30rem)";
+            }
 
-            for (i = 0; i < li.length; i++) {
-                key = li[i].getElementsByTagName("summary")[0].firstChild.data;
-                if (input.value === "") {
-                    li[i].firstElementChild.open = false;
-                }
+            // for (i = 0; i < li.length; i++) {
+            //     key = li[i].getElementsByTagName("summary")[0].firstChild.data;
+            //     if (input.value === "") {
+            //         li[i].firstElementChild.open = false;
+            //     }
+            //     if (key.toUpperCase().indexOf(filter) > -1) {
+            //         li[i].style.display = "";
+            //         if (key.toUpperCase() === filter) {
+            //             li[i].firstElementChild.open = true;
+            //         }
+            //     }
+            //     else {
+            //         if (input.value === "") {
+            //             li[i].style.display = "";
+            //         } else {
+            //             li[i].style.display = "none";
+            //         }
+            //     }
+            // }
+
+            for (i = 0; i < card.length; i++) {
+                key = card[i].querySelector(".card__title").innerHTML;
                 if (key.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                    if (key.toUpperCase() === filter) {
-                        li[i].firstElementChild.open = true;
-                    }
-                }
-                else {
+                    card[i].style.display = "";
+                } else {
                     if (input.value === "") {
-                        li[i].style.display = "";
+                        card[i].style.display = "";
                     } else {
-                        li[i].style.display = "none";
+                        card[i].style.display = "none";
                     }
                 }
             }

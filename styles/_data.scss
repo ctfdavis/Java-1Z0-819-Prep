@@ -37,6 +37,8 @@
     }
 }
 
+/* old keyword page */
+
 .keywords {
     list-style: none;
     font-size: var(--big);
@@ -49,6 +51,54 @@
 
 .summary {
     outline: none;
+}
+
+/* new keyword page */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem , 1fr));
+    gap: 2rem;
+    padding: 3rem;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--code-block);
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: var(--primary-shadow);
+    transition: all 0.3s;
+    // display: flex;
+    // flex-direction: column;
+    // gap: 0.65rem;
+    height: 30rem;
+
+    &:hover {
+        box-shadow: var(--secondary-shadow);
+        transform: scale(1.05);
+    }
+
+    &__title {
+        height: 4rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        font-size: var(--small);
+        overflow-x: auto;
+        border-bottom: var(--primary-line);
+    }
+
+    &__details {
+        margin: auto 0;
+        overflow-y: auto;
+        height: 20rem;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+    }
 }
 
 .modal {

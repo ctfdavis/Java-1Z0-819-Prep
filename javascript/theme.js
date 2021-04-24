@@ -33,7 +33,7 @@ const themeToggle = () => {
         root_theme.style.setProperty('--link-color', "#354A12");
         root_theme.style.setProperty('--comment-color', '#4b4b4b');
         root_theme.style.setProperty('--code-block', "#d7fae7");
-        root_theme.style.setProperty('--tertiary-gradient', "linear-gradient(45deg, rgba(188, 241, 228, 0.7), rgba(174, 239, 245, 0.7) 40%, rgba(215, 250, 231, 0.7))");
+        root_theme.style.setProperty('--tertiary-gradient', "linear-gradient(45deg, rgba(188, 241, 228, 0.6), rgba(174, 239, 245, 0.6) 40%, rgba(215, 250, 231, 0.6))");
         toggle = 0;
     }
 }
