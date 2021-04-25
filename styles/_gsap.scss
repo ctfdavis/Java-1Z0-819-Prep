@@ -14,6 +14,15 @@
     }
 }
 
+.gsap_ani--3 {
+    display: flex;
+    font-size: var(--bigger);
+    gap: 1rem;
+    & > *:not(.gsap_play) {
+        transition: all 0.3s;
+    }
+}
+
 #ani--1_3 {
     opacity: 0;
 }
@@ -31,6 +40,7 @@
     background-color: #fff;
     margin-right: var(--primary-margin);
     box-shadow: var(--primary-shadow);
+    transition: all 0.3s;
 
     &:hover,
     &:active {

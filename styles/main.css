@@ -740,6 +740,19 @@ body {
   letter-spacing: 0.3rem;
 }
 
+.gsap_ani--3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: var(--bigger);
+  gap: 1rem;
+}
+
+.gsap_ani--3 > *:not(.gsap_play) {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
 #ani--1_3 {
   opacity: 0;
 }
@@ -758,6 +771,8 @@ body {
   margin-right: var(--primary-margin);
   -webkit-box-shadow: var(--primary-shadow);
           box-shadow: var(--primary-shadow);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .gsap_play:hover, .gsap_play:active {

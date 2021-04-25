@@ -35,5 +35,16 @@ var keywords = [
         "word": "Integer caching",
         "definition": "Introduced in Java 5, this feature applies when autoboxing to Integer values in between -128 to 127; the created Integer references will point to the same objects of the same values previously created." 
     },
-
+    {
+        "word": "short-circuit",
+        "definition": "Short-circuit means that the second operand will not be checked if the first operand can decide the final outcome. For example, && is short-circuit so in the case of 'false && ++a>b', ++a will never be executed because the first operand 'false' can already determine the outcome to be false."
+    },
+    {
+        "word": "local variables",
+        "definition": "A local variable is a variable declared inside a method. Local variables are accessible only inside the method which declared them."
+    },
+    {
+        "word": "lambda expressions",
+        "definition": "A lambda expression is a block of code which takes in 0, 1, or more parameters and returns a value."
+    },
 ]
