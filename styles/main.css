@@ -806,11 +806,11 @@ body {
 }
 
 .glide__arrow--left {
-  left: 1rem;
+  left: 5vw !important;
 }
 
 .glide__arrow--right {
-  right: 1rem;
+  right: 10vw !important;
 }
 
 .glide__bullets {
@@ -1118,7 +1118,7 @@ body {
 }
 
 .topic {
-  width: 85%;
+  width: 80%;
   margin: 0 auto;
 }
 
