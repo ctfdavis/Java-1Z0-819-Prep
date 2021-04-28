@@ -63,7 +63,7 @@
         </header>
         <main>
             <div class="search-container">
-                <input type="search" name="search" id="search" class="search-bar" placeholder="search..." onkeyup="searchFunction()" onchange="searchFunction()">
+                <input type="search" name="search" id="search" class="search-bar" placeholder="search..." onkeyup="searchFunction()" onsearch="this.onkeyup();" onchange="searchFunction()">
             </div>
             <!-- <ul class="keywords"></ul> -->
             <div class="cards"></div>
