@@ -138,6 +138,13 @@
     font-family: "Montserrat", sans-serif;
     font-size: calc(var(--smaller) * 0.95);
     padding: 3rem 0;
+    height: 80vh;
+
+    @media only screen and (max-width: 25em) {
+        // 400px
+        font-size: calc(var(--smaller) * 0.9);
+    }
+
     &__topics {
         list-style: none;
     }
@@ -150,6 +157,20 @@
     &__link {
         @include link;
         white-space: nowrap;
+        border: none;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 1px 1px 3px rgba(58, 167, 125, 0.3),
+            2px 2px 4px rgba(200, 200, 200, 0.5), 3px 3px 5px rgba(15, 144, 144, 0.25);
+        background-color: rgba(240, 222, 255, 0.25);
+
+        @media only screen and (min-width: 31.25em) {
+            // 500px
+            letter-spacing: 0.1rem;
+        }
+
+        @media only screen and (max-width: 18.75em) {
+            //300px
+            white-space: normal;
+        }
     }
 
     &__link:link,

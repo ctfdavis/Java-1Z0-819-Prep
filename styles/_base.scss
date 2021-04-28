@@ -35,6 +35,10 @@
     @media screen and (min-width: 93.75em) { // 1500px
         font-size: 69%;
     }
+
+    @media screen and (max-width: 18.75em) { // 300px 
+        font-size: 45%;
+    }
 }
 
 html {

@@ -39,6 +39,12 @@
   }
 }
 
+@media screen and (max-width: 18.75em) {
+  :root {
+    font-size: 45%;
+  }
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -986,6 +992,13 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: calc(var(--smaller) * 0.95);
   padding: 3rem 0;
+  height: 80vh;
+}
+
+@media only screen and (max-width: 25em) {
+  .content {
+    font-size: calc(var(--smaller) * 0.9);
+  }
 }
 
 .content__topics {
@@ -1004,6 +1017,10 @@ body {
   -webkit-box-shadow: var(--secondary-shadow);
           box-shadow: var(--secondary-shadow);
   white-space: nowrap;
+  border: none;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 1px 1px 3px rgba(58, 167, 125, 0.3), 2px 2px 4px rgba(200, 200, 200, 0.5), 3px 3px 5px rgba(15, 144, 144, 0.25);
+          box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 1px 1px 3px rgba(58, 167, 125, 0.3), 2px 2px 4px rgba(200, 200, 200, 0.5), 3px 3px 5px rgba(15, 144, 144, 0.25);
+  background-color: rgba(240, 222, 255, 0.25);
 }
 
 .content__link:link, .content__link:visited {
@@ -1023,6 +1040,18 @@ body {
   cursor: none;
   pointer-events: none;
   background-color: var(--primary-grey);
+}
+
+@media only screen and (min-width: 31.25em) {
+  .content__link {
+    letter-spacing: 0.1rem;
+  }
+}
+
+@media only screen and (max-width: 18.75em) {
+  .content__link {
+    white-space: normal;
+  }
 }
 
 .content__link:link, .content__link:visited {
