@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="src/favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:wght@200;400&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/glide.core.min.css" />
+    <link rel="stylesheet" href="styles/glide.theme.min.css" />
     <title>Java 1Z0-819 Prep</title>
 </head>
 
@@ -19,12 +20,12 @@
                 <use xlink:href="./src/sprite.svg#icon-arrow-up"></use>
             </svg>
         </button>
-       <button class="theme">
-           <svg class="theme__icon">
-                 <use class="theme__icon--light" xlink:href="./src/sprite.svg#icon-sun"></use>
-                 <use class="theme__icon--dark" xlink:href="./src/sprite.svg#icon-moon"></use>
-           </svg>
-       </button> 
+        <button class="theme">
+            <svg class="theme__icon">
+                <use class="theme__icon--light" xlink:href="./src/sprite.svg#icon-sun"></use>
+                <use class="theme__icon--dark" xlink:href="./src/sprite.svg#icon-moon"></use>
+            </svg>
+        </button>
         <div class="size-control">
             <button class="size-control__icon size-control__icon-plus">
                 <svg>
@@ -61,150 +62,197 @@
             </nav>
         </header>
         <main class="topic">
-            <section class="topic__section">
-                <h1 class="topic__title">Topic 1: Java Data Types</h1>
-                <h2 class="topic__subtitle">Topic goals</h2>
-                <ol class="topic__goals">
-                    <li class="topic__goals__item">understand primitive types in Java</li>
-                    <li class="topic__goals__item">understand wrapper classes in Java</li>
-                    <li class="topic__goals__item">understand auto-boxing &amp; auto-unboxing</li>
-                    <li class="topic__goals__item">understand type promotion and casting</li>
-                    <li class="topic__goals__item">learn about operators and their precedence</li>
-                    <li class="topic__goals__item">learn about var (local variable type inference) &amp; lambda
-                        parameters
-                    </li>
-                </ol>
-            </section>
-            <section class="topic__section">
-                <h1 class="topic__title">Topic 2: Controlling Programme Flow</h1>
-                <h2 class="topic__subtitle">Topic goals</h2>
-                <ol class="topic__goals">
-                    <li class="topic__goals__item">understand for &amp; enhanced for loops</li>
-                    <li class="topic__goals__item">understand while &amp; do/while loops</li>
-                    <li class="topic__goals__item">understand if/else statements</li>
-                    <li class="topic__goals__item">understand switch statements</li>
-                </ol>
-            </section>
-            <section class="topic__section">
-                <h1 class="topic__title">Topic 3: Object-oriented Programming Concepts</h1>
-                <h2 class="topic__subtitle">Topic goals</h2>
-                <ol class="topic__goals">
-                    <li class="topic__goals__item">learn about objects, instances, classes &amp; constructors</li>
-                    <li class="topic__goals__item">learn about differences between primitive types and reference types
-                    </li>
-                    <li class="topic__goals__item">understand modifiers</li>
-                    <li class="topic__goals__item">learn about non-abstract classes &amp; abstract classes</li>
-                    <li class="topic__goals__item">understand polymorphism</li>
-                    <li class="topic__goals__item">learn about interfaces &amp; functional interfaces</li>
-                    <li class="topic__goals__item">learn about enums</li>
-                    <li class="topic__goals__item">learn about inner, nested &amp; anonymous classes</li>
-                    <li class="topic__goals__item">learn about garbage collection</li>
-                </ol>
-            </section>
-            <section class="topic__section">
-                <h1 class="topic__title">Topic 4: Exception Handling</h1>
-                <h2 class="topic__subtitle">Topic goals</h2>
-                <ol class="topic__goals">
-                    <li class="topic__goals__item">learn about different exception types</li>
-                    <li class="topic__goals__item">learn about throw &amp; throws</li>
-                    <li class="topic__goals__item">learn to handle exceptions with try/catch/finally blocks</li>
-                    <li class="topic__goals__item">learn to create custom exceptions</li>
-                </ol>
-            </section>
-            <section class="topic__section">
-                <h1 class="topic__title">Topic 5: Arrays &amp; Collections</h1>
-                <h2 class="topic__subtitle">Topic goals</h2>
-                <ol class="topic__goals">
-                    <li class="topic__goals__item">learn about arrays</li>
-                    <li class="topic__goals__item">learn about various Collections types (List, Set, Map &amp; Deque)
-                    </li>
-                    <li class="topic__goals__item">learn about Comparator &amp; Comparable Interfaces</li>
-                </ol>
-            </section>
-            <section class="topic__section">
-                <h1 class="topic__title">Topic 6: Streams &amp; Lambda Expressions</h1>
-                <h2 class="topic__subtitle">Topic goals</h2>
-                <ol class="topic__goals">
-                    <li class="topic__goals__item">learn to use lambdas to implement functional interfaces</li>
-                    <li class="topic__goals__item">learn to use Streams to filter, transform &amp; process data</li>
-                </ol>
-            </section>
-            <section class="topic__section">
-                <h1 class="topic__title">Topic 7: Module System</h1>
-                <h2 class="topic__subtitle">Topic goals</h2>
-                <ol class="topic__goals">
-                    <li class="topic__goals__item">understand the rationale &amp; structure of a module</li>
-                    <li class="topic__goals__item">learn about different types of module</li>
-                    <li class="topic__goals__item">learn to create module-info and its keywords</li>
-                    <li class="topic__goals__item">learn to display information about modules</li>
-                    <li class="topic__goals__item">learn about built-in JDK modules</li>
-                    <li class="topic__goals__item">learn about migration</li>
-                    <li class="topic__goals__item">learn about services</li>
-                </ol>
-            </section>
-            <section class="topic__section">
-                <h1 class="topic__title">Topic 8: I/O API</h1>
-                <h2 class="topic__subtitle">Topic goals</h2>
-                <ol class="topic__goals">
-                    <li class="topic__goals__item">learn to read from and write to files using I/O streams</li>
-                    <li class="topic__goals__item">understand the uses &amp; differences between various streams</li>
-                    <li class="topic__goals__item">understand serialization &amp; deserialization</li>
-                    <li class="topic__goals__item">learn to use NIO.2 to create &amp; use Path objects</li>
-                    <li class="topic__goals__item">learn to operate on files &amp; directories using NIO.2 Files</li>
-                </ol>
-            </section>
-            <section class="topic__section">
-                <h1 class="topic__title">Topic 9: JDBC</h1>
-                <h2 class="topic__subtitle">Topic goals</h2>
-                <ol class="topic__goals">
-                    <li class="topic__goals__item">learn to connect to databases with JDBC</li>
-                    <li class="topic__goals__item">learn to perform CRUD operations</li>
-                    <li class="topic__goals__item">learn to perform other database operations</li>
-                </ol>
-            </section>
-            <section class="topic__section">
-                <h1 class="topic__title">Topic 10: Localization</h1>
-                <h2 class="topic__subtitle">Topic goals</h2>
-                <ol class="topic__goals">
-                    <li class="topic__goals__item">learn about DateTime API</li>
-                    <li class="topic__goals__item">learn to use Locale</li>
-                    <li class="topic__goals__item">learn to use resource bundles</li>
-                </ol>
-            </section>
-            <section class="topic__section">
-                <h1 class="topic__title">Topic 11: Annotations</h1>
-                <h2 class="topic__subtitle">Topic goals</h2>
-                <ol class="topic__goals">
-                    <li class="topic__goals__item">learn to declare annotations</li>
-                    <li class="topic__goals__item">learn about built-in annotations</li>
-                    <li class="topic__goals__item">learn to use common annotations</li>
-                </ol>
-            </section>
-            <section class="topic__section">
-                <h1 class="topic__title">Topic 12: Security</h1>
-                <h2 class="topic__subtitle">Topic goals</h2>
-                <ol class="topic__goals">
-                    <li class="topic__goals__item">learn to prevent resource leaks</li>
-                    <li class="topic__goals__item">learn to mitigate injection, inclusion, and input validation</li>
-                    <li class="topic__goals__item">learn to secure resource access</li>
-                </ol>
-            </section>
-            <section class="topic__section">
-                <h1 class="topic__title">Special Topic: Java Command Line</h1>
-                <h2 class="topic__subtitle">Topic goals</h2>
-                <ol class="topic__goals">
-                    <li class="topic__goals__item">learn about basic Java commands for non-modular programmes</li>
-                    <li class="topic__goals__item">learn about Java commands for modular programmes</li>
-                    <li class="topic__goals__item">learn to discover & describe modules via the command line</li>
-                    <li class="topic__goals__item">learn to use jdeps to list packages</li>
-                </ol>
-            </section>
+            <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <li class="glide__slide">
+                            <h1 class="topic__title">Topic 1: Java Data Types</h1>
+                            <h2 class="topic__subtitle">Topic goals</h2>
+                            <ol class="topic__goals">
+                                <li class="topic__goals__item">understand primitive types in Java</li>
+                                <li class="topic__goals__item">understand wrapper classes in Java</li>
+                                <li class="topic__goals__item">understand auto-boxing &amp; auto-unboxing</li>
+                                <li class="topic__goals__item">understand type promotion and casting</li>
+                                <li class="topic__goals__item">learn about operators and their precedence</li>
+                                <li class="topic__goals__item">learn about var (local variable type inference) &amp; lambda
+                                    parameters
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="glide__slide">
+                            <h1 class="topic__title">Topic 2: Controlling Programme Flow</h1>
+                            <h2 class="topic__subtitle">Topic goals</h2>
+                            <ol class="topic__goals">
+                                <li class="topic__goals__item">understand for &amp; enhanced for loops</li>
+                                <li class="topic__goals__item">understand while &amp; do/while loops</li>
+                                <li class="topic__goals__item">understand if/else statements</li>
+                                <li class="topic__goals__item">understand switch statements</li>
+                            </ol>
+
+                        </li>
+                        <li class="glide__slide">
+                            <h1 class="topic__title">Topic 3: Object-oriented Programming Concepts</h1>
+                            <h2 class="topic__subtitle">Topic goals</h2>
+                            <ol class="topic__goals">
+                                <li class="topic__goals__item">learn about objects, instances, classes &amp; constructors</li>
+                                <li class="topic__goals__item">learn about differences between primitive types and reference types
+                                </li>
+                                <li class="topic__goals__item">understand modifiers</li>
+                                <li class="topic__goals__item">learn about non-abstract classes &amp; abstract classes</li>
+                                <li class="topic__goals__item">understand polymorphism</li>
+                                <li class="topic__goals__item">learn about interfaces &amp; functional interfaces</li>
+                                <li class="topic__goals__item">learn about enums</li>
+                                <li class="topic__goals__item">learn about inner, nested &amp; anonymous classes</li>
+                                <li class="topic__goals__item">learn about garbage collection</li>
+                            </ol>
+                        </li>
+
+                        <li class="glide__slide">
+                            <h1 class="topic__title">Topic 4: Exception Handling</h1>
+                            <h2 class="topic__subtitle">Topic goals</h2>
+                            <ol class="topic__goals">
+                                <li class="topic__goals__item">learn about different exception types</li>
+                                <li class="topic__goals__item">learn about throw &amp; throws</li>
+                                <li class="topic__goals__item">learn to handle exceptions with try/catch/finally blocks</li>
+                                <li class="topic__goals__item">learn to create custom exceptions</li>
+                            </ol>
+                        </li>
+
+                        <li class="glide__slide">
+                            <h1 class="topic__title">Topic 5: Arrays &amp; Collections</h1>
+                            <h2 class="topic__subtitle">Topic goals</h2>
+                            <ol class="topic__goals">
+                                <li class="topic__goals__item">learn about arrays</li>
+                                <li class="topic__goals__item">learn about various Collections types (List, Set, Map &amp; Deque)
+                                </li>
+                                <li class="topic__goals__item">learn about Comparator &amp; Comparable Interfaces</li>
+                            </ol>
+                        </li>
+
+                        <li class="glide__slide">
+                            <h1 class="topic__title">Topic 6: Streams &amp; Lambda Expressions</h1>
+                            <h2 class="topic__subtitle">Topic goals</h2>
+                            <ol class="topic__goals">
+                                <li class="topic__goals__item">learn to use lambdas to implement functional interfaces</li>
+                                <li class="topic__goals__item">learn to use Streams to filter, transform &amp; process data</li>
+                            </ol>
+                        </li>
+
+                        <li class="glide__slide">
+                            <h1 class="topic__title">Topic 7: Module System</h1>
+                            <h2 class="topic__subtitle">Topic goals</h2>
+                            <ol class="topic__goals">
+                                <li class="topic__goals__item">understand the rationale &amp; structure of a module</li>
+                                <li class="topic__goals__item">learn about different types of module</li>
+                                <li class="topic__goals__item">learn to create module-info and its keywords</li>
+                                <li class="topic__goals__item">learn to display information about modules</li>
+                                <li class="topic__goals__item">learn about built-in JDK modules</li>
+                                <li class="topic__goals__item">learn about migration</li>
+                                <li class="topic__goals__item">learn about services</li>
+                            </ol>
+                        </li>
+
+                        <li class="glide__slide">
+                            <h1 class="topic__title">Topic 8: I/O API</h1>
+                            <h2 class="topic__subtitle">Topic goals</h2>
+                            <ol class="topic__goals">
+                                <li class="topic__goals__item">learn to read from and write to files using I/O streams</li>
+                                <li class="topic__goals__item">understand the uses &amp; differences between various streams</li>
+                                <li class="topic__goals__item">understand serialization &amp; deserialization</li>
+                                <li class="topic__goals__item">learn to use NIO.2 to create &amp; use Path objects</li>
+                                <li class="topic__goals__item">learn to operate on files &amp; directories using NIO.2 Files</li>
+                            </ol>
+                        </li>
+
+                        <li class="glide__slide">
+                            <h1 class="topic__title">Topic 9: JDBC</h1>
+                            <h2 class="topic__subtitle">Topic goals</h2>
+                            <ol class="topic__goals">
+                                <li class="topic__goals__item">learn to connect to databases with JDBC</li>
+                                <li class="topic__goals__item">learn to perform CRUD operations</li>
+                                <li class="topic__goals__item">learn to perform other database operations</li>
+                            </ol>
+                        </li>
+
+                        <li class="glide__slide">
+                            <h1 class="topic__title">Topic 10: Localization</h1>
+                            <h2 class="topic__subtitle">Topic goals</h2>
+                            <ol class="topic__goals">
+                                <li class="topic__goals__item">learn about DateTime API</li>
+                                <li class="topic__goals__item">learn to use Locale</li>
+                                <li class="topic__goals__item">learn to use resource bundles</li>
+                            </ol>
+                        </li>
+
+                        <li class="glide__slide">
+                            <h1 class="topic__title">Topic 11: Annotations</h1>
+                            <h2 class="topic__subtitle">Topic goals</h2>
+                            <ol class="topic__goals">
+                                <li class="topic__goals__item">learn to declare annotations</li>
+                                <li class="topic__goals__item">learn about built-in annotations</li>
+                                <li class="topic__goals__item">learn to use common annotations</li>
+                            </ol>
+                        </li>
+
+                        <li class="glide__slide">
+                            <h1 class="topic__title">Topic 12: Security</h1>
+                            <h2 class="topic__subtitle">Topic goals</h2>
+                            <ol class="topic__goals">
+                                <li class="topic__goals__item">learn to prevent resource leaks</li>
+                                <li class="topic__goals__item">learn to mitigate injection, inclusion, and input validation</li>
+                                <li class="topic__goals__item">learn to secure resource access</li>
+                            </ol>
+                        </li>
+
+                        <li class="glide__slide">
+                            <h1 class="topic__title">Special Topic: Java Command Line</h1>
+                            <h2 class="topic__subtitle">Topic goals</h2>
+                            <ol class="topic__goals">
+                                <li class="topic__goals__item">learn about basic Java commands for non-modular programmes</li>
+                                <li class="topic__goals__item">learn about Java commands for modular programmes</li>
+                                <li class="topic__goals__item">learn to discover & describe modules via the command line</li>
+                                <li class="topic__goals__item">learn to use jdeps to list packages</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&larr;</button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&rarr;</button>
+                </div>
+
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                    <button class="glide__bullet" data-glide-dir="=0"></button>
+                    <button class="glide__bullet" data-glide-dir="=1"></button>
+                    <button class="glide__bullet" data-glide-dir="=2"></button>
+                    <button class="glide__bullet" data-glide-dir="=3"></button>
+                    <button class="glide__bullet" data-glide-dir="=4"></button>
+                    <button class="glide__bullet" data-glide-dir="=5"></button>
+                    <button class="glide__bullet" data-glide-dir="=6"></button>
+                    <button class="glide__bullet" data-glide-dir="=7"></button>
+                    <button class="glide__bullet" data-glide-dir="=8"></button>
+                    <button class="glide__bullet" data-glide-dir="=9"></button>
+                    <button class="glide__bullet" data-glide-dir="=10"></button>
+                    <button class="glide__bullet" data-glide-dir="=11"></button>
+                    <button class="glide__bullet" data-glide-dir="=12"></button>
+                </div>
+            </div>
         </main>
     </div>
     <script src="./javascript/nav.js"></script>
     <script src="./javascript/theme.js"></script>
     <script src="./javascript/backToTop.js"></script>
     <script src="./javascript/sizeControl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script>
+        var glide = new Glide('.glide', {
+            type: 'carousel',
+            startAt: 0,
+            perView: 1
+        });
+        glide.mount();
+    </script>
 </body>
 
 </html>

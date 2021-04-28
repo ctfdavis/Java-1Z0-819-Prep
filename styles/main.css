@@ -786,6 +786,64 @@ body {
   background-color: var(--highlight-color);
 }
 
+.glide__arrows {
+  position: fixed;
+  bottom: 2rem;
+  height: 10vh;
+  width: 85%;
+}
+
+.glide__arrows > .glide__arrow {
+  color: currentColor;
+  border: var(--primary-line);
+  height: 50%;
+}
+
+.glide__arrow {
+  position: fixed;
+  bottom: 1rem;
+  height: 3rem;
+}
+
+.glide__arrow--left {
+  left: 1rem;
+}
+
+.glide__arrow--right {
+  right: 1rem;
+}
+
+.glide__bullets {
+  position: fixed !important;
+  bottom: 4.5rem !important;
+}
+
+@media only screen and (max-width: 43.75em) {
+  .glide__bullets {
+    bottom: 10rem !important;
+  }
+}
+
+.glide__bullets > .glide__bullet {
+  width: 2rem;
+  height: 2rem;
+}
+
+@media only screen and (max-width: 31.25em) {
+  .glide__bullets > .glide__bullet {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.glide__slides {
+  height: 60vh;
+}
+
+.glide__slides > .glide__slide {
+  overflow-y: auto;
+}
+
 .container {
   font-family: Arial, sans-serif;
   font-size: var(--regular);
