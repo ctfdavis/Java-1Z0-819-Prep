@@ -29,6 +29,7 @@
                 <li><a href="#item-5" class="sidebar__link">5. learn about operators and their precedence</a></li>
                 <li><a href="#item-6" class="sidebar__link">6. learn about var (local variable type inference) &amp;
                         lambda parameters</a></li>
+                <li><a href="#item-7" class="sidebar__link">Summary of Topic 1</a></li>
             </ul>
         </aside>
         <button class="backToTop">
@@ -865,6 +866,27 @@
                 </code>
             </section>
 
+            <section class="topic__section">
+                <h2 class="topic__section__title" id="item-7">Summary of Topic 1</h2>
+                <p>In this topic, we have learnt about the 8 types of primitive data in Java, namely:
+                    <span class="emphasis">boolean</span>, <span class="emphasis">byte</span>, <span class="emphasis">char</span>, <span class="emphasis">short</span>,
+                    <span class="emphasis">int</span>, <span class="emphasis">long</span>, <span class="emphasis">float</span>, and <span class="emphasis">double</span>.
+                    Not only did we learn about their sizes and values ranges, but also how we could declare variables of their types and assign values to them.</p>
+                <p>We also learnt the Java variable naming rules. In particular, we saw from multiple examples that (1) all identifiers (i.e. variable names) must begin with a letter, $ or _;
+                    (2) a single underscore is not a valid identifier; (3) numbers are allowed except in the first position of an identifier.
+                </p>
+                <p>After that, we jumped into the world of wrapper classes which are the "object version" of the primitive types. We saw how Java perform auto-conversion between primitive types
+                    and their corresponding wrapper classes for us. In particular, the auto-conversion from a primitive type to a wrapper class object is called auto-boxing, and the reverse is called auto-unboxing.
+                </p>
+                <p>Besides auto-conversion, we also touched upon the topic of type conversion. We saw why in Java, widening conversion (i.e. type promotion) is implicitly accepted by the Java compiler,
+                    and also why narrowing conversion is not. Specifically, we learnt that narrowing conversion (i.e. from a "bigger" type to a "smaller" type) requires an explicit cast to work.
+                </p>
+                <p>Then we dove into a list of opeartors. We categorized them and discussed their usages from the highest precedence to the lowest.
+                    While unary operators are of the highest precedence, we see a tertiary operator which is of higher precendence than the binary operators for assignment.
+                </p>
+                <p>Last but not least, we learnt a little bit about var (i.e. local variable type inference) as well as some rules of specifying lambda parameters. We will see var and lambda again in the subsequent topics.</p>
+
+            </section>
         </main>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous"></script>
