@@ -40,15 +40,21 @@
     margin: var(--primary-margin) 0;
 
     &__title {
-        font-family: "Montez", cursive;
-        font-size: var(--biggest);
+        font-family: "Srisakdi", cursive;
+        font-size: var(--bigger);
+        text-shadow: 0px 1px 0px #b9b876, 0px 14px 10px rgba(0, 0, 0, 0.15), 0px 24px 2px rgba(0, 0, 0, 0.1),
+            0px 34px 30px rgba(0, 0, 0, 0.1);
         letter-spacing: 0.25rem;
         margin-bottom: var(--secondary-margin);
     }
-    @media only screen and (max-height: 43.75em) and (max-width: 40.625em) {
+    @media only screen and (max-height: 43.75em) and (max-width: 40.625em), (max-height: 37.5em) {
         //height: 700px, width: 650px
         align-items: flex-start;
         margin-left: var(--secondary-margin);
+
+        .header__title {
+            font-size: var(--big);
+        }
     }
 }
 
@@ -112,7 +118,7 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        background-color: var(--code-block);
+        background-color: var(--link-block);
 
         @media only screen and (max-height: 18.75em) {
             //300px
@@ -128,6 +134,7 @@
         &:visited {
             color: currentColor;
         }
+        background-color: var(--code-block);
     }
 }
 
@@ -186,17 +193,29 @@
     margin: 0 auto;
 
     &__title {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.25rem;
         margin-bottom: var(--primary-margin);
         font-size: var(--bigger);
+        text-align: center;
 
         @media only screen and (max-height: 43.75em) {
             padding-top: 1rem;
         }
+
+        @media only screen and (min-width: 31.25em) {
+            //500px
+            text-decoration: underline var(--emphasis-color);
+            text-underline-offset: 1rem;
+        }
     }
 
     &__subtitle {
+        font-family: "Julius Sans One", sans-serif;
         margin-bottom: var(--secondary-margin);
-        font-size: var(--big);
+        font-size: calc(var(--big) * 0.9);
     }
 
     &__goals {
@@ -217,15 +236,18 @@
 
         &__title {
             @extend .topic__subtitle;
-            font-style: oblique;
+            font-family: "Montserrat", sans-serif;
+            font-style: italic;
+            text-align: center;
+            letter-spacing: 0.15rem;
         }
 
         &__subtitle {
-            font-size: var(--regular);
+            font-family: "Julius Sans One", sans-serif;
 
             &--small {
+                font-family: "Julius Sans One", sans-serif;
                 font-size: var(--smaller);
-                text-decoration: underline;
             }
         }
     }

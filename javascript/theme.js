@@ -24,6 +24,7 @@ const themeToggle = () => {
         root_theme.style.setProperty('--link-color', "#72e789");
         root_theme.style.setProperty('--comment-color', '#dcdcdc');
         root_theme.style.setProperty('--code-block', "#4b4b4b");
+        root_theme.style.setProperty('--link-block', "rgba(75,75,75,0.9)");
         root_theme.style.setProperty('--tertiary-gradient', "linear-gradient(45deg, rgb(51, 48, 48, 0.7), rgb(32, 32, 32, 0.7) 40%, rgb(26, 24, 24, 0.7))");
         toggle = 1;
     }
@@ -33,6 +34,7 @@ const themeToggle = () => {
         root_theme.style.setProperty('--link-color', "#354A12");
         root_theme.style.setProperty('--comment-color', '#4b4b4b');
         root_theme.style.setProperty('--code-block', "#d7fae7");
+        root_theme.style.setProperty('--link-block', "rgba(215,250,231,0.85)");
         root_theme.style.setProperty('--tertiary-gradient', "linear-gradient(45deg, rgba(188, 241, 228, 0.6), rgba(174, 239, 245, 0.6) 40%, rgba(215, 250, 231, 0.6))");
         toggle = 0;
     }
@@ -51,6 +53,7 @@ if (localStorage.getItem('dark-mode') == 'dark') {
     root_theme.style.setProperty('--link-color', "#72e789");
     root_theme.style.setProperty('--comment-color', '#dcdcdc');
     root_theme.style.setProperty('--code-block', "#4b4b4b");
+    root_theme.style.setProperty('--link-block', "rgba(75,75,75,0.9)");
     root_theme.style.setProperty('--tertiary-gradient', "linear-gradient(45deg, rgb(51, 48, 48, 0.7), rgb(32, 32, 32, 0.7) 40%, rgb(26, 24, 24, 0.7))");
     if (backToTopIcon !== null) {
         backToTopIcon.classList.add("backToTop--dark");

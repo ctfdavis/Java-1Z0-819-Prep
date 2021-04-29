@@ -209,6 +209,7 @@
     top: 0;
     left: 0;
     display: flex;
+    font-family: 'Montserrat', sans-serif;
 
     &__btn {
         order: 1;
@@ -256,11 +257,11 @@
     }
 
     &__links {
-        text-align: center;
+        // text-align: center;
         overflow-y: auto;
         line-height: 1.5;
         padding: 2rem 1rem;
-        background-color: var(--code-block);
+        background-color: var(--link-block);
         color: currentColor;
         position: absolute;
         list-style: none;
@@ -281,8 +282,9 @@
 
     &__link {
         @include link;
-        border-radius: 5rem;
+        border-radius: 0.5rem;
         padding: 0 2rem;
+        background-color: var(--code-block);
     }
 
     &__link:link,
@@ -340,3 +342,4 @@
         text-decoration-thickness: 0.3rem;
     }
 }
+

@@ -6,7 +6,7 @@
     --primary-line: 1px solid var(--primary-grey);
     --primary-margin: 2rem;
     --secondary-margin: 1rem;
-    --section-line: 3px dashed var(--primary-grey);
+    --section-line: 2px ridge var(--primary-grey);
     --emphasis-color: #d4258b;
     --highlight-color: rgba(255, 255, 0, 0.4);
     --link-color: #354A12;
@@ -15,6 +15,7 @@
     --tertiary-shadow: 0 0.1rem 0.2rem 0.02rem var(--primary-grey);
     --comment-color: #4b4b4b;
     --code-block: #d7fae7;
+    --link-block: rgba(215, 250, 231, 0.85);
 
     --primary-gradient: linear-gradient(45deg, #bcf1e4, #aeeff5 40%, #d7fae7);
     --secondary-gradient: linear-gradient(45deg, #333030, #202020 40%, #1a1818);

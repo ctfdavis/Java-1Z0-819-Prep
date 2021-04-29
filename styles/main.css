@@ -7,7 +7,7 @@
   --primary-line: 1px solid var(--primary-grey);
   --primary-margin: 2rem;
   --secondary-margin: 1rem;
-  --section-line: 3px dashed var(--primary-grey);
+  --section-line: 2px ridge var(--primary-grey);
   --emphasis-color: #d4258b;
   --highlight-color: rgba(255, 255, 0, 0.4);
   --link-color: #354A12;
@@ -16,6 +16,7 @@
   --tertiary-shadow: 0 0.1rem 0.2rem 0.02rem var(--primary-grey);
   --comment-color: #4b4b4b;
   --code-block: #d7fae7;
+  --link-block: rgba(215, 250, 231, 0.85);
   --primary-gradient: linear-gradient(45deg, #bcf1e4, #aeeff5 40%, #d7fae7);
   --secondary-gradient: linear-gradient(45deg, #333030, #202020 40%, #1a1818);
   --tertiary-gradient: linear-gradient(45deg, rgba(188, 241, 228, 0.6), rgba(174, 239, 245, 0.7) 40%, rgba(215, 250, 231, 0.6));
@@ -561,6 +562,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .sidebar__btn {
@@ -618,11 +620,10 @@ body {
 }
 
 .sidebar__links {
-  text-align: center;
   overflow-y: auto;
   line-height: 1.5;
   padding: 2rem 1rem;
-  background-color: var(--code-block);
+  background-color: var(--link-block);
   color: currentColor;
   position: absolute;
   list-style: none;
@@ -649,8 +650,9 @@ body {
   border-radius: 100vh;
   -webkit-box-shadow: var(--secondary-shadow);
           box-shadow: var(--secondary-shadow);
-  border-radius: 5rem;
+  border-radius: 0.5rem;
   padding: 0 2rem;
+  background-color: var(--code-block);
 }
 
 .sidebar__link:link, .sidebar__link:visited {
@@ -895,18 +897,22 @@ body {
 }
 
 .header__title {
-  font-family: "Montez", cursive;
-  font-size: var(--biggest);
+  font-family: "Srisakdi", cursive;
+  font-size: var(--bigger);
+  text-shadow: 0px 1px 0px #b9b876, 0px 14px 10px rgba(0, 0, 0, 0.15), 0px 24px 2px rgba(0, 0, 0, 0.1), 0px 34px 30px rgba(0, 0, 0, 0.1);
   letter-spacing: 0.25rem;
   margin-bottom: var(--secondary-margin);
 }
 
-@media only screen and (max-height: 43.75em) and (max-width: 40.625em) {
+@media only screen and (max-height: 43.75em) and (max-width: 40.625em), (max-height: 37.5em) {
   .header {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
     margin-left: var(--secondary-margin);
+  }
+  .header .header__title {
+    font-size: var(--big);
   }
 }
 
@@ -988,7 +994,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: var(--code-block);
+  background-color: var(--link-block);
 }
 
 @media only screen and (max-height: 18.75em) {
@@ -1009,6 +1015,7 @@ body {
   border-radius: 100vh;
   -webkit-box-shadow: var(--secondary-shadow);
           box-shadow: var(--secondary-shadow);
+  background-color: var(--code-block);
 }
 
 .nav__link:link, .nav__link:visited {
@@ -1124,8 +1131,13 @@ body {
 }
 
 .topic__title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
   margin-bottom: var(--primary-margin);
   font-size: var(--bigger);
+  text-align: center;
 }
 
 @media only screen and (max-height: 43.75em) {
@@ -1134,9 +1146,18 @@ body {
   }
 }
 
+@media only screen and (min-width: 31.25em) {
+  .topic__title {
+    -webkit-text-decoration: underline var(--emphasis-color);
+            text-decoration: underline var(--emphasis-color);
+    text-underline-offset: 1rem;
+  }
+}
+
 .topic__subtitle, .topic__section__title {
+  font-family: "Julius Sans One", sans-serif;
   margin-bottom: var(--secondary-margin);
-  font-size: var(--big);
+  font-size: calc(var(--big) * 0.9);
 }
 
 .topic__goals {
@@ -1158,15 +1179,18 @@ body {
 }
 
 .topic__section__title {
-  font-style: oblique;
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 0.15rem;
 }
 
 .topic__section__subtitle {
-  font-size: var(--regular);
+  font-family: "Julius Sans One", sans-serif;
 }
 
 .topic__section__subtitle--small {
+  font-family: "Julius Sans One", sans-serif;
   font-size: var(--smaller);
-  text-decoration: underline;
 }
 /*# sourceMappingURL=main.css.map */
