@@ -224,6 +224,8 @@
     }
 
     &__section {
+        padding: 1rem 0 2rem;
+
         & > *:not(.box):not(.preformat) {
             padding: 1rem 0;
         }
