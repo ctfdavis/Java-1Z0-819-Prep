@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="../src/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Montserrat:ital,wght@0,400;0,500;1,400&family=Srisakdi:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css" />
+    <title>Java 1Z0-819 Prep</title>
+</head>
+
+<body>
+    <div class="container">
+        <button class="backToTop">
+            <svg class="backToTop__icon">
+                <use xlink:href="../src/sprite.svg#icon-arrow-up"></use>
+            </svg>
+        </button>
+        <button class="theme">
+            <svg class="theme__icon">
+                <use class="theme__icon--light" xlink:href="../src/sprite.svg#icon-sun"></use>
+                <use class="theme__icon--dark" xlink:href="../src/sprite.svg#icon-moon"></use>
+            </svg>
+        </button>
+        <div class="size-control">
+            <button class="size-control__icon size-control__icon-plus">
+                <svg>
+                    <use xlink:href="../src/sprite.svg#icon-plus"></use>
+                </svg>
+            </button>
+            <button class="size-control__icon size-control__icon-minus">
+                <svg>
+                    <use xlink:href="../src/sprite.svg#icon-minus"></use>
+                </svg>
+            </button>
+        </div>
+        <header class="header">
+            <nav class="nav">
+                <button class="nav__icon">
+                    <svg class="nav__icon__svg">
+                        <use xlink:href="../src/sprite.svg#icon-more"></use>
+                        <use xlink:href="../src/sprite.svg#icon-x"></use>
+                    </svg>
+                </button>
+                <ul class="nav__links">
+                    <li class="nav__item">
+                        <a href="../index.html" class="nav__link">Content</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../overview.html" class="nav__link">Overview</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../keywords.html" class="nav__link">Keywords</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../contact.html" class="nav__link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="topic">
+            <h1 class="topic__title">Prerequisite: Java Basic Knowledge</h1>
+            <h2 class="topic__subtitle">Topic goals</h2>
+            <ol class="topic__goals">
+                <li class="topic__goals__item">understand classes as building blocks of Java</li>
+                <li class="topic__goals__item">learn different ways to write comments inside a Java program</li>
+                <li class="topic__goals__item">learn the basics of a main() method</li>
+                <li class="topic__goals__item">learn about imports</li>
+            </ol>
+
+            <section class="topic__section">
+                <h2 class="topic__section__title" id="item-1">1. understand classes as building blocks of Java</h2>
+                <h3 class="topic__section__subtitle">What are classes?</h3>
+                <p>Let's kick off with a basic fact of Java: <q>Classes are the basic building blocks of Java</q>. That's nice, but what are classes in Java?</p>
+                <p>If you have programmed in another language, you probably have already learnt about objects and object constructors, and in Java classes are basically the object constructors.
+                    If you have not learnt about objects before, they are in a sense like what we call objects in real life. Just as an object in reality has some describable attributes and functions, so do objects in Java.
+                    In light of that, a Java class is like a blueprint for creating objects in Java. For example,
+                    you may want to create multiple student objects in Java to represent a group of students in the real world.
+                    To do that, you would first create a <span class="emphasis">Student</span> class, and then use that class to create the student objects you need.</p>
+                <p>Note that a class in Java always starts with a capital letter. That's why in the above we have a <span class="emphasis">Student</span> class, rather than
+                    a "student" class. When it comes to other things in Java, they typically start with a lowercase letter so as to differentiate from the classes.</p>
+
+                <h3 class="topic__section__subtitle">Members of a class: Fields &amp; Methods</h3>
+
+            </section>
+        </main>
+    </div>
+    <script src="../javascript/nav.js"></script>
+    <script src="../javascript/theme.js"></script>
+    <script src="../javascript/backToTop.js"></script>
+    <script src="../javascript/sizeControl.js"></script>
+    <script src="../javascript/keywords.js"></script>
+    <script src="../javascript/keywordModal.js"></script>
+    <script src="../javascript/commentToggle.js"></script>
+</body>
+
+</html>
