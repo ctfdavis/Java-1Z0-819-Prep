@@ -562,7 +562,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .sidebar__btn {
@@ -845,6 +845,183 @@ body {
 
 .glide__slides > .glide__slide {
   overflow-y: auto;
+}
+
+.quicktour {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+@media screen and (min-width: 31.25em) {
+  .quicktour {
+    bottom: 5rem;
+    right: 5rem;
+  }
+}
+
+.quicktour__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 100vh;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.65);
+  -webkit-box-shadow: var(--primary-shadow);
+          box-shadow: var(--primary-shadow);
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.quicktour__icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  cursor: pointer;
+}
+
+.quicktour__modal {
+  position: absolute;
+  top: -27rem;
+  left: -31rem;
+  height: 30rem;
+  width: 30rem;
+  background-color: var(--link-block);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+.quicktour__modal__btn {
+  display: block;
+  width: 75%;
+  height: 3rem;
+  border-radius: 2rem;
+  background-color: var(--code-block);
+  cursor: pointer;
+  color: currentColor;
+  border: var(--primary-line);
+  font-family: "Montserrat", sans-serif;
+  -webkit-box-shadow: var(--secondary-shadow);
+          box-shadow: var(--secondary-shadow);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.quicktour__modal__btn:hover, .quicktour__modal__btn:active {
+  background-color: var(--highlight-color);
+  -webkit-box-shadow: var(--tertiary-shadow);
+          box-shadow: var(--tertiary-shadow);
+}
+
+.quicktour__heading {
+  font-size: var(--smaller);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+}
+
+.quicktour__subheading {
+  font-variant: small-caps;
+  font-size: calc(var(--smaller) * 0.75);
+  font-weight: 200;
+  opacity: 0.7;
+}
+
+.quicktour__cookies {
+  font-size: calc(var(--smaller) * 0.5);
+  padding: 0 1rem;
+}
+
+.quicktour-launch {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.quicktour-launch__modal {
+  position: relative;
+  background-color: var(--code-block);
+  border-radius: 1rem;
+  padding: 1.5rem 3rem 4rem;
+  width: 32.5rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  display: none;
+}
+
+.quicktour-launch__heading {
+  font-size: var(--smaller);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+}
+
+.quicktour-launch__content {
+  font-size: var(--smaller);
+  padding: 0 1rem;
+}
+
+.quicktour-launch__svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #fff;
+  border-radius: 50%;
+  background-color: #000;
+}
+
+.quicktour-launch__quit {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 3rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.quicktour-launch__change, .quicktour-launch__next, .quicktour-launch__prev {
+  position: absolute;
+  bottom: 1rem;
+  font-size: 1.75rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--emphasis-color);
+  text-decoration: underline;
+}
+
+.quicktour-launch__change:hover, .quicktour-launch__next:hover, .quicktour-launch__prev:hover {
+  background-color: var(--highlight-color);
+}
+
+.quicktour-launch__next {
+  right: 4rem;
+}
+
+.quicktour-launch__prev {
+  left: 4rem;
 }
 
 .container {
