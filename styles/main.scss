@@ -7,7 +7,7 @@
 @import "./quicktour";
 
 .container {
-    font-family: Arial, sans-serif;
+    font-family: 'Maven Pro', sans-serif;
     font-size: var(--regular);
     min-height: 100vh;
     display: flex;
@@ -16,7 +16,7 @@
     background: var(--primary-gradient);
     background-attachment: fixed;
     color: #000;
-    line-height: 1.6;
+    line-height: 1.75;
     padding-bottom: 2rem;
     overflow-y: auto;
 
