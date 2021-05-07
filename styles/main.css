@@ -86,13 +86,22 @@ body {
 .table {
   text-align: center;
   border: var(--primary-line);
-  width: 100%;
   border-collapse: collapse;
+  width: 95vw;
+  margin-left: -7.5vw;
+  font-size: var(--smaller);
 }
 
 .table__row > * {
   border: var(--primary-line);
   padding: 0.5rem;
+}
+
+@media only screen and (min-width: 56.25em) {
+  .table {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 .list {
@@ -108,22 +117,26 @@ body {
   position: relative;
   font-size: var(--smaller);
   background-color: var(--code-block);
-  border-radius: 0.5rem;
   border: var(--primary-line);
   padding: 3rem;
   white-space: nowrap;
   overflow-x: auto;
+  width: 100vw;
+  margin-left: -10vw;
 }
 
 @media only screen and (min-width: 56.25em) {
   .preformat {
     font-size: var(--regular);
+    width: 100%;
+    margin-left: 0;
+    border-radius: 0.5rem;
   }
 }
 
 @media only screen and (min-width: 87.5em) {
   .preformat {
-    font-size: calc(var(--regular)*1.05);
+    font-size: calc(var(--regular) * 1.05);
   }
 }
 
@@ -938,14 +951,14 @@ body {
 
 .quicktour__subheading {
   font-variant: small-caps;
-  font-size: calc(var(--smaller) * 0.75);
+  font-size: calc(var(--smaller) * 0.95);
   font-weight: 200;
   opacity: 0.7;
 }
 
 .quicktour__cookies {
-  font-size: calc(var(--smaller) * 0.5);
-  padding: 0 1rem;
+  font-size: calc(var(--smaller) * 0.7);
+  padding: 0 2rem;
 }
 
 .quicktour-launch {
