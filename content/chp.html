@@ -75,18 +75,115 @@
                 <h2 class="topic__section__title" id="item-1">1. understand classes as building blocks of Java</h2>
                 <h3 class="topic__section__subtitle">What are classes?</h3>
                 <p>Let's kick off with a basic fact of Java: <q>Classes are the basic building blocks of Java</q>. That's nice, but what are classes in Java?</p>
-                <p>If you have programmed in another language, you probably have already learnt about objects and object constructors, and in Java classes are basically the object constructors.
+                <p>If you have programming experience in another language, you probably have already learnt about objects and object constructors, and in Java, classes are basically the object constructors.
                     If you have not learnt about objects before, they are in a sense like what we call objects in real life. Just as an object in reality has some describable attributes and functions, so do objects in Java.
                     In light of that, a Java class is like a blueprint for creating objects in Java. For example,
                     you may want to create multiple student objects in Java to represent a group of students in the real world.
                     To do that, you would first create a <span class="emphasis">Student</span> class, and then use that class to create the student objects you need.</p>
                 <p>Note that a class in Java always starts with a capital letter. That's why in the above we have a "<span class="emphasis">Student</span>" class, instead of
-                    a "student" class. When it comes to other things in Java, they typically start with a lowercase letter so as to differentiate from the classes.</p>
+                    a "student" class. When it comes to other things in Java, they typically start with a lowercase letter so as to differentiate themselves from the classes.</p>
 
                 <h3 class="topic__section__subtitle">Members of a class: Fields &amp; Methods</h3>
-                <p></p>
-
+                <p>Let's start with fields. A <span class="keyword">field</span> is a variable inside a class. For example, a <span class="emphasis">Student</span> class may include the following fields as attributes:</p>
+                <ul class="list">
+                    <li>name</li>
+                    <li>grade</li>
+                    <li>school</li>
+                </ul>
+                <p>These fields are set up so that for each student object we create, we can have different values assigned to them. For example, if we make a object student_A out of the Student class,
+                    we can have personal data about the student stored in the object which would help us do things with it later. When it comes to doing things with an object,
+                    we are talking about their methods. A <span class="keyword">method</span> is a block of code in that would be executed when you call it.
+                    For example, a Student class may provide one method to display the name, grade and school data of a student object, and another method to set/update those data:
+                </p>
+                <code class="preformat">
+                    class Student { <span class="comment">// declaring a Student class</span><br />
+                            &nbsp;&nbsp;private String name; <span class="comment">// setting up (declaring) the fields</span><br />
+                            &nbsp;&nbsp;private int grade;<br />
+                            &nbsp;&nbsp;private String school;<br />
+                        &nbsp;&nbsp;public void printStudentInfo() <span class="comment">// set up a method to display the information</span>{<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Name: " + name + "; Grade: " + grade + "; School: " + school); <span class="comment">// System.out.println() is how to print a line to the console</span><br />
+                        &nbsp;&nbsp;}<br />
+                         &nbsp;&nbsp;public void setStudentInfo(String given_name, int given_grade, String given_school) <span class="comment">// set up a method to set the information of a student</span><br />
+                         &nbsp;&nbsp;&nbsp;&nbsp;name = given_name;<br />
+                          &nbsp;&nbsp;&nbsp;&nbsp;grade = given_grade;<br />
+                          &nbsp;&nbsp;&nbsp;&nbsp;school = given_school;<br />
+                          &nbsp;&nbsp;}<br />
+                    }
+                </code>
+                <p>If you are new to Java, you would probably find the above hard to grasp at first. Don't worry, the main take-away here is the concepts of fields and methods.
+                    As for the code, we will delve into the details and see more examples later.
+                </p>
+                <p>Having said that, with regards to methods, it would be beneficial to get familiar with the basic syntax of it right away:</p>
+                <img class="topic__section__example" src="../src/examples/chp_example_01.png" alt="method declaration example">
+                <p>As shown in the above, <span class="specialName">setStudentInfo</span> is the <span class="emphasis">method name</span> by which we can call the method, and the parentheses following it include the <span class="emphasis">method parameter list</span>.
+                    As we have seen with the <span class="specialName">printStudentInfo</span> method though, the method parameter list can be empty (therefore taking no argument), but the parentheses must still be there.</p>
+                <p>We will cover methods in greater details later. For now, just keep in mind that a method has a method name and method parameter list, and these two combined are commonly referred to as the <span class="keyword">method signature</span>.</p>
             </section>
+            <section class="topic__section">
+                <h2 class="topic__section__title" id="item-1">2. learn different ways to write comments inside a Java program</h2>
+                <p>We have seen some <span class="keyword">comments</span> already. In the above, the <span class="comment">//</span> (double forward slash) is used to indicate the start of a comment until the end of line (i.e. everything starting from <span class="comment">//</span> on that line gets ignored).
+                    Comments are helpful in helping other programmers understand what you are coding. They are generally a good practice, and are highly appreciated for some more complex logic that would not be readily consumed without some explanations.</p>
+                <p>Besides <span class="comment">//</span>, another way to write comments in Java is with <span class="comment">/* everything in between will get ignored */</span>. This is helpful when writing multi-line comments. For example:</p>
+                <code class="preformat">
+                    <span class="emphasis">/*</span> &lt;-- Start of the comment<br />
+                    You may write anything in between<br />
+                    Include whatever information that you think is necessary<br />
+                    So that the program gets easier for others and yourself to read<br/>
+                    End of the comment --&gt; <span class="emphasis">*/</span>
+                </code>
+                <p>There is actually a third way to write comments in Java, but it is specifically made for Javadoc.
+                    As stated in <a class="external" href="https://en.wikipedia.org/wiki/Javadoc" target="_blank">this Wikipedia entry</a>, <q>Javadoc is a documentation generator [...] for the Java language for generating API documentation in HTML format from Java source code.</q>
+                    We will not talk about Javadoc in details in this set of notes, but feel free to learn more about it on <a class="external" href="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html" target="_blank">this official Oracle entry</a>.
+                    To write comments for Javadoc, simply start with <span class="emphasis">/**</span> (yes, two asterisks here) and end with <span class="emphasis">*/</span> (similar to the previous one, this can span multiple lines).
+                </p>
+            </section>
+            <section class="topic__section">
+                <h2 class="topic__section__title" id="item-1">3. learn the basics of a main() method</h2>
+                <p>Here is another important fact of Java: <q>A Java program begins execution with its <span class="emphasis">main()</span> method.</q> In other words, 
+                the main() method is the bread and butter of a Java program as without it, Java programs would not know where to start. Below is how you would write a 
+                main() method:</p>
+                <code class="preformat">
+                    public class Game {<br />
+                        &nbsp;&nbsp;<span class="emphasis">public static void main(</span>String[] args<span class="emphasis">){</span><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// do something or nothing</span><br />
+                    &nbsp;&nbsp;<span class="emphasis">}</span><br />
+                        }
+                </code>
+                <p>A main() method always has the modifiers <span class="emphasis">public</span>, <span class="emphasis">staic</span>, the return type <span class="emphasis">void</span> and surely the method name <span class="emphasis">main</span>. 
+                We will talk more about modifiers and return types in <a href="ch3.html" class="nav__link">Topic 3: Object-Oriented Programming Concepts</a>. For now, it suffices to know that these are required when writing the main() method.</p>
+                <p>As for the <span class="specialName">String[] args</span> which is the only method parameter, it is actually a String array which takes in any number of String(s) you provide. This explains why when we run a Java program from the command line, 
+                we can provide some arguments as they are taken as strings by the program's main() method. Let's have a look at an example below to make sure you hammer this notion home.</p>
+                <p>Consider the following silly java file:</p>
+                <code class="preformat">
+                    public class Hello {<br />
+                        &nbsp;&nbsp;public staic void main(String[] arguments) { <span class="comment">// it is not a must to call it args, you can call the parameters whatever you want</span><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;for (String argument: arguments) { <span class="comment">// a for loop to loop through the arguments (covered later)</span><br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello " + argument + "!"); <span class="comment">// print out Hello and the argument as a line for every argument given</span><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                        &nbsp;&nbsp;}<br />
+                    }
+                </code>
+                <p>Let's say we have compiled this java file to a class and now run the class in a terminal with the following command:</p>
+                <code class="preformat">
+                    java Hello robots mice pizzas "cats and dogs"
+                </code>
+                <p>Then we will get back 4 separate lines of output in the terminal:</p>
+                <code class="preformat">
+                    Hello robots!<br />
+                    Hello mice!<br />
+                    Hello pizzas!<br />
+                    Hello cats and dogs! <span class="comment">// Note how quotation marks can group words into a single argument</span>
+                </code>
+                <p>Surely, the main() method can do a bunch of other things with the arguments other than printing them out, but 
+                    the idea here is just to showcase the basic usage of the main() method, and why it has the parameter <span class="specialName">String[] args</span>.
+                </p>
+                <p>One last note here, besides writing the parameter as <span class="specialName">String[] args</span>, we can also write it as <span class="specialName">String args[]</span> which is simply another accepted way to denote a String array in Java. 
+                We will learn more about these ways of declaring an array later. Also, we can write the parameter as <span class="emphasis">varargs</span> like this: <span class="specialName">String... args</span>. Varargs are an arbitrary number of arguments, 
+                which in the case of a main() method, is another suitable parameter for taking whatever number of arguments.</p>
+            </section>
+            <section class="topic__section">
+                <h2 class="topic__section__title" id="item-1">4. learn about imports</h2>
+                </section>
         </main>
     </div>
     <script src="../javascript/nav.js"></script>

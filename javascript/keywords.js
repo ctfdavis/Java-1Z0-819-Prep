@@ -1,5 +1,21 @@
 var keywords = [
     {
+        "word": "field",
+        "definition": "A field in Java is a variable inside a class."
+    },
+    {
+        "word": "method",
+        "definition": "A method is a block of code in that would be executed when you call it."
+    },
+    {
+        "word": "method signature",
+        "definition": "A method signature is consisted of the method name and the method parameter list."
+    },
+    {
+        "word": "comments",
+        "definition": "Comments are statements which are not executed by the compiler and can be used to provide information about a program."
+    },
+    {
         "word": "Object",
         "definition": "An Object in Java is an entity that contains a state and behaviours defined by its variables and methods."
     },

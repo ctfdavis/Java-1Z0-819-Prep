@@ -7,7 +7,7 @@
 @import "./quicktour";
 
 .container {
-    font-family: 'Maven Pro', sans-serif;
+    font-family: "Maven Pro", sans-serif;
     font-size: var(--regular);
     min-height: 100vh;
     display: flex;
@@ -251,6 +251,15 @@
             &--small {
                 font-family: "Julius Sans One", sans-serif;
                 font-size: var(--smaller);
+            }
+        }
+
+        &__example {
+            width: 100vw;
+            margin-left: -10vw;
+            @media only screen and (min-width: 56.25em) {
+                width: 100%;
+                margin-left: 0;
             }
         }
     }
