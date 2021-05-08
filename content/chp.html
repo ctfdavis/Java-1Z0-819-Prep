@@ -13,6 +13,22 @@
 
 <body>
     <div class="container">
+        <aside class="sidebar">
+            <button class="sidebar__btn">
+                <svg class="sidebar__icon">
+                    <use xlink:href="../src/sprite.svg#icon-chevron-right" class="sidebar__icon-1"></use>
+                    <use xlink:href="../src/sprite.svg#icon-chevron-left" class="sidebar__icon-2"></use>
+                </svg>
+            </button>
+            <ul class="sidebar__links">
+                <li><a href="#goals" class="sidebar__link">Topic goals</a></li>
+                <li><a href="#item-1" class="sidebar__link">1. understand classes as building blocks of Java</a></li>
+                <li><a href="#item-2" class="sidebar__link">2. learn different ways to write comments inside a Java program</a></li>
+                <li><a href="#item-3" class="sidebar__link">3. learn the basics of a main() method</a></li>
+                <li><a href="#item-4" class="sidebar__link">4. learn about imports</a></li>
+                <li><a href="#item-5" class="sidebar__link">Summary of Prerequisites</a></li>
+            </ul>
+        </aside>
         <button class="backToTop">
             <svg class="backToTop__icon">
                 <use xlink:href="../src/sprite.svg#icon-arrow-up"></use>
@@ -62,8 +78,8 @@
         </header>
 
         <main class="topic">
-            <h1 class="topic__title">Prerequisite: Java Basic Knowledge</h1>
-            <h2 class="topic__subtitle">Topic goals</h2>
+            <h1 class="topic__title">Prerequisites: Java Basic Knowledge</h1>
+            <h2 class="topic__subtitle" id="goals">Topic goals</h2>
             <ol class="topic__goals">
                 <li class="topic__goals__item">understand classes as building blocks of Java</li>
                 <li class="topic__goals__item">learn different ways to write comments inside a Java program</li>
@@ -120,7 +136,7 @@
                 <p>We will cover methods in greater details later. For now, just keep in mind that a method has a method name and method parameter list, and these two combined are commonly referred to as the <span class="keyword">method signature</span>.</p>
             </section>
             <section class="topic__section">
-                <h2 class="topic__section__title" id="item-1">2. learn different ways to write comments inside a Java program</h2>
+                <h2 class="topic__section__title" id="item-2">2. learn different ways to write comments inside a Java program</h2>
                 <p>We have seen some <span class="keyword">comments</span> already. In the above, the <span class="comment">//</span> (double forward slash) is used to indicate the start of a comment until the end of line (i.e. everything starting from <span class="comment">//</span> on that line gets ignored).
                     Comments are helpful in helping other programmers understand what you are coding. They are generally a good practice, and are highly appreciated for some more complex logic that would not be readily consumed without some explanations.</p>
                 <p>Besides <span class="comment">//</span>, another way to write comments in Java is with <span class="comment">/* everything in between will get ignored */</span>. This is helpful when writing multi-line comments. For example:</p>
@@ -138,10 +154,10 @@
                 </p>
             </section>
             <section class="topic__section">
-                <h2 class="topic__section__title" id="item-1">3. learn the basics of a main() method</h2>
-                <p>Here is another important fact of Java: <q>A Java program begins execution with its <span class="emphasis">main()</span> method.</q> In other words, 
-                the main() method is the bread and butter of a Java program as without it, Java programs would not know where to start. Below is how you would write a 
-                main() method:</p>
+                <h2 class="topic__section__title" id="item-3">3. learn the basics of a main() method</h2>
+                <p>Here is another important fact of Java: <q>A Java program begins execution with its <span class="emphasis">main()</span> method.</q> In other words,
+                    the main() method is the bread and butter of a Java program as without it, Java programs would not know where to start. Below is how you would write a
+                    main() method:</p>
                 <code class="preformat">
                     public class Game {<br />
                         &nbsp;&nbsp;<span class="emphasis">public static void main(</span>String[] args<span class="emphasis">){</span><br />
@@ -149,10 +165,10 @@
                     &nbsp;&nbsp;<span class="emphasis">}</span><br />
                         }
                 </code>
-                <p>A main() method always has the modifiers <span class="emphasis">public</span>, <span class="emphasis">staic</span>, the return type <span class="emphasis">void</span> and surely the method name <span class="emphasis">main</span>. 
-                We will talk more about modifiers and return types in <a href="ch3.html" class="nav__link">Topic 3: Object-Oriented Programming Concepts</a>. For now, it suffices to know that these are required when writing the main() method.</p>
-                <p>As for the <span class="specialName">String[] args</span> which is the only method parameter, it is actually a String array which takes in any number of String(s) you provide. This explains why when we run a Java program from the command line, 
-                we can provide some arguments as they are taken as strings by the program's main() method. Let's have a look at an example below to make sure you hammer this notion home.</p>
+                <p>A main() method always has the modifiers <span class="emphasis">public</span>, <span class="emphasis">staic</span>, the return type <span class="emphasis">void</span> and surely the method name <span class="emphasis">main</span>.
+                    We will talk more about modifiers and return types in <a href="ch3.html" class="nav__link">Topic 3: Object-Oriented Programming Concepts</a>. For now, it suffices to know that these are required when writing the main() method.</p>
+                <p>As for the <span class="specialName">String[] args</span> which is the only method parameter, it is actually a String array which takes in any number of String(s) you provide. This explains why when we run a Java program from the command line,
+                    we can provide some arguments as they are taken as strings by the program's main() method. Let's have a look at an example below to make sure you hammer this notion home.</p>
                 <p>Consider the following silly java file:</p>
                 <code class="preformat">
                     public class Hello {<br />
@@ -174,21 +190,117 @@
                     Hello pizzas!<br />
                     Hello cats and dogs! <span class="comment">// Note how quotation marks can group words into a single argument</span>
                 </code>
-                <p>Surely, the main() method can do a bunch of other things with the arguments other than printing them out, but 
+                <p>Surely, the main() method can do a bunch of other things with the arguments other than printing them out, but
                     the idea here is just to showcase the basic usage of the main() method, and why it has the parameter <span class="specialName">String[] args</span>.
                 </p>
-                <p>One last note here, besides writing the parameter as <span class="specialName">String[] args</span>, we can also write it as <span class="specialName">String args[]</span> which is simply another accepted way to denote a String array in Java. 
-                We will learn more about these ways of declaring an array later. Also, we can write the parameter as <span class="emphasis">varargs</span> like this: <span class="specialName">String... args</span>. Varargs are an arbitrary number of arguments, 
-                which in the case of a main() method, is another suitable parameter for taking whatever number of arguments.</p>
+                <p>One last note here, besides writing the parameter as <span class="specialName">String[] args</span>, we can also write it as <span class="specialName">String args[]</span> which is simply another accepted way to denote a String array in Java.
+                    We will learn more about these ways of declaring an array later. Also, we can write the parameter as <span class="emphasis">varargs</span> like this: <span class="specialName">String... args</span>. Varargs are an arbitrary number of arguments,
+                    which in the case of a main() method, is another suitable parameter for taking whatever number of arguments.</p>
             </section>
             <section class="topic__section">
-                <h2 class="topic__section__title" id="item-1">4. learn about imports</h2>
-                </section>
+                <h2 class="topic__section__title" id="item-4">4. learn about imports</h2>
+                <p>Before we can understand imports in Java properly, we must first learn about what packages are. In short, a <span class="keyword">package</span> is where related classes are placed together.
+                    There are two types of packages: (1) Java built-in packages &amp; (2) your own packages. In this section, we will focus on how to import built-in packages in Java such as the <span class="emphasis">Java.util</span> package which
+                    contains a lot of useful classes such as the <span class="emphasis">ArrayList</span> class which we would have a closer look in a later topic. To import the ArrayList class from the Java.util package so that we can use it in our program,
+                    we just need to write an import statement like below:</p>
+                <code class="preformat">
+                    import Java.util.ArrayList; <span class="comment">// the import statement has to be placed before the class</span><br />
+<br />
+                    public class Demo {<br />
+                        &nbsp;&nbsp;public static void main(String... args) {<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;ArrayList someArrayList = new ArrayList(); <span class="comment">// create an empty ArrayList</span><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;someArrayList.add(1);<span class="comment">// add Integer 1 to the ArrayList</span><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(someArrayList); <span class="comment">// print [1]</span><br />
+                        &nbsp;&nbsp;}<br />
+                    }
+                </code>
+                <p>In Java, we have something called a wildcard, denoted by <span class="emphasis">*</span>, which can be used to mean "everything".
+                    So let's say we don't only want to import the ArrayList class from the Java.util, but also other classes from the same package.
+                    Then, what we can do is to write the import statement: <span class="formula">import Java.util.*</span> instead.</p>
+                <p>In general, we would like to create packages for our own code as well. To do so, we need to write a package statement at the very top
+                    of our program, before any import statements and classes. For example, let's say we actually want the above demo class to reside in
+                    a package called "code_examples":
+                </p>
+                <code class="preformat">
+                    <span class="comment">//Of course I can still put some comments here which will simply be ignored</span><br />
+                    package code_examples; <span class="comment">// the package statement has to be placed before any import statements and classes</span><br />
+                    import Java.util.ArrayList; <span class="comment">// the import statement has to be placed before the class</span><br />
+<br />
+                    public class Demo {<br />
+                        &nbsp;&nbsp;public static void main(String... args) {<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;ArrayList someArrayList = new ArrayList(); <span class="comment">// create an empty ArrayList</span><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;someArrayList.add(1);<span class="comment">// add Integer 1 to the ArrayList</span><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(someArrayList); <span class="comment">// print [1]</span><br />
+                        &nbsp;&nbsp;}<br />
+                    }
+                </code>
+                <p>Without defining your own packages, when you work with other classes from Java itself and other programmers, you may easily have classes with the same names
+                    which will cause the issue of <span class="emphasis">name conflicts</span>. Defining packages makes it easier to work with code of others as even if you may have
+                    classes with the same names, their <span class="keyword">fully qualified names</span> are likely different. In fact, packages are imperative in Java that if you
+                    do not state what packages your own classes are in, when they are compiled, the resulting class files will still have a package name: <span class="emphasis">.</span> (dot),
+                    which is also know as the <span class="emphasis">default package</span>.
+                </p>
+                <p>Let's consider the situation when we run to conflicting class names from two different packages that we want to import into a single file.
+                    What should we do? For example, there is a Date class from the java.util package and also a Date class from the java.sql package.
+                    One thing for sure is we cannot do the following:
+                </p>
+                <code class="preformat">
+                    import Java.util.*;<br />
+                    import Java.sql.*; <span class="comment">// it is fine here as we have not used the Date class</span><br />
+<br />
+                    public class Ambiguous {<br />
+                        &nbsp;&nbsp;public static void main(String... args) {<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;Date date; <span class="comment">// <span class="emphasis">DNC (Does not compile)</span> as the Date class is ambiguous here</span><br />
+                        &nbsp;&nbsp;}<br />
+                    }<br />
+                </code>
+                <p>The above code will fail to compile because Java cannot decide which Date class do we mean to use (Java.sql.Date or Java.util.Date?)
+                    The same is true if we replace <span class="formula">import Java.util.*</span> and <span class="formula">import Java.sql.*</span> with
+                    <span class="formula">import Java.util.Date</span> and <span class="formula">import Java.sql.Date</span> as this does not solve the ambiguity problem.
+                    However, if we only change either one of them, for example, <span class="formula">import Java.util.*</span> to <span class="formula">import Java.util.Date</span>,
+                    then the code will compile because we explicitly want Java.util.Date rather than Java.sql.Date:
+                </p>
+                <code class="preformat">
+                    import Java.util.Date; <span class="comment">// explicitly want the Date class</span><br />
+                    import Java.sql.*; <span class="comment">// although it still imports the Date class, it is sort of implied </span><br />
+<br />
+                    public class NoLongerAmbiguous {<br />
+                        &nbsp;&nbsp;public static void main(String... args) {<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;Date date; <span class="comment">// it is okay now and uses the Java.util.Date class</span><br />
+                        &nbsp;&nbsp;}<br />
+                    }<br />
+                </code>
+                <p>How about if we still want to have other classes from the <span class="specialName">Java.util</span> package? Well, in that case,
+                    we can still write the <span class="formula">import Java.util.*</span> statement in addition to <span class="formula">import Java.util.Date</span>.
+                    This is okay because Java accepts redundant import statments.</p>
+                <p>Another way to work around this problem of ambiguity is to write the fully qualified name of the class that we want to use:</p>
+                <code class="preformat">
+                    <span class="comment">//As we'll write the fully qualified names directly, we do not even need the import statement for Java.util.Date</span><br />
+                    import Java.sql.*;<br />
+<br />
+                    public class Good {<br />
+                        &nbsp;&nbsp;public static void main(String... args) {<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;java.util.Date date; <span class="comment"> // no more ambiguity </span><br />
+                        &nbsp;&nbsp;}<br />
+                    }<br />
+                </code>
+            </section>
+            <section class="topic__section">
+                <h2 class="topic__section__title" id="item-5">Summary of Prerequisites</h2>
+                <p>In the above we have seen how classes are the fundamental blocks of Java as they are the blueprints of objects. We have learnt about the members of a class which are consisted of 
+                both fields and methods. We now know that a field is simply a variable inside a class which is used to represent an attribute of the class. On the other hand, 
+                a method is a block of code to perform something (like displaying some data, setting/updating the fields, etc.) when we call it.</p>
+                <p>We have also looked at the three ways of writing comments in Java. Comments are helpful for yourself and other programmers to understand your code, especially so if it contains some complex logic.</p>
+                <p>Finally, we have learnt the basics of a main() method which is the entry point of any Java program. We then look at packages and imports. While packages are useful for organizing classes and avoiding name conflicts, 
+                    shall a name conflict arises when we use imports, we have seen ways how we can deal with that.
+                </p>
+            </section>
         </main>
     </div>
     <script src="../javascript/nav.js"></script>
     <script src="../javascript/theme.js"></script>
     <script src="../javascript/backToTop.js"></script>
+    <script src="../javascript/sidebar.js"></script>
     <script src="../javascript/sizeControl.js"></script>
     <script src="../javascript/keywords.js"></script>
     <script src="../javascript/keywordModal.js"></script>

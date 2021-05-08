@@ -16,6 +16,14 @@ var keywords = [
         "definition": "Comments are statements which are not executed by the compiler and can be used to provide information about a program."
     },
     {
+        "word": "package",
+        "definition": "Packages in Java are logical groupings of classes. In other words, a package is like a folder to contain related papers so that if you need to find a specific paper, you can simply look into the right folder."
+    },
+    {
+        "word": "fully qualified names",
+        "definition": "Fully qualified names are names of classes plus their packages. For example, the fully qualified name of the ArrayList class from the Java.util package is Java.util.ArrayList."
+    },
+    {
         "word": "Object",
         "definition": "An Object in Java is an entity that contains a state and behaviours defined by its variables and methods."
     },
