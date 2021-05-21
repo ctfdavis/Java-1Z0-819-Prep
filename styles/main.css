@@ -863,6 +863,7 @@ body {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
+  z-index: 100;
 }
 
 @media screen and (min-width: 31.25em) {
