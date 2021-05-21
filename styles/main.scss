@@ -42,19 +42,20 @@
 
     &__title {
         font-family: "Srisakdi", cursive;
-        font-size: var(--bigger);
+        font-size: var(--big);
         text-shadow: 0px 1px 0px #b9b876, 0px 14px 10px rgba(0, 0, 0, 0.15), 0px 24px 2px rgba(0, 0, 0, 0.1),
             0px 34px 30px rgba(0, 0, 0, 0.1);
         letter-spacing: 0.25rem;
         margin-bottom: var(--secondary-margin);
+
     }
-    @media only screen and (max-height: 43.75em) and (max-width: 40.625em), (max-height: 37.5em) {
-        //height: 700px, width: 650px
+    @media only screen and (max-height: 43.75em) and (max-width: 40.625em), (max-height: 42.5em) {
+        //height: 700px, width: 650px OR height: 680px
         align-items: flex-start;
         margin-left: var(--secondary-margin);
 
         .header__title {
-            font-size: var(--big);
+            font-size: var(--regular);
         }
     }
 }
@@ -146,8 +147,7 @@
     justify-content: center;
     font-family: "Montserrat", sans-serif;
     font-size: calc(var(--smaller) * 0.95);
-    padding: 3rem 0;
-    height: 80vh;
+    min-height: 80vh;
 
     @media only screen and (max-width: 25em) {
         // 400px
@@ -165,6 +165,9 @@
 
     &__link {
         @include link;
+        padding-right: 15%;
+        clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+        // clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
         white-space: nowrap;
         border: none;
         box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 1px 1px 3px rgba(58, 167, 125, 0.3),
